@@ -1,10 +1,16 @@
 import os
 
+# URL de conexión directa (formato que funciona)
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "mysql+pymysql://root@localhost:3307/dw_proyectos?charset=utf8mb4"
+)
+
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "port": int(os.getenv("DB_PORT", 3307)),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", " "),
+    "password": os.getenv("DB_PASSWORD", ""),
     "database": os.getenv("DB_NAME", "dw_proyectos"),
 }
 

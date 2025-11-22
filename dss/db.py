@@ -2,15 +2,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 import streamlit as st
 
-from dss.config import DB_CONFIG
+from dss.config import DATABASE_URL
 
 
 def get_engine():
-    connection_url = (
-        f"mysql+mysqlconnector://{DB_CONFIG['user']}:{DB_CONFIG['password']}"
-        f"@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
-    )
-    return create_engine(connection_url, pool_pre_ping=True)
+    # Usar la URL directa con pymysql
+    return create_engine(DATABASE_URL, pool_pre_ping=True)
 
 
 def get_connection():

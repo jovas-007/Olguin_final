@@ -2,6 +2,6 @@ streamlit
 pandas
 numpy
 sqlalchemy
-mysql-connector-python
+pymysql
 scikit-learn
 scipy

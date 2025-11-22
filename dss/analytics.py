@@ -90,7 +90,9 @@ def build_olap_views(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
 
     if not proyectos.empty:
         proyectos = proyectos.copy()
-        proyectos["FechaFin"] = pd.to_datetime(proyectos[["AnioFin", "MesFin"]].assign(Dia=1))
+        proyectos["FechaFin"] = pd.to_datetime(
+            proyectos[["AnioFin", "MesFin"]].rename(columns={"AnioFin": "year", "MesFin": "month"}).assign(day=1)
+        )
         proyectos_a_tiempo = (
             proyectos.assign(A_Tiempo=(proyectos["RetrasoFinalDias"] <= 0).astype(int))
             .groupby(proyectos["FechaFin"].dt.to_period("M"))["A_Tiempo"]

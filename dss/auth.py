@@ -5,7 +5,7 @@ from dss.config import USERS
 
 def login():
     if "auth" not in st.session_state:
-        st.session_state.auth = {"is_authenticated": False, "role": None, "user": None}
+        st.session_state.auth = {"is_authenticated": True, "role": "viewer", "user": "invitado"}
 
     with st.sidebar.form("login_form"):
         st.subheader("Acceso restringido")
@@ -27,6 +27,7 @@ def login():
 
     if st.session_state.auth["is_authenticated"]:
         st.sidebar.caption(f"Rol: {st.session_state.auth['role']}")
-        if st.sidebar.button("Cerrar sesión"):
-            st.session_state.auth = {"is_authenticated": False, "role": None, "user": None}
-            st.experimental_rerun()
+        if st.session_state.auth["user"] != "invitado":
+            if st.sidebar.button("Cerrar sesión"):
+                st.session_state.auth = {"is_authenticated": True, "role": "viewer", "user": "invitado"}
+                st.rerun()
