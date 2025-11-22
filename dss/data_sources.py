@@ -1,12 +1,40 @@
+from pathlib import Path
 from typing import Tuple
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-from sqlalchemy import text
-from sqlalchemy.exc import SQLAlchemyError
 
-from dss.db import get_connection
+# Ruta a la carpeta de datos
+DATA_DIR = Path(__file__).parent.parent / "CargaDatos"
+
+
+def cargar_datos_desde_csv():
+    """Carga todos los archivos CSV y realiza los JOINs necesarios"""
+    try:
+        # Cargar tablas de hechos
+        hechos_proyectos = pd.read_csv(DATA_DIR / "hechos_proyectos_seed.csv")
+        hechos_asignaciones = pd.read_csv(DATA_DIR / "hechos_asignaciones_seed.csv")
+        
+        # Cargar dimensiones
+        dim_proyectos = pd.read_csv(DATA_DIR / "dim_proyectos_seed.csv")
+        dim_clientes = pd.read_csv(DATA_DIR / "dim_clientes_seed.csv")
+        dim_gastos = pd.read_csv(DATA_DIR / "dim_gastos_seed.csv")
+        dim_tiempo = pd.read_csv(DATA_DIR / "dim_tiempo_seed.csv")
+        dim_empleados = pd.read_csv(DATA_DIR / "dim_empleados_seed.csv")
+        
+        return {
+            "hechos_proyectos": hechos_proyectos,
+            "hechos_asignaciones": hechos_asignaciones,
+            "dim_proyectos": dim_proyectos,
+            "dim_clientes": dim_clientes,
+            "dim_gastos": dim_gastos,
+            "dim_tiempo": dim_tiempo,
+            "dim_empleados": dim_empleados
+        }
+    except Exception as e:
+        st.error(f"Error al cargar archivos CSV: {e}")
+        return None
 
 
 def generar_datos_de_ejemplo() -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -62,90 +90,69 @@ def generar_datos_de_ejemplo() -> Tuple[pd.DataFrame, pd.DataFrame]:
 
 @st.cache_data(show_spinner=False)
 def cargar_df_proyectos() -> pd.DataFrame:
-    conn = get_connection()
-    if conn is None:
+    """Carga y une datos de proyectos desde archivos CSV"""
+    datos = cargar_datos_desde_csv()
+    
+    if datos is None:
         return generar_datos_de_ejemplo()[0]
-
-    query = text(
-        """
-        SELECT
-            hp.ID_Proyecto,
-            dp.CodigoProyecto,
-            dp.Version,
-            dp.Cancelado,
-            dp.TotalErrores,
-            dp.NumTrabajadores,
-            dc.CodigoClienteReal,
-            gi.TipoGasto,
-            gi.Categoria,
-            hp.Presupuesto,
-            hp.CosteReal,
-            hp.DesviacionPresupuestal,
-            hp.PenalizacionesMonto,
-            hp.ProporcionCAPEX_OPEX,
-            hp.RetrasoInicioDias,
-            hp.RetrasoFinalDias,
-            hp.TasaDeErroresEncontrados,
-            hp.TasaDeExitoEnPruebas,
-            hp.ProductividadPromedio,
-            hp.PorcentajeTareasRetrasadas,
-            hp.PorcentajeHitosRetrasados,
-            ti_inicio.Anio AS AnioInicio,
-            ti_inicio.Mes AS MesInicio,
-            ti_fin.Anio AS AnioFin,
-            ti_fin.Mes AS MesFin
-        FROM hechos_proyectos hp
-        JOIN dim_proyectos dp ON hp.ID_Proyecto = dp.ID_Proyecto
-        JOIN dim_clientes dc ON dp.ID_Cliente = dc.ID_Cliente
-        JOIN dim_gastos gi ON hp.ID_Gasto = gi.ID_Finanza
-        JOIN dim_tiempo ti_inicio ON hp.ID_FechaInicio = ti_inicio.ID_Tiempo
-        JOIN dim_tiempo ti_fin ON hp.ID_FechaFin = ti_fin.ID_Tiempo
-        """
+    
+    # JOIN: hechos_proyectos + dim_proyectos + dim_clientes + dim_gastos + dim_tiempo
+    df = datos["hechos_proyectos"].merge(
+        datos["dim_proyectos"], on="ID_Proyecto", how="left"
+    ).merge(
+        datos["dim_clientes"], on="ID_Cliente", how="left"
+    ).merge(
+        datos["dim_gastos"], left_on="ID_Gasto", right_on="ID_Finanza", how="left"
+    ).merge(
+        datos["dim_tiempo"], left_on="ID_FechaInicio", right_on="ID_Tiempo", how="left", suffixes=("", "_inicio")
+    ).merge(
+        datos["dim_tiempo"], left_on="ID_FechaFin", right_on="ID_Tiempo", how="left", suffixes=("_inicio", "_fin")
     )
-    try:
-        df = pd.read_sql(query, conn)
-    except SQLAlchemyError as exc:
-        st.error("Error al consultar hechos_proyectos. Usando datos de ejemplo.")
-        st.info(f"Detalle técnico: {exc}")
-        df = generar_datos_de_ejemplo()[0]
-    finally:
-        conn.close()
-    return df
+    
+    # Renombrar columnas para coincidir con el esquema esperado
+    df = df.rename(columns={
+        "Anio_inicio": "AnioInicio",
+        "Mes_inicio": "MesInicio",
+        "Anio_fin": "AnioFin",
+        "Mes_fin": "MesFin"
+    })
+    
+    # Seleccionar solo las columnas necesarias
+    columnas = [
+        "ID_Proyecto", "CodigoProyecto", "Version", "Cancelado", "TotalErrores",
+        "NumTrabajadores", "CodigoClienteReal", "TipoGasto", "Categoria",
+        "Presupuesto", "CosteReal", "DesviacionPresupuestal", "PenalizacionesMonto",
+        "ProporcionCAPEX_OPEX", "RetrasoInicioDias", "RetrasoFinalDias",
+        "TasaDeErroresEncontrados", "TasaDeExitoEnPruebas", "ProductividadPromedio",
+        "PorcentajeTareasRetrasadas", "PorcentajeHitosRetrasados",
+        "AnioInicio", "MesInicio", "AnioFin", "MesFin"
+    ]
+    
+    return df[columnas]
 
 
 @st.cache_data(show_spinner=False)
 def cargar_df_asignaciones() -> pd.DataFrame:
-    conn = get_connection()
-    if conn is None:
+    """Carga y une datos de asignaciones desde archivos CSV"""
+    datos = cargar_datos_desde_csv()
+    
+    if datos is None:
         return generar_datos_de_ejemplo()[1]
-
-    query = text(
-        """
-        SELECT
-            ha.ID_Empleado,
-            de.CodigoEmpleado,
-            de.Rol,
-            de.Seniority,
-            ha.ID_Proyecto,
-            dp.CodigoProyecto,
-            ha.HorasPlanificadas,
-            ha.HorasReales,
-            ha.ValorHoras,
-            ha.RetrasoHoras,
-            dt.Anio,
-            dt.Mes
-        FROM hechos_asignaciones ha
-        JOIN dim_empleados de ON ha.ID_Empleado = de.ID_Empleado
-        JOIN dim_proyectos dp ON ha.ID_Proyecto = dp.ID_Proyecto
-        JOIN dim_tiempo dt ON ha.ID_FechaAsignacion = dt.ID_Tiempo
-        """
+    
+    # JOIN: hechos_asignaciones + dim_empleados + dim_proyectos + dim_tiempo
+    df = datos["hechos_asignaciones"].merge(
+        datos["dim_empleados"], on="ID_Empleado", how="left"
+    ).merge(
+        datos["dim_proyectos"], on="ID_Proyecto", how="left"
+    ).merge(
+        datos["dim_tiempo"], left_on="ID_FechaAsignacion", right_on="ID_Tiempo", how="left"
     )
-    try:
-        df = pd.read_sql(query, conn)
-    except SQLAlchemyError as exc:
-        st.error("Error al consultar hechos_asignaciones. Usando datos de ejemplo.")
-        st.info(f"Detalle técnico: {exc}")
-        df = generar_datos_de_ejemplo()[1]
-    finally:
-        conn.close()
-    return df
+    
+    # Seleccionar solo las columnas necesarias
+    columnas = [
+        "ID_Empleado", "CodigoEmpleado", "Rol", "Seniority",
+        "ID_Proyecto", "CodigoProyecto", "HorasPlanificadas", "HorasReales",
+        "ValorHoras", "RetrasoHoras", "Anio", "Mes"
+    ]
+    
+    return df[columnas]

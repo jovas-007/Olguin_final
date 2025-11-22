@@ -14,11 +14,6 @@ DB_CONFIG = {
     "database": os.getenv("DB_NAME", "dw_proyectos"),
 }
 
-USERS = {
-    "pm1": {"password": "1234", "role": "project_manager"},
-    "analista1": {"password": "abcd", "role": "viewer"},
-}
-
 KPI_TARGETS = {
     "cumplimiento_presupuesto": 0.9,
     "desviacion_presupuestal": 0.05,

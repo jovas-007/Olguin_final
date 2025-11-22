@@ -1,0 +1,41 @@
+ID_Empleado,CodigoEmpleado,Rol,Seniority
+1,2001,BA,Jr
+2,2002,Dev Backend,Sr
+3,2003,QA,Jr
+4,2004,Dev Frontend,Jr
+5,2005,BA,Jr
+6,2006,BA,Sr
+7,2007,PM,Jr
+8,2008,PM,Mid
+9,2009,Dev Backend,Jr
+10,2010,Dev Backend,Jr
+11,2011,Dev Frontend,Sr
+12,2012,PM,Jr
+13,2013,PM,Jr
+14,2014,BA,Sr
+15,2015,BA,Sr
+16,2016,DevOps,Jr
+17,2017,DevOps,Sr
+18,2018,QA,Jr
+19,2019,Dev Frontend,Sr
+20,2020,DevOps,Mid
+21,2021,QA,Jr
+22,2022,Dev Frontend,Mid
+23,2023,Dev Backend,Jr
+24,2024,DevOps,Jr
+25,2025,QA,Mid
+26,2026,PM,Mid
+27,2027,Dev Backend,Sr
+28,2028,DevOps,Sr
+29,2029,Dev Backend,Mid
+30,2030,Dev Backend,Sr
+31,2031,QA,Sr
+32,2032,PM,Mid
+33,2033,PM,Jr
+34,2034,BA,Jr
+35,2035,Dev Backend,Sr
+36,2036,Dev Frontend,Mid
+37,2037,Dev Backend,Jr
+38,2038,Dev Backend,Mid
+39,2039,QA,Mid
+40,2040,BA,Mid
