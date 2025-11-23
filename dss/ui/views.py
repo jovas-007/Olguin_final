@@ -222,13 +222,18 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
                 </p>
             </div>
         """, unsafe_allow_html=True)
-        if not vistas["proyectos_a_tiempo"].empty:
-            st.line_chart(
-                vistas["proyectos_a_tiempo"].set_index("Fecha")[["A_Tiempo"]],
-                use_container_width=True,
-                height=400
-            )
-            st.caption("Seguimiento temporal del cumplimiento de plazos para gestión proactiva de riesgos.")
+        if not vistas["proyectos_a_tiempo"].empty and len(vistas["proyectos_a_tiempo"]) > 0:
+            # Verificar que la columna Fecha existe y tiene valores
+            if "Fecha" in vistas["proyectos_a_tiempo"].columns and "A_Tiempo" in vistas["proyectos_a_tiempo"].columns:
+                chart_data = vistas["proyectos_a_tiempo"].set_index("Fecha")[["A_Tiempo"]]
+                st.line_chart(
+                    chart_data,
+                    use_container_width=True,
+                    height=400
+                )
+                st.caption("Seguimiento temporal del cumplimiento de plazos para gestión proactiva de riesgos.")
+            else:
+                st.warning("Datos de evolución temporal incompletos - faltan columnas requeridas.")
         else:
             st.info("Sin datos suficientes para mostrar evolución mensual de entregas a tiempo.")
 
@@ -304,38 +309,188 @@ def render_detalle(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, fi
     vistas = build_olap_views(df_proyectos, df_asignaciones, filtros)
     detalle = get_detail_table(df_proyectos, filtros)
 
-    st.header("Análisis detallado")
-    st.dataframe(detalle, use_container_width=True)
+    # Header principal
+    st.header("Análisis Detallado de Proyectos")
+    st.caption("Vista operativa completa con desglose de métricas clave por proyecto")
+    
+    st.markdown("---")
+    
+    # Tabla detallada
+    st.subheader("Tabla Consolidada de Proyectos")
+    st.dataframe(detalle, use_container_width=True, height=400)
+    st.caption("Datos consolidados por proyecto incluyendo tiempos, costos, recursos y desviaciones.")
 
-    col_a, col_b = st.columns(2)
-    with col_a:
-        st.subheader("Distribución de retrasos por proyecto")
-        st.bar_chart(
-            vistas["retrasos"].set_index("CodigoProyecto")[["RetrasoInicioDias", "RetrasoFinalDias"]],
-            use_container_width=True,
-        )
-        st.caption("Identifica proyectos críticos y ayuda a replanificar recursos.")
-    with col_b:
-        st.subheader("Productividad por rol")
+    st.markdown("---")
+    
+    # Sección de análisis de tiempos y retrasos
+    st.subheader("Análisis Temporal y Retrasos")
+    st.caption("Evaluación de cumplimiento de plazos y eficiencia de ejecución")
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    col_tiempo1, col_tiempo2 = st.columns(2)
+    
+    with col_tiempo1:
+        st.markdown("**Retrasos de Inicio vs Finalización**")
+        if not vistas["retrasos"].empty:
+            st.bar_chart(
+                vistas["retrasos"].set_index("CodigoProyecto")[["RetrasoInicioDias", "RetrasoFinalDias"]],
+                use_container_width=True,
+                height=400
+            )
+            st.caption("Identifica proyectos críticos con retrasos significativos para reasignación de recursos.")
+        else:
+            st.info("No hay datos de retrasos disponibles para el filtro actual.")
+    
+    with col_tiempo2:
+        st.markdown("**Duración Real vs Planificada**")
+        # Calcular duración desde las fechas
+        fechas_disponibles = all(col in df_proyectos.columns for col in ["AnioInicio", "MesInicio", "AnioFin", "MesFin", "RetrasoFinalDias"])
+        if not df_proyectos.empty and fechas_disponibles:
+            proyectos_filtrados = df_proyectos[df_proyectos["CodigoProyecto"].isin(detalle["CodigoProyecto"])].copy()
+            if not proyectos_filtrados.empty:
+                # Duración planificada en meses
+                proyectos_filtrados["Planificado"] = ((proyectos_filtrados["AnioFin"] - proyectos_filtrados["AnioInicio"]) * 12 + 
+                                                       (proyectos_filtrados["MesFin"] - proyectos_filtrados["MesInicio"]))
+                # Duración real considera retrasos (convertir días a meses)
+                proyectos_filtrados["Real"] = proyectos_filtrados["Planificado"] + (proyectos_filtrados["RetrasoFinalDias"] / 30)
+                
+                duracion_comp = proyectos_filtrados[["CodigoProyecto", "Planificado", "Real"]]
+                st.bar_chart(
+                    duracion_comp.set_index("CodigoProyecto")[["Planificado", "Real"]],
+                    use_container_width=True,
+                    height=400
+                )
+                st.caption("Duración en meses - comparación entre planificado y real (con retrasos) para mejorar estimaciones.")
+            else:
+                st.info("No hay proyectos con datos de duración en el filtro actual.")
+        else:
+            st.info("No hay datos de duración disponibles para comparar.")
+
+    st.markdown("---")
+
+    # Sección de análisis de recursos y productividad
+    st.subheader("Gestión de Recursos Humanos")
+    st.caption("Eficiencia y aprovechamiento de capital humano")
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    col_recursos1, col_recursos2 = st.columns(2)
+    
+    with col_recursos1:
+        st.markdown("**Productividad por Rol**")
         if not vistas["productividad_por_rol"].empty:
-            data = vistas["productividad_por_rol"]
+            data = vistas["productividad_por_rol"].copy()
             data["Relacion"] = data["HorasReales"] / data["HorasPlanificadas"]
-            st.bar_chart(data.set_index("Rol")["Relacion"], use_container_width=True)
+            st.bar_chart(data.set_index("Rol")["Relacion"], use_container_width=True, height=400)
+            st.caption("Eficiencia por rol para optimización de cargas de trabajo y formación dirigida.")
         else:
             st.info("Sin datos de asignaciones para el filtro actual.")
-        st.caption("Visibiliza eficiencia por rol/empleado para promover coaching y balance de cargas.")
+    
+    with col_recursos2:
+        st.markdown("**Horas Planificadas vs Reales**")
+        if not vistas["asignaciones"].empty:
+            pivot = vistas["asignaciones"].pivot_table(
+                index="CodigoProyecto",
+                values=["HorasPlanificadas", "HorasReales"],
+                aggfunc="sum",
+            )
+            st.bar_chart(pivot, use_container_width=True, height=400)
+            st.caption("Analiza desviaciones operativas para ajustar estimaciones futuras de esfuerzo.")
+        else:
+            st.info("No hay asignaciones para mostrar en el rango seleccionado.")
 
-    st.subheader("Horas planificadas vs reales")
-    if not vistas["asignaciones"].empty:
-        pivot = vistas["asignaciones"].pivot_table(
-            index="CodigoProyecto",
-            values=["HorasPlanificadas", "HorasReales"],
-            aggfunc="sum",
-        )
-        st.bar_chart(pivot, use_container_width=True)
-    else:
-        st.info("No hay asignaciones para mostrar en el rango seleccionado.")
-    st.caption("Analiza desviaciones operativas para ajustar estimaciones futuras.")
+    st.markdown("---")
+
+    # Sección de análisis financiero detallado
+    st.subheader("Análisis Financiero Comparativo")
+    st.caption("Control presupuestal y rentabilidad de proyectos")
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    col_fin1, col_fin2 = st.columns(2)
+    
+    with col_fin1:
+        st.markdown("**Desviación Presupuestal**")
+        if not detalle.empty and "DesviacionPresupuestal" in detalle.columns:
+            desv_data = detalle[["CodigoProyecto", "DesviacionPresupuestal"]].copy()
+            st.bar_chart(
+                desv_data.set_index("CodigoProyecto")["DesviacionPresupuestal"],
+                use_container_width=True,
+                height=400
+            )
+            st.caption("Proyectos con mayor desviación presupuestal requieren análisis de causas raíz.")
+        else:
+            st.info("No hay datos de desviación presupuestal disponibles.")
+    
+    with col_fin2:
+        st.markdown("**Penalizaciones vs Presupuesto**")
+        pen_disponible = "PenalizacionesMonto" in df_proyectos.columns and "Presupuesto" in df_proyectos.columns
+        if not df_proyectos.empty and pen_disponible:
+            proyectos_filtrados = df_proyectos[df_proyectos["CodigoProyecto"].isin(detalle["CodigoProyecto"])].copy()
+            if not proyectos_filtrados.empty:
+                pen_data = proyectos_filtrados[["CodigoProyecto", "PenalizacionesMonto", "Presupuesto"]].copy()
+                # Evitar división por cero
+                pen_data = pen_data[pen_data["Presupuesto"] > 0]
+                if not pen_data.empty:
+                    pen_data["Porcentaje_Penalizacion"] = (pen_data["PenalizacionesMonto"] / pen_data["Presupuesto"]) * 100
+                    st.bar_chart(
+                        pen_data.set_index("CodigoProyecto")["Porcentaje_Penalizacion"],
+                        use_container_width=True,
+                        height=400
+                    )
+                    st.caption("Penalizaciones como porcentaje del presupuesto - indicador de riesgo contractual.")
+                else:
+                    st.info("No hay proyectos con presupuesto válido.")
+            else:
+                st.info("No hay proyectos con datos de penalizaciones en el filtro actual.")
+        else:
+            st.info("No hay datos de penalizaciones disponibles.")
+
+    st.markdown("---")
+
+    # Sección de calidad y errores
+    st.subheader("Métricas de Calidad y Testing")
+    st.caption("Evaluación de calidad del producto y efectividad de pruebas")
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    col_cal1, col_cal2 = st.columns(2)
+    
+    with col_cal1:
+        st.markdown("**Total de Errores por Proyecto**")
+        errores_disponible = "TotalErrores" in df_proyectos.columns
+        if not df_proyectos.empty and errores_disponible:
+            proyectos_filtrados = df_proyectos[df_proyectos["CodigoProyecto"].isin(detalle["CodigoProyecto"])].copy()
+            if not proyectos_filtrados.empty:
+                errores_data = proyectos_filtrados[["CodigoProyecto", "TotalErrores"]].copy()
+                st.bar_chart(
+                    errores_data.set_index("CodigoProyecto")["TotalErrores"],
+                    use_container_width=True,
+                    height=400
+                )
+                st.caption("Proyectos con mayor cantidad de errores requieren refuerzo en QA y revisión de procesos.")
+            else:
+                st.info("No hay proyectos con datos de errores en el filtro actual.")
+        else:
+            st.info("No hay datos de errores disponibles.")
+    
+    with col_cal2:
+        st.markdown("**Tasa de Éxito en Pruebas**")
+        pruebas_disponible = "TasaDeExitoEnPruebas" in df_proyectos.columns
+        if not df_proyectos.empty and pruebas_disponible:
+            proyectos_filtrados = df_proyectos[df_proyectos["CodigoProyecto"].isin(detalle["CodigoProyecto"])].copy()
+            if not proyectos_filtrados.empty:
+                pruebas_data = proyectos_filtrados[["CodigoProyecto", "TasaDeExitoEnPruebas"]].copy()
+                # Convertir a porcentaje
+                pruebas_data["Tasa_Exito"] = pruebas_data["TasaDeExitoEnPruebas"] * 100
+                st.bar_chart(
+                    pruebas_data.set_index("CodigoProyecto")["Tasa_Exito"],
+                    use_container_width=True,
+                    height=400
+                )
+                st.caption("Mayor tasa de éxito indica mejor calidad de código y testing más efectivo.")
+            else:
+                st.info("No hay proyectos con datos de pruebas en el filtro actual.")
+        else:
+            st.info("No hay datos de pruebas disponibles.")
+
 
 
 def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):

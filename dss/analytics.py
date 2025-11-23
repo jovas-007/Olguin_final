@@ -79,6 +79,12 @@ def get_detail_table(df_proy: pd.DataFrame, filtros: Dict) -> pd.DataFrame:
         "PorcentajeTareasRetrasadas",
         "PorcentajeHitosRetrasados",
     ]
+    # Agregar columnas opcionales si existen
+    columnas_opcionales = ["DuracionDias", "DuracionRealDias", "PenalizacionesMonto", "TotalErrores", "PruebasExitosas", "PruebasRealizadas"]
+    for col in columnas_opcionales:
+        if col in proyectos.columns:
+            columnas.append(col)
+    
     return proyectos[columnas]
 
 
@@ -88,28 +94,72 @@ def build_olap_views(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
 
     barras_presupuesto = proyectos[["CodigoProyecto", "Presupuesto", "CosteReal"]]
 
-    if not proyectos.empty:
-        proyectos = proyectos.copy()
-        proyectos["FechaFin"] = pd.to_datetime(
-            proyectos[["AnioFin", "MesFin"]].rename(columns={"AnioFin": "year", "MesFin": "month"}).assign(day=1)
-        )
-        proyectos_a_tiempo = (
-            proyectos.assign(A_Tiempo=(proyectos["RetrasoFinalDias"] <= 0).astype(int))
-            .groupby(proyectos["FechaFin"].dt.to_period("M"))["A_Tiempo"]
-            .mean()
-            .reset_index()
-        )
-        proyectos_a_tiempo["Fecha"] = proyectos_a_tiempo["FechaFin"].dt.to_timestamp()
-    else:
-        proyectos_a_tiempo = pd.DataFrame(columns=["Fecha", "A_Tiempo"])
+    # Crear evolución temporal de proyectos a tiempo
+    proyectos_a_tiempo = pd.DataFrame(columns=["Fecha", "A_Tiempo"])
+    if not proyectos.empty and "AnioFin" in proyectos.columns and "MesFin" in proyectos.columns:
+        try:
+            proyectos_temp = proyectos.copy()
+            
+            # Validar que AnioFin y MesFin son numéricos
+            proyectos_temp["AnioFin"] = pd.to_numeric(proyectos_temp["AnioFin"], errors='coerce')
+            proyectos_temp["MesFin"] = pd.to_numeric(proyectos_temp["MesFin"], errors='coerce')
+            
+            # Filtrar valores válidos (año entre 2000-2050, mes entre 1-12)
+            proyectos_temp = proyectos_temp[
+                (proyectos_temp["AnioFin"] >= 2000) & 
+                (proyectos_temp["AnioFin"] <= 2050) &
+                (proyectos_temp["MesFin"] >= 1) & 
+                (proyectos_temp["MesFin"] <= 12)
+            ]
+            
+            if not proyectos_temp.empty:
+                # Crear fecha válida
+                proyectos_temp["FechaFin"] = pd.to_datetime(
+                    proyectos_temp[["AnioFin", "MesFin"]].rename(
+                        columns={"AnioFin": "year", "MesFin": "month"}
+                    ).assign(day=1),
+                    errors='coerce'
+                )
+                
+                # Filtrar fechas válidas
+                proyectos_temp = proyectos_temp[proyectos_temp["FechaFin"].notna()]
+                
+                if not proyectos_temp.empty and "RetrasoFinalDias" in proyectos_temp.columns:
+                    # Calcular proyectos a tiempo por mes
+                    proyectos_temp["A_Tiempo"] = (proyectos_temp["RetrasoFinalDias"] <= 0).astype(int)
+                    
+                    # Agrupar por mes y calcular porcentaje de proyectos a tiempo
+                    proyectos_por_mes = (
+                        proyectos_temp.groupby(proyectos_temp["FechaFin"].dt.to_period("M"))
+                        .agg({"A_Tiempo": ["sum", "count"]})
+                        .reset_index()
+                    )
+                    proyectos_por_mes.columns = ["Periodo", "Proyectos_A_Tiempo", "Total_Proyectos"]
+                    
+                    # Calcular porcentaje
+                    proyectos_por_mes["A_Tiempo"] = (proyectos_por_mes["Proyectos_A_Tiempo"] / 
+                                                      proyectos_por_mes["Total_Proyectos"])
+                    
+                    proyectos_por_mes["Fecha"] = proyectos_por_mes["Periodo"].dt.to_timestamp()
+                    proyectos_a_tiempo = proyectos_por_mes[["Fecha", "A_Tiempo"]].sort_values("Fecha")
+        except Exception as e:
+            print(f"Error al crear proyectos_a_tiempo: {e}")
+            import traceback
+            traceback.print_exc()
+            proyectos_a_tiempo = pd.DataFrame(columns=["Fecha", "A_Tiempo"])
 
     capex_opex = (
         proyectos.groupby(["Categoria"])["ProporcionCAPEX_OPEX"].mean().reset_index()
-        if not proyectos.empty
+        if not proyectos.empty and "Categoria" in proyectos.columns and "ProporcionCAPEX_OPEX" in proyectos.columns
         else pd.DataFrame(columns=["Categoria", "ProporcionCAPEX_OPEX"])
     )
 
-    retrasos = proyectos[["CodigoProyecto", "RetrasoInicioDias", "RetrasoFinalDias"]]
+    retrasos = (
+        proyectos[["CodigoProyecto", "RetrasoInicioDias", "RetrasoFinalDias"]]
+        if not proyectos.empty
+        else pd.DataFrame(columns=["CodigoProyecto", "RetrasoInicioDias", "RetrasoFinalDias"])
+    )
+    
     productividad_por_rol = (
         asignaciones.groupby("Rol")[["HorasReales", "HorasPlanificadas"]]
         .sum()
