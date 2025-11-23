@@ -98,7 +98,7 @@ def login():
             st.error("Usuario o contraseña incorrectos")
     
     # Botón de registro debajo del formulario de login
-    if st.sidebar.button("📝 Registrar nuevo usuario"):
+    if st.sidebar.button("Registrar nuevo usuario"):
         mostrar_formulario_registro()
 
     if st.session_state.auth["is_authenticated"]:

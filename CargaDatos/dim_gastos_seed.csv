@@ -1,5 +1,7 @@
 ID_Finanza,TipoGasto,Categoria,Monto
 1,Hardware servidores,CAPEX,50000.00
 2,Licencias software,CAPEX,30000.00
-3,Sueldos equipo,OPEX,80000.00
-4,Servicios cloud,OPEX,60000.00
+3,Equipos desarrollo,CAPEX,45000.00
+4,Sueldos equipo,OPEX,120000.00
+5,Servicios cloud,OPEX,90000.00
+6,Consultoría externa,OPEX,60000.00

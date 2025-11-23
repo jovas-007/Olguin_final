@@ -1,41 +1,121 @@
 ID_Empleado,CodigoEmpleado,Rol,Seniority
-1,2001,BA,Jr
-2,2002,Dev Backend,Sr
-3,2003,QA,Jr
-4,2004,Dev Frontend,Jr
-5,2005,BA,Jr
-6,2006,BA,Sr
-7,2007,PM,Jr
-8,2008,PM,Mid
-9,2009,Dev Backend,Jr
-10,2010,Dev Backend,Jr
+1,2001,Dev Backend,Mid
+2,2002,Dev Frontend,Mid
+3,2003,PM,Jr
+4,2004,Dev Backend,Mid
+5,2005,BA,Mid
+6,2006,Dev Backend,Jr
+7,2007,QA,Mid
+8,2008,BA,Sr
+9,2009,DevOps,Jr
+10,2010,Dev Backend,Mid
 11,2011,Dev Frontend,Sr
-12,2012,PM,Jr
-13,2013,PM,Jr
-14,2014,BA,Sr
-15,2015,BA,Sr
-16,2016,DevOps,Jr
-17,2017,DevOps,Sr
-18,2018,QA,Jr
-19,2019,Dev Frontend,Sr
-20,2020,DevOps,Mid
-21,2021,QA,Jr
-22,2022,Dev Frontend,Mid
-23,2023,Dev Backend,Jr
-24,2024,DevOps,Jr
-25,2025,QA,Mid
-26,2026,PM,Mid
-27,2027,Dev Backend,Sr
-28,2028,DevOps,Sr
-29,2029,Dev Backend,Mid
-30,2030,Dev Backend,Sr
-31,2031,QA,Sr
-32,2032,PM,Mid
-33,2033,PM,Jr
-34,2034,BA,Jr
-35,2035,Dev Backend,Sr
-36,2036,Dev Frontend,Mid
-37,2037,Dev Backend,Jr
-38,2038,Dev Backend,Mid
-39,2039,QA,Mid
-40,2040,BA,Mid
+12,2012,Data Engineer,Jr
+13,2013,Dev Backend,Mid
+14,2014,Data Scientist,Jr
+15,2015,Dev Backend,Jr
+16,2016,QA,Jr
+17,2017,Dev Backend,Mid
+18,2018,Data Engineer,Sr
+19,2019,Data Scientist,Mid
+20,2020,Data Scientist,Jr
+21,2021,PM,Mid
+22,2022,Data Scientist,Jr
+23,2023,BA,Jr
+24,2024,Data Engineer,Sr
+25,2025,Data Engineer,Sr
+26,2026,Data Scientist,Sr
+27,2027,Data Engineer,Mid
+28,2028,Dev Backend,Sr
+29,2029,QA,Sr
+30,2030,Dev Frontend,Mid
+31,2031,PM,Jr
+32,2032,BA,Mid
+33,2033,Data Engineer,Jr
+34,2034,Data Scientist,Mid
+35,2035,BA,Jr
+36,2036,DevOps,Sr
+37,2037,Dev Frontend,Sr
+38,2038,BA,Jr
+39,2039,BA,Jr
+40,2040,Data Engineer,Sr
+41,2041,Dev Backend,Sr
+42,2042,PM,Mid
+43,2043,DevOps,Sr
+44,2044,Data Scientist,Jr
+45,2045,QA,Sr
+46,2046,Data Scientist,Mid
+47,2047,Data Scientist,Jr
+48,2048,Dev Backend,Jr
+49,2049,Data Scientist,Jr
+50,2050,Dev Backend,Mid
+51,2051,BA,Sr
+52,2052,PM,Mid
+53,2053,Data Engineer,Jr
+54,2054,Dev Frontend,Sr
+55,2055,Dev Frontend,Sr
+56,2056,BA,Sr
+57,2057,Dev Frontend,Jr
+58,2058,Data Engineer,Jr
+59,2059,Data Engineer,Jr
+60,2060,Data Engineer,Jr
+61,2061,BA,Mid
+62,2062,Data Scientist,Jr
+63,2063,BA,Mid
+64,2064,BA,Jr
+65,2065,QA,Mid
+66,2066,Dev Frontend,Sr
+67,2067,QA,Mid
+68,2068,DevOps,Sr
+69,2069,Dev Frontend,Sr
+70,2070,Dev Backend,Sr
+71,2071,Data Engineer,Sr
+72,2072,PM,Jr
+73,2073,PM,Mid
+74,2074,BA,Jr
+75,2075,BA,Sr
+76,2076,Dev Frontend,Sr
+77,2077,QA,Sr
+78,2078,Data Engineer,Mid
+79,2079,Dev Backend,Sr
+80,2080,QA,Mid
+81,2081,Dev Backend,Mid
+82,2082,Data Scientist,Sr
+83,2083,Data Scientist,Mid
+84,2084,Data Engineer,Jr
+85,2085,QA,Sr
+86,2086,BA,Sr
+87,2087,QA,Mid
+88,2088,Dev Frontend,Sr
+89,2089,BA,Jr
+90,2090,BA,Jr
+91,2091,PM,Sr
+92,2092,DevOps,Jr
+93,2093,BA,Mid
+94,2094,Data Engineer,Jr
+95,2095,Dev Frontend,Jr
+96,2096,DevOps,Jr
+97,2097,DevOps,Mid
+98,2098,DevOps,Jr
+99,2099,BA,Jr
+100,2100,BA,Sr
+101,2101,QA,Sr
+102,2102,QA,Mid
+103,2103,Data Scientist,Sr
+104,2104,Data Engineer,Jr
+105,2105,PM,Sr
+106,2106,Data Scientist,Mid
+107,2107,Data Engineer,Jr
+108,2108,QA,Sr
+109,2109,Dev Backend,Sr
+110,2110,Data Scientist,Mid
+111,2111,Dev Frontend,Sr
+112,2112,Dev Backend,Mid
+113,2113,Data Scientist,Mid
+114,2114,Data Engineer,Mid
+115,2115,BA,Jr
+116,2116,Data Scientist,Mid
+117,2117,DevOps,Jr
+118,2118,Data Engineer,Jr
+119,2119,Data Engineer,Mid
+120,2120,PM,Jr
