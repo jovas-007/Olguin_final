@@ -25,36 +25,78 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
     kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
     vistas = build_olap_views(df_proyectos, df_asignaciones, filtros)
 
-    st.header("Balanced Scorecard / Cuadro de Mando Integral")
-    col_fin, col_cli = st.columns(2)
-    with col_fin:
-        st.subheader("Perspectiva financiera")
+    # Header principal con diseño mejorado
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    padding: 30px; border-radius: 15px; margin-bottom: 30px;'>
+            <h1 style='color: white; margin: 0; text-align: center; font-size: 2.5em;'>
+                Balanced Scorecard
+            </h1>
+            <p style='color: rgba(255,255,255,0.9); text-align: center; margin: 10px 0 0 0; font-size: 1.1em;'>
+                Cuadro de Mando Integral - Análisis Estratégico de Desempeño
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Perspectivas con diseño de tarjetas modernas
+    st.markdown("---")
+    
+    # PERSPECTIVA FINANCIERA
+    st.markdown("""
+        <div style='background: linear-gradient(to right, #11998e, #38ef7d); 
+                    padding: 15px 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva Financiera</h2>
+            <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
+                Eficiencia financiera, sostenibilidad y optimización de recursos
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col_fin1, col_fin2, col_fin3 = st.columns(3)
+    with col_fin1:
         mostrar_tarjeta_kpi(
             "Cumplimiento de presupuesto",
             kpis["cumplimiento_presupuesto"],
             KPI_TARGETS["cumplimiento_presupuesto"],
             "Refleja eficiencia financiera alineada a sostenibilidad y optimización.",
         )
+    with col_fin2:
         mostrar_tarjeta_kpi(
             "Desviación presupuestal promedio",
             kpis["desviacion_presupuestal"],
             KPI_TARGETS["desviacion_presupuestal"],
             "Control estricto de costos para mantener rentabilidad y resiliencia.",
         )
+    with col_fin3:
         mostrar_tarjeta_kpi(
             "Penalizaciones sobre presupuesto",
             kpis["penalizaciones_sobre_presupuesto"],
             KPI_TARGETS["penalizaciones_sobre_presupuesto"],
             "Minimiza riesgos económicos y refuerza acuerdos de calidad.",
         )
-    with col_cli:
-        st.subheader("Perspectiva del cliente")
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # PERSPECTIVA DEL CLIENTE
+    st.markdown("""
+        <div style='background: linear-gradient(to right, #2980b9, #6dd5fa); 
+                    padding: 15px 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva del Cliente</h2>
+            <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
+                Cumplimiento de compromisos, confianza y fidelización
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col_cli1, col_cli2 = st.columns(2)
+    with col_cli1:
         mostrar_tarjeta_kpi(
             "Proyectos entregados a tiempo",
             kpis["proyectos_a_tiempo"],
             KPI_TARGETS["proyectos_a_tiempo"],
             "Cumplimiento de compromisos aumenta confianza y fidelidad.",
         )
+    with col_cli2:
         mostrar_tarjeta_kpi(
             "Proyectos cancelados",
             1 - kpis["proyectos_cancelados"],
@@ -62,41 +104,71 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             "Gestión de riesgos temprana evita cancelaciones y refuerza la reputación.",
         )
 
-    col_proc, col_learning = st.columns(2)
-    with col_proc:
-        st.subheader("Perspectiva de procesos internos")
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # PERSPECTIVA DE PROCESOS INTERNOS
+    st.markdown("""
+        <div style='background: linear-gradient(to right, #f857a6, #ff5858); 
+                    padding: 15px 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva de Procesos Internos</h2>
+            <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
+                Operación ágil, trazabilidad y calidad del producto
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col_proc1, col_proc2, col_proc3 = st.columns(3)
+    with col_proc1:
         mostrar_tarjeta_kpi(
             "Porcentaje de tareas retrasadas",
             1 - kpis["porcentaje_tareas_retrasadas"],
             1 - KPI_TARGETS["porcentaje_tareas_retrasadas"],
             "Menos retrasos implica operación ágil y trazable.",
         )
+    with col_proc2:
         mostrar_tarjeta_kpi(
             "Porcentaje de hitos retrasados",
             1 - kpis["porcentaje_hitos_retrasados"],
             1 - KPI_TARGETS["porcentaje_hitos_retrasados"],
             "Entrega disciplinada de hitos acelera valor al cliente.",
         )
+    with col_proc3:
         mostrar_tarjeta_kpi(
             "Tasa de errores encontrados",
             1 - kpis["tasa_errores"],
             1 - KPI_TARGETS["tasa_errores"],
             "Calidad del producto mejora satisfacción y reduce reprocesos.",
         )
-    with col_learning:
-        st.subheader("Perspectiva de aprendizaje e innovación")
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # PERSPECTIVA DE APRENDIZAJE E INNOVACIÓN
+    st.markdown("""
+        <div style='background: linear-gradient(to right, #fa709a, #fee140); 
+                    padding: 15px 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva de Aprendizaje e Innovación</h2>
+            <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
+                Colaboración interdisciplinaria, mejora continua y escalabilidad
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col_learn1, col_learn2, col_learn3 = st.columns(3)
+    with col_learn1:
         mostrar_tarjeta_kpi(
             "Productividad promedio",
             kpis["productividad_promedio"],
             KPI_TARGETS["productividad_promedio"],
             "Colaboración interdisciplinaria y mejora continua.",
         )
+    with col_learn2:
         mostrar_tarjeta_kpi(
             "Tasa de éxito en pruebas",
             kpis["tasa_exito_pruebas"],
             KPI_TARGETS["tasa_exito_pruebas"],
             "Pruebas efectivas aseguran software confiable e innovador.",
         )
+    with col_learn3:
         mostrar_tarjeta_kpi(
             "Relación horas reales / planificadas",
             kpis["horas_relacion"],
@@ -104,29 +176,128 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             "Planificación precisa favorece proyectos medibles y escalables.",
         )
 
-    st.subheader("Visualizaciones clave")
-    col1, col2 = st.columns(2)
-    with col1:
+    st.markdown("---")
+    
+    # VISUALIZACIONES CLAVE con diseño mejorado
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    padding: 20px 25px; border-radius: 12px; margin: 25px 0;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);'>
+            <h2 style='color: white; margin: 0; font-size: 2em; font-weight: 600;'>Análisis Visual Estratégico</h2>
+            <p style='color: rgba(255,255,255,0.95); margin: 8px 0 0 0; font-size: 1.05em;'>
+                Dashboard de indicadores clave de rendimiento y tendencias operativas
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Primera fila de visualizaciones
+    col_viz1, col_viz2 = st.columns(2)
+    
+    with col_viz1:
+        st.markdown("""
+            <div style='background: linear-gradient(to right, #11998e, #38ef7d); 
+                        padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                <h4 style='margin: 0; color: white; font-weight: 600;'>Presupuesto vs Coste Real</h4>
+                <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
+                    Análisis comparativo por proyecto
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
         st.bar_chart(
             vistas["barras_presupuesto"].set_index("CodigoProyecto")[["Presupuesto", "CosteReal"]],
             use_container_width=True,
+            height=400
         )
-        st.caption("Comparación Presupuesto vs Coste Real por proyecto para vigilar eficiencia financiera.")
-    with col2:
+        st.caption("Comparación financiera para identificar desviaciones presupuestales y optimizar control de costos.")
+    
+    with col_viz2:
+        st.markdown("""
+            <div style='background: linear-gradient(to right, #2980b9, #6dd5fa); 
+                        padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                <h4 style='margin: 0; color: white; font-weight: 600;'>Evolución de Entregas a Tiempo</h4>
+                <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
+                    Tendencia mensual de cumplimiento
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
         if not vistas["proyectos_a_tiempo"].empty:
             st.line_chart(
                 vistas["proyectos_a_tiempo"].set_index("Fecha")[["A_Tiempo"]],
                 use_container_width=True,
+                height=400
             )
+            st.caption("Seguimiento temporal del cumplimiento de plazos para gestión proactiva de riesgos.")
         else:
-            st.info("Sin datos suficientes para evolución mensual de entregas a tiempo.")
-        st.caption("Evolución mensual de proyectos entregados a tiempo: apoya decisiones preventivas.")
+            st.info("Sin datos suficientes para mostrar evolución mensual de entregas a tiempo.")
 
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Segunda fila de visualizaciones
+    col_viz3, col_viz4 = st.columns(2)
+    
+    with col_viz3:
+        st.markdown("""
+            <div style='background: linear-gradient(to right, #f857a6, #ff5858); 
+                        padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                <h4 style='margin: 0; color: white; font-weight: 600;'>Distribución de Retrasos</h4>
+                <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
+                    Retrasos de inicio vs finalización
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+        if not vistas["retrasos"].empty:
+            st.bar_chart(
+                vistas["retrasos"].set_index("CodigoProyecto")[["RetrasoInicioDias", "RetrasoFinalDias"]],
+                use_container_width=True,
+                height=400
+            )
+            st.caption("Identificación de proyectos críticos para reasignación de recursos y ajuste de planificación.")
+        else:
+            st.info("No hay datos de retrasos disponibles para el filtro actual.")
+    
+    with col_viz4:
+        st.markdown("""
+            <div style='background: linear-gradient(to right, #fa709a, #fee140); 
+                        padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                <h4 style='margin: 0; color: white; font-weight: 600;'>Productividad por Rol</h4>
+                <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
+                    Relación horas reales/planificadas
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+        if not vistas["productividad_por_rol"].empty:
+            data = vistas["productividad_por_rol"].copy()
+            data["Relacion"] = data["HorasReales"] / data["HorasPlanificadas"]
+            st.bar_chart(data.set_index("Rol")["Relacion"], use_container_width=True, height=400)
+            st.caption("Análisis de eficiencia por rol para optimización de cargas de trabajo y formación dirigida.")
+        else:
+            st.info("No hay datos de asignaciones disponibles para el filtro actual.")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Tercera fila - Visualización única más grande
+    st.markdown("""
+        <div style='background: linear-gradient(to right, #8e2de2, #4a00e0); 
+                    padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+            <h4 style='margin: 0; color: white; font-weight: 600;'>Distribución CAPEX/OPEX por Categoría</h4>
+            <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
+                Equilibrio de inversiones de capital vs operativas
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
     st.bar_chart(
         vistas["capex_opex"].set_index("Categoria")[["ProporcionCAPEX_OPEX"]],
         use_container_width=True,
+        height=350
     )
-    st.caption("Distribución CAPEX/OPEX promedio por categoría de gasto para equilibrar inversiones.")
+    st.caption("Distribución estratégica de gastos para equilibrar inversiones a largo plazo (CAPEX) y operativas (OPEX).")
+
+
 
 
 def render_detalle(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):
