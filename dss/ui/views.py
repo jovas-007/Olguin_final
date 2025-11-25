@@ -621,8 +621,8 @@ def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            presupuesto = st.number_input("Presupuesto estimado ($)", value=400000.0, step=5000.0)
-            duracion = st.slider("Duración estimada (semanas)", 4, 52, 16)
+            presupuesto = st.number_input("Presupuesto estimado ($)", value=100000.0, step=5000.0)
+            duracion = st.slider("Duración estimada (semanas)", 0, 100, 52)
         with col2:
             trabajadores = st.number_input("Tamaño de equipo", value=8, step=1, min_value=1)
             retraso_inicio = st.number_input("Retraso inicial esperado (días)", value=0, min_value=0)
