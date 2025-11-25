@@ -1,121 +1,401 @@
 ID_Empleado,CodigoEmpleado,Rol,Seniority
-1,2001,Dev Backend,Mid
-2,2002,Dev Frontend,Mid
-3,2003,PM,Jr
-4,2004,Dev Backend,Mid
-5,2005,BA,Mid
-6,2006,Dev Backend,Jr
-7,2007,QA,Mid
-8,2008,BA,Sr
-9,2009,DevOps,Jr
-10,2010,Dev Backend,Mid
-11,2011,Dev Frontend,Sr
-12,2012,Data Engineer,Jr
-13,2013,Dev Backend,Mid
-14,2014,Data Scientist,Jr
-15,2015,Dev Backend,Jr
-16,2016,QA,Jr
-17,2017,Dev Backend,Mid
-18,2018,Data Engineer,Sr
-19,2019,Data Scientist,Mid
-20,2020,Data Scientist,Jr
-21,2021,PM,Mid
-22,2022,Data Scientist,Jr
-23,2023,BA,Jr
-24,2024,Data Engineer,Sr
-25,2025,Data Engineer,Sr
-26,2026,Data Scientist,Sr
-27,2027,Data Engineer,Mid
-28,2028,Dev Backend,Sr
-29,2029,QA,Sr
-30,2030,Dev Frontend,Mid
-31,2031,PM,Jr
-32,2032,BA,Mid
-33,2033,Data Engineer,Jr
-34,2034,Data Scientist,Mid
-35,2035,BA,Jr
-36,2036,DevOps,Sr
-37,2037,Dev Frontend,Sr
-38,2038,BA,Jr
-39,2039,BA,Jr
-40,2040,Data Engineer,Sr
-41,2041,Dev Backend,Sr
-42,2042,PM,Mid
-43,2043,DevOps,Sr
-44,2044,Data Scientist,Jr
-45,2045,QA,Sr
-46,2046,Data Scientist,Mid
-47,2047,Data Scientist,Jr
-48,2048,Dev Backend,Jr
-49,2049,Data Scientist,Jr
-50,2050,Dev Backend,Mid
-51,2051,BA,Sr
-52,2052,PM,Mid
-53,2053,Data Engineer,Jr
-54,2054,Dev Frontend,Sr
-55,2055,Dev Frontend,Sr
-56,2056,BA,Sr
-57,2057,Dev Frontend,Jr
-58,2058,Data Engineer,Jr
-59,2059,Data Engineer,Jr
-60,2060,Data Engineer,Jr
-61,2061,BA,Mid
-62,2062,Data Scientist,Jr
-63,2063,BA,Mid
-64,2064,BA,Jr
-65,2065,QA,Mid
-66,2066,Dev Frontend,Sr
-67,2067,QA,Mid
-68,2068,DevOps,Sr
-69,2069,Dev Frontend,Sr
-70,2070,Dev Backend,Sr
-71,2071,Data Engineer,Sr
-72,2072,PM,Jr
-73,2073,PM,Mid
-74,2074,BA,Jr
-75,2075,BA,Sr
-76,2076,Dev Frontend,Sr
-77,2077,QA,Sr
-78,2078,Data Engineer,Mid
-79,2079,Dev Backend,Sr
-80,2080,QA,Mid
-81,2081,Dev Backend,Mid
-82,2082,Data Scientist,Sr
-83,2083,Data Scientist,Mid
-84,2084,Data Engineer,Jr
-85,2085,QA,Sr
-86,2086,BA,Sr
-87,2087,QA,Mid
-88,2088,Dev Frontend,Sr
-89,2089,BA,Jr
-90,2090,BA,Jr
-91,2091,PM,Sr
-92,2092,DevOps,Jr
-93,2093,BA,Mid
-94,2094,Data Engineer,Jr
-95,2095,Dev Frontend,Jr
-96,2096,DevOps,Jr
-97,2097,DevOps,Mid
-98,2098,DevOps,Jr
-99,2099,BA,Jr
-100,2100,BA,Sr
-101,2101,QA,Sr
-102,2102,QA,Mid
-103,2103,Data Scientist,Sr
-104,2104,Data Engineer,Jr
-105,2105,PM,Sr
-106,2106,Data Scientist,Mid
-107,2107,Data Engineer,Jr
-108,2108,QA,Sr
-109,2109,Dev Backend,Sr
-110,2110,Data Scientist,Mid
-111,2111,Dev Frontend,Sr
-112,2112,Dev Backend,Mid
-113,2113,Data Scientist,Mid
-114,2114,Data Engineer,Mid
-115,2115,BA,Jr
-116,2116,Data Scientist,Mid
-117,2117,DevOps,Jr
-118,2118,Data Engineer,Jr
-119,2119,Data Engineer,Mid
-120,2120,PM,Jr
+1,1,Dev,Lead
+2,2,QA,Junior
+3,3,Dev,Senior
+4,4,PM,Junior
+5,5,UX,Junior
+6,6,Dev,Semi-Senior
+7,7,Dev,Semi-Senior
+8,8,Dev,Semi-Senior
+9,9,Dev,Senior
+10,10,Dev,Semi-Senior
+11,11,QA,Junior
+12,12,DevOps,Lead
+13,13,Dev,Junior
+14,14,Dev,Junior
+15,15,Dev,Lead
+16,16,QA,Semi-Senior
+17,17,QA,Junior
+18,18,PM,Lead
+19,19,QA,Lead
+20,20,Dev,Junior
+21,21,Dev,Semi-Senior
+22,22,Dev,Semi-Senior
+23,23,Dev,Senior
+24,24,DevOps,Senior
+25,25,Dev,Senior
+26,26,PM,Senior
+27,27,Dev,Junior
+28,28,QA,Semi-Senior
+29,29,Dev,Semi-Senior
+30,30,QA,Senior
+31,31,Dev,Senior
+32,32,QA,Senior
+33,33,QA,Semi-Senior
+34,34,Dev,Junior
+35,35,Dev,Semi-Senior
+36,36,Dev,Semi-Senior
+37,37,Dev,Junior
+38,38,Dev,Lead
+39,39,QA,Senior
+40,40,Dev,Senior
+41,41,UX,Senior
+42,42,Dev,Junior
+43,43,UX,Senior
+44,44,Dev,Semi-Senior
+45,45,Dev,Semi-Senior
+46,46,Dev,Semi-Senior
+47,47,Dev,Lead
+48,48,Dev,Semi-Senior
+49,49,Dev,Junior
+50,50,Dev,Junior
+51,51,DevOps,Junior
+52,52,Dev,Lead
+53,53,QA,Senior
+54,54,PM,Semi-Senior
+55,55,QA,Semi-Senior
+56,56,UX,Semi-Senior
+57,57,Dev,Semi-Senior
+58,58,Dev,Semi-Senior
+59,59,QA,Junior
+60,60,Dev,Lead
+61,61,Dev,Junior
+62,62,UX,Semi-Senior
+63,63,UX,Semi-Senior
+64,64,Dev,Junior
+65,65,DevOps,Senior
+66,66,Dev,Senior
+67,67,DevOps,Senior
+68,68,Dev,Junior
+69,69,QA,Junior
+70,70,QA,Junior
+71,71,QA,Senior
+72,72,Dev,Senior
+73,73,Dev,Senior
+74,74,UX,Senior
+75,75,Dev,Semi-Senior
+76,76,Dev,Lead
+77,77,DevOps,Senior
+78,78,Dev,Semi-Senior
+79,79,Dev,Senior
+80,80,Dev,Senior
+81,81,DevOps,Lead
+82,82,Dev,Junior
+83,83,Dev,Lead
+84,84,UX,Semi-Senior
+85,85,UX,Semi-Senior
+86,86,QA,Lead
+87,87,QA,Junior
+88,88,DevOps,Junior
+89,89,UX,Senior
+90,90,PM,Semi-Senior
+91,91,UX,Senior
+92,92,DevOps,Semi-Senior
+93,93,PM,Senior
+94,94,PM,Senior
+95,95,Dev,Junior
+96,96,Dev,Semi-Senior
+97,97,Dev,Semi-Senior
+98,98,Dev,Senior
+99,99,Dev,Semi-Senior
+100,100,Dev,Senior
+101,101,Dev,Semi-Senior
+102,102,QA,Senior
+103,103,Dev,Semi-Senior
+104,104,Dev,Semi-Senior
+105,105,Dev,Lead
+106,106,QA,Semi-Senior
+107,107,Dev,Semi-Senior
+108,108,PM,Senior
+109,109,DevOps,Senior
+110,110,QA,Semi-Senior
+111,111,Dev,Senior
+112,112,Dev,Junior
+113,113,UX,Senior
+114,114,Dev,Semi-Senior
+115,115,Dev,Semi-Senior
+116,116,QA,Senior
+117,117,Dev,Senior
+118,118,UX,Senior
+119,119,Dev,Senior
+120,120,QA,Lead
+121,121,Dev,Senior
+122,122,QA,Lead
+123,123,DevOps,Lead
+124,124,Dev,Junior
+125,125,Dev,Senior
+126,126,Dev,Senior
+127,127,UX,Semi-Senior
+128,128,QA,Senior
+129,129,PM,Senior
+130,130,Dev,Senior
+131,131,DevOps,Semi-Senior
+132,132,PM,Semi-Senior
+133,133,UX,Semi-Senior
+134,134,PM,Junior
+135,135,Dev,Senior
+136,136,DevOps,Semi-Senior
+137,137,DevOps,Junior
+138,138,DevOps,Lead
+139,139,QA,Semi-Senior
+140,140,Dev,Senior
+141,141,PM,Senior
+142,142,Dev,Junior
+143,143,Dev,Senior
+144,144,Dev,Junior
+145,145,QA,Junior
+146,146,PM,Junior
+147,147,PM,Junior
+148,148,DevOps,Semi-Senior
+149,149,UX,Lead
+150,150,PM,Semi-Senior
+151,151,PM,Semi-Senior
+152,152,DevOps,Junior
+153,153,Dev,Semi-Senior
+154,154,Dev,Junior
+155,155,PM,Semi-Senior
+156,156,Dev,Semi-Senior
+157,157,Dev,Lead
+158,158,DevOps,Junior
+159,159,QA,Lead
+160,160,QA,Lead
+161,161,QA,Senior
+162,162,QA,Semi-Senior
+163,163,Dev,Semi-Senior
+164,164,DevOps,Semi-Senior
+165,165,Dev,Junior
+166,166,Dev,Semi-Senior
+167,167,DevOps,Lead
+168,168,QA,Semi-Senior
+169,169,QA,Junior
+170,170,UX,Lead
+171,171,QA,Semi-Senior
+172,172,UX,Junior
+173,173,Dev,Senior
+174,174,Dev,Semi-Senior
+175,175,DevOps,Senior
+176,176,Dev,Semi-Senior
+177,177,Dev,Senior
+178,178,DevOps,Lead
+179,179,PM,Lead
+180,180,Dev,Semi-Senior
+181,181,DevOps,Senior
+182,182,QA,Senior
+183,183,Dev,Senior
+184,184,PM,Semi-Senior
+185,185,QA,Semi-Senior
+186,186,Dev,Junior
+187,187,PM,Senior
+188,188,Dev,Junior
+189,189,Dev,Semi-Senior
+190,190,Dev,Lead
+191,191,Dev,Senior
+192,192,QA,Senior
+193,193,Dev,Lead
+194,194,Dev,Semi-Senior
+195,195,Dev,Semi-Senior
+196,196,Dev,Junior
+197,197,Dev,Junior
+198,198,QA,Junior
+199,199,DevOps,Semi-Senior
+200,200,Dev,Junior
+201,201,Dev,Semi-Senior
+202,202,Dev,Junior
+203,203,Dev,Semi-Senior
+204,204,QA,Junior
+205,205,QA,Junior
+206,206,DevOps,Junior
+207,207,UX,Senior
+208,208,Dev,Semi-Senior
+209,209,QA,Semi-Senior
+210,210,PM,Junior
+211,211,PM,Senior
+212,212,QA,Junior
+213,213,QA,Junior
+214,214,Dev,Junior
+215,215,Dev,Semi-Senior
+216,216,DevOps,Semi-Senior
+217,217,PM,Semi-Senior
+218,218,QA,Semi-Senior
+219,219,Dev,Junior
+220,220,Dev,Senior
+221,221,Dev,Lead
+222,222,Dev,Junior
+223,223,Dev,Junior
+224,224,Dev,Junior
+225,225,Dev,Semi-Senior
+226,226,DevOps,Junior
+227,227,DevOps,Senior
+228,228,Dev,Junior
+229,229,DevOps,Semi-Senior
+230,230,Dev,Senior
+231,231,Dev,Semi-Senior
+232,232,Dev,Junior
+233,233,Dev,Semi-Senior
+234,234,Dev,Semi-Senior
+235,235,Dev,Junior
+236,236,DevOps,Semi-Senior
+237,237,Dev,Senior
+238,238,QA,Semi-Senior
+239,239,Dev,Lead
+240,240,DevOps,Junior
+241,241,DevOps,Junior
+242,242,PM,Semi-Senior
+243,243,Dev,Senior
+244,244,Dev,Junior
+245,245,QA,Semi-Senior
+246,246,UX,Semi-Senior
+247,247,Dev,Semi-Senior
+248,248,Dev,Senior
+249,249,Dev,Senior
+250,250,QA,Lead
+251,251,Dev,Lead
+252,252,Dev,Junior
+253,253,QA,Semi-Senior
+254,254,PM,Junior
+255,255,Dev,Senior
+256,256,QA,Senior
+257,257,Dev,Senior
+258,258,UX,Junior
+259,259,PM,Junior
+260,260,PM,Senior
+261,261,QA,Semi-Senior
+262,262,Dev,Junior
+263,263,QA,Semi-Senior
+264,264,DevOps,Junior
+265,265,Dev,Senior
+266,266,UX,Lead
+267,267,QA,Lead
+268,268,Dev,Semi-Senior
+269,269,Dev,Senior
+270,270,DevOps,Semi-Senior
+271,271,DevOps,Senior
+272,272,DevOps,Senior
+273,273,QA,Semi-Senior
+274,274,Dev,Senior
+275,275,Dev,Semi-Senior
+276,276,DevOps,Semi-Senior
+277,277,PM,Semi-Senior
+278,278,Dev,Junior
+279,279,Dev,Semi-Senior
+280,280,Dev,Semi-Senior
+281,281,Dev,Senior
+282,282,DevOps,Junior
+283,283,Dev,Lead
+284,284,QA,Junior
+285,285,Dev,Senior
+286,286,Dev,Junior
+287,287,QA,Junior
+288,288,Dev,Semi-Senior
+289,289,Dev,Semi-Senior
+290,290,Dev,Senior
+291,291,Dev,Semi-Senior
+292,292,Dev,Junior
+293,293,PM,Senior
+294,294,Dev,Junior
+295,295,Dev,Junior
+296,296,Dev,Senior
+297,297,Dev,Junior
+298,298,UX,Senior
+299,299,QA,Junior
+300,300,DevOps,Junior
+301,301,Dev,Junior
+302,302,QA,Semi-Senior
+303,303,UX,Semi-Senior
+304,304,Dev,Semi-Senior
+305,305,QA,Semi-Senior
+306,306,Dev,Semi-Senior
+307,307,PM,Junior
+308,308,Dev,Senior
+309,309,Dev,Junior
+310,310,QA,Senior
+311,311,Dev,Senior
+312,312,QA,Junior
+313,313,Dev,Lead
+314,314,QA,Semi-Senior
+315,315,QA,Senior
+316,316,Dev,Junior
+317,317,UX,Semi-Senior
+318,318,QA,Junior
+319,319,Dev,Semi-Senior
+320,320,Dev,Junior
+321,321,Dev,Senior
+322,322,Dev,Semi-Senior
+323,323,PM,Semi-Senior
+324,324,Dev,Senior
+325,325,PM,Junior
+326,326,Dev,Semi-Senior
+327,327,Dev,Semi-Senior
+328,328,PM,Junior
+329,329,PM,Semi-Senior
+330,330,Dev,Junior
+331,331,PM,Senior
+332,332,QA,Semi-Senior
+333,333,DevOps,Junior
+334,334,Dev,Junior
+335,335,UX,Senior
+336,336,QA,Senior
+337,337,Dev,Semi-Senior
+338,338,DevOps,Lead
+339,339,PM,Lead
+340,340,QA,Lead
+341,341,QA,Semi-Senior
+342,342,DevOps,Lead
+343,343,UX,Senior
+344,344,UX,Junior
+345,345,Dev,Junior
+346,346,QA,Semi-Senior
+347,347,Dev,Semi-Senior
+348,348,PM,Semi-Senior
+349,349,DevOps,Senior
+350,350,Dev,Senior
+351,351,UX,Semi-Senior
+352,352,PM,Lead
+353,353,PM,Semi-Senior
+354,354,QA,Senior
+355,355,PM,Semi-Senior
+356,356,PM,Junior
+357,357,Dev,Semi-Senior
+358,358,Dev,Junior
+359,359,DevOps,Semi-Senior
+360,360,QA,Junior
+361,361,PM,Junior
+362,362,UX,Lead
+363,363,QA,Junior
+364,364,Dev,Lead
+365,365,QA,Semi-Senior
+366,366,Dev,Junior
+367,367,PM,Semi-Senior
+368,368,DevOps,Senior
+369,369,DevOps,Junior
+370,370,PM,Senior
+371,371,UX,Junior
+372,372,QA,Semi-Senior
+373,373,Dev,Senior
+374,374,Dev,Senior
+375,375,UX,Senior
+376,376,QA,Junior
+377,377,Dev,Semi-Senior
+378,378,Dev,Junior
+379,379,QA,Junior
+380,380,Dev,Semi-Senior
+381,381,UX,Semi-Senior
+382,382,QA,Semi-Senior
+383,383,PM,Senior
+384,384,UX,Senior
+385,385,QA,Senior
+386,386,PM,Junior
+387,387,UX,Junior
+388,388,Dev,Semi-Senior
+389,389,Dev,Senior
+390,390,Dev,Junior
+391,391,QA,Lead
+392,392,Dev,Senior
+393,393,PM,Junior
+394,394,QA,Lead
+395,395,QA,Lead
+396,396,DevOps,Senior
+397,397,Dev,Senior
+398,398,QA,Semi-Senior
+399,399,Dev,Senior
+400,400,DevOps,Senior

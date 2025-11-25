@@ -1,7 +1,3604 @@
 ID_Finanza,TipoGasto,Categoria,Monto
-1,Hardware servidores,CAPEX,50000.00
-2,Licencias software,CAPEX,30000.00
-3,Equipos desarrollo,CAPEX,45000.00
-4,Sueldos equipo,OPEX,120000.00
-5,Servicios cloud,OPEX,90000.00
-6,Consultoría externa,OPEX,60000.00
+1,Capacitacion,OPEX,1155.76
+2,Viajes,OPEX,383.34
+3,Desarrollo a Medida,CAPEX,1252.89
+4,Hardware,CAPEX,650.67
+5,Suscripciones SaaS,OPEX,670.12
+6,Viajes,OPEX,1331.12
+7,Servicios Nube,OPEX,547.40
+8,Suscripciones SaaS,OPEX,403.31
+9,Licencias Perpetuas,CAPEX,555.53
+10,Suscripciones SaaS,OPEX,1080.49
+11,Desarrollo a Medida,CAPEX,367.95
+12,Suscripciones SaaS,OPEX,572.30
+13,Desarrollo a Medida,CAPEX,946.02
+14,Licencias Perpetuas,CAPEX,273.86
+15,Viajes,OPEX,941.62
+16,Suscripciones SaaS,OPEX,803.49
+17,Hardware,CAPEX,2598.55
+18,Hardware,CAPEX,903.22
+19,Hardware,CAPEX,173.90
+20,Hardware,CAPEX,1123.57
+21,Licencias Perpetuas,CAPEX,1155.99
+22,Licencias Perpetuas,CAPEX,4601.30
+23,Viajes,OPEX,369.19
+24,Viajes,OPEX,143.20
+25,Servicios Nube,OPEX,350.83
+26,Capacitacion,OPEX,539.69
+27,Desarrollo a Medida,CAPEX,685.78
+28,Suscripciones SaaS,OPEX,513.51
+29,Suscripciones SaaS,OPEX,566.58
+30,Servicios Nube,OPEX,467.55
+31,Hardware,CAPEX,813.40
+32,Desarrollo a Medida,CAPEX,1009.00
+33,Suscripciones SaaS,OPEX,687.41
+34,Servicios Nube,OPEX,617.26
+35,Soporte,OPEX,856.67
+36,Suscripciones SaaS,OPEX,1036.13
+37,Viajes,OPEX,1494.25
+38,Desarrollo a Medida,CAPEX,385.20
+39,Licencias Perpetuas,CAPEX,380.80
+40,Suscripciones SaaS,OPEX,1184.88
+41,Viajes,OPEX,3141.73
+42,Suscripciones SaaS,OPEX,949.47
+43,Servicios Nube,OPEX,1306.57
+44,Soporte,OPEX,834.04
+45,Hardware,CAPEX,339.95
+46,Hardware,CAPEX,326.58
+47,Licencias Perpetuas,CAPEX,757.63
+48,Desarrollo a Medida,CAPEX,1058.05
+49,Viajes,OPEX,554.82
+50,Licencias Perpetuas,CAPEX,730.09
+51,Desarrollo a Medida,CAPEX,353.42
+52,Soporte,OPEX,785.85
+53,Suscripciones SaaS,OPEX,498.96
+54,Hardware,CAPEX,1085.13
+55,Servicios Nube,OPEX,585.36
+56,Capacitacion,OPEX,633.16
+57,Servicios Nube,OPEX,1151.41
+58,Capacitacion,OPEX,674.10
+59,Licencias Perpetuas,CAPEX,734.61
+60,Viajes,OPEX,484.59
+61,Hardware,CAPEX,1818.53
+62,Hardware,CAPEX,2863.72
+63,Licencias Perpetuas,CAPEX,750.50
+64,Capacitacion,OPEX,1417.70
+65,Licencias Perpetuas,CAPEX,3653.71
+66,Viajes,OPEX,1405.72
+67,Hardware,CAPEX,771.32
+68,Viajes,OPEX,307.35
+69,Soporte,OPEX,399.96
+70,Licencias Perpetuas,CAPEX,816.37
+71,Capacitacion,OPEX,539.53
+72,Soporte,OPEX,674.80
+73,Capacitacion,OPEX,278.25
+74,Hardware,CAPEX,233.90
+75,Suscripciones SaaS,OPEX,312.51
+76,Hardware,CAPEX,328.07
+77,Viajes,OPEX,393.52
+78,Servicios Nube,OPEX,1263.78
+79,Servicios Nube,OPEX,2791.21
+80,Capacitacion,OPEX,540.13
+81,Hardware,CAPEX,2016.32
+82,Desarrollo a Medida,CAPEX,805.88
+83,Desarrollo a Medida,CAPEX,1394.43
+84,Licencias Perpetuas,CAPEX,2070.15
+85,Viajes,OPEX,163.86
+86,Hardware,CAPEX,377.32
+87,Hardware,CAPEX,1322.73
+88,Suscripciones SaaS,OPEX,410.03
+89,Soporte,OPEX,742.40
+90,Hardware,CAPEX,556.24
+91,Servicios Nube,OPEX,782.60
+92,Suscripciones SaaS,OPEX,80.55
+93,Desarrollo a Medida,CAPEX,1967.46
+94,Viajes,OPEX,891.15
+95,Hardware,CAPEX,237.00
+96,Suscripciones SaaS,OPEX,444.05
+97,Suscripciones SaaS,OPEX,224.06
+98,Suscripciones SaaS,OPEX,1055.06
+99,Suscripciones SaaS,OPEX,711.87
+100,Servicios Nube,OPEX,328.29
+101,Desarrollo a Medida,CAPEX,643.68
+102,Servicios Nube,OPEX,959.20
+103,Servicios Nube,OPEX,1191.42
+104,Hardware,CAPEX,345.57
+105,Hardware,CAPEX,579.74
+106,Servicios Nube,OPEX,737.64
+107,Soporte,OPEX,752.12
+108,Suscripciones SaaS,OPEX,1178.09
+109,Desarrollo a Medida,CAPEX,1354.47
+110,Desarrollo a Medida,CAPEX,481.16
+111,Soporte,OPEX,750.31
+112,Capacitacion,OPEX,578.46
+113,Capacitacion,OPEX,343.46
+114,Licencias Perpetuas,CAPEX,272.41
+115,Soporte,OPEX,1079.63
+116,Licencias Perpetuas,CAPEX,340.41
+117,Licencias Perpetuas,CAPEX,429.10
+118,Desarrollo a Medida,CAPEX,649.47
+119,Servicios Nube,OPEX,1886.33
+120,Servicios Nube,OPEX,879.18
+121,Viajes,OPEX,1507.26
+122,Suscripciones SaaS,OPEX,487.41
+123,Desarrollo a Medida,CAPEX,150.40
+124,Desarrollo a Medida,CAPEX,644.38
+125,Desarrollo a Medida,CAPEX,892.13
+126,Suscripciones SaaS,OPEX,528.06
+127,Desarrollo a Medida,CAPEX,728.82
+128,Soporte,OPEX,697.93
+129,Hardware,CAPEX,1558.63
+130,Servicios Nube,OPEX,400.35
+131,Soporte,OPEX,559.48
+132,Desarrollo a Medida,CAPEX,3091.64
+133,Viajes,OPEX,711.22
+134,Servicios Nube,OPEX,642.81
+135,Licencias Perpetuas,CAPEX,713.00
+136,Desarrollo a Medida,CAPEX,1179.30
+137,Suscripciones SaaS,OPEX,598.65
+138,Suscripciones SaaS,OPEX,700.34
+139,Servicios Nube,OPEX,496.64
+140,Suscripciones SaaS,OPEX,1014.19
+141,Servicios Nube,OPEX,2456.07
+142,Hardware,CAPEX,828.22
+143,Soporte,OPEX,709.49
+144,Viajes,OPEX,471.80
+145,Viajes,OPEX,791.71
+146,Licencias Perpetuas,CAPEX,533.90
+147,Servicios Nube,OPEX,384.87
+148,Desarrollo a Medida,CAPEX,553.66
+149,Hardware,CAPEX,393.18
+150,Viajes,OPEX,948.40
+151,Servicios Nube,OPEX,227.19
+152,Suscripciones SaaS,OPEX,716.63
+153,Licencias Perpetuas,CAPEX,418.83
+154,Hardware,CAPEX,719.16
+155,Desarrollo a Medida,CAPEX,501.52
+156,Licencias Perpetuas,CAPEX,533.55
+157,Desarrollo a Medida,CAPEX,739.59
+158,Hardware,CAPEX,1236.64
+159,Suscripciones SaaS,OPEX,910.17
+160,Desarrollo a Medida,CAPEX,564.07
+161,Desarrollo a Medida,CAPEX,946.78
+162,Licencias Perpetuas,CAPEX,731.03
+163,Viajes,OPEX,555.37
+164,Suscripciones SaaS,OPEX,421.29
+165,Licencias Perpetuas,CAPEX,1242.72
+166,Licencias Perpetuas,CAPEX,410.55
+167,Licencias Perpetuas,CAPEX,327.59
+168,Servicios Nube,OPEX,798.19
+169,Soporte,OPEX,723.39
+170,Capacitacion,OPEX,1149.75
+171,Suscripciones SaaS,OPEX,795.81
+172,Licencias Perpetuas,CAPEX,1059.35
+173,Hardware,CAPEX,435.33
+174,Suscripciones SaaS,OPEX,1395.63
+175,Soporte,OPEX,1337.86
+176,Soporte,OPEX,1818.11
+177,Suscripciones SaaS,OPEX,2282.67
+178,Soporte,OPEX,700.98
+179,Licencias Perpetuas,CAPEX,744.53
+180,Soporte,OPEX,430.30
+181,Suscripciones SaaS,OPEX,774.93
+182,Viajes,OPEX,1074.19
+183,Capacitacion,OPEX,565.84
+184,Servicios Nube,OPEX,555.87
+185,Desarrollo a Medida,CAPEX,449.41
+186,Soporte,OPEX,1446.88
+187,Hardware,CAPEX,472.34
+188,Capacitacion,OPEX,712.69
+189,Licencias Perpetuas,CAPEX,793.43
+190,Soporte,OPEX,651.04
+191,Hardware,CAPEX,523.97
+192,Soporte,OPEX,489.67
+193,Desarrollo a Medida,CAPEX,765.94
+194,Viajes,OPEX,1378.12
+195,Servicios Nube,OPEX,970.35
+196,Desarrollo a Medida,CAPEX,2172.93
+197,Servicios Nube,OPEX,184.02
+198,Servicios Nube,OPEX,401.59
+199,Soporte,OPEX,298.51
+200,Capacitacion,OPEX,380.15
+201,Hardware,CAPEX,2123.48
+202,Soporte,OPEX,400.12
+203,Suscripciones SaaS,OPEX,1164.98
+204,Licencias Perpetuas,CAPEX,2313.12
+205,Suscripciones SaaS,OPEX,637.30
+206,Capacitacion,OPEX,530.98
+207,Hardware,CAPEX,1701.51
+208,Soporte,OPEX,262.56
+209,Capacitacion,OPEX,536.11
+210,Hardware,CAPEX,563.19
+211,Capacitacion,OPEX,742.31
+212,Capacitacion,OPEX,814.80
+213,Capacitacion,OPEX,336.31
+214,Desarrollo a Medida,CAPEX,674.63
+215,Capacitacion,OPEX,826.48
+216,Hardware,CAPEX,255.65
+217,Servicios Nube,OPEX,486.97
+218,Soporte,OPEX,3550.14
+219,Servicios Nube,OPEX,502.78
+220,Suscripciones SaaS,OPEX,392.95
+221,Licencias Perpetuas,CAPEX,654.17
+222,Licencias Perpetuas,CAPEX,970.43
+223,Hardware,CAPEX,755.98
+224,Soporte,OPEX,620.03
+225,Licencias Perpetuas,CAPEX,657.07
+226,Suscripciones SaaS,OPEX,488.24
+227,Viajes,OPEX,886.62
+228,Desarrollo a Medida,CAPEX,429.24
+229,Hardware,CAPEX,1339.90
+230,Hardware,CAPEX,502.28
+231,Capacitacion,OPEX,889.66
+232,Hardware,CAPEX,1093.29
+233,Servicios Nube,OPEX,538.61
+234,Desarrollo a Medida,CAPEX,729.63
+235,Capacitacion,OPEX,213.35
+236,Servicios Nube,OPEX,958.24
+237,Hardware,CAPEX,1299.82
+238,Suscripciones SaaS,OPEX,539.07
+239,Soporte,OPEX,849.16
+240,Licencias Perpetuas,CAPEX,2476.33
+241,Capacitacion,OPEX,1199.48
+242,Suscripciones SaaS,OPEX,910.13
+243,Soporte,OPEX,458.86
+244,Suscripciones SaaS,OPEX,966.03
+245,Suscripciones SaaS,OPEX,842.42
+246,Viajes,OPEX,675.89
+247,Desarrollo a Medida,CAPEX,792.41
+248,Viajes,OPEX,2033.14
+249,Capacitacion,OPEX,885.16
+250,Desarrollo a Medida,CAPEX,257.42
+251,Viajes,OPEX,418.68
+252,Capacitacion,OPEX,169.70
+253,Hardware,CAPEX,1437.98
+254,Capacitacion,OPEX,209.42
+255,Soporte,OPEX,2681.18
+256,Soporte,OPEX,571.06
+257,Capacitacion,OPEX,801.58
+258,Licencias Perpetuas,CAPEX,387.67
+259,Suscripciones SaaS,OPEX,452.08
+260,Licencias Perpetuas,CAPEX,504.08
+261,Suscripciones SaaS,OPEX,268.22
+262,Desarrollo a Medida,CAPEX,1484.13
+263,Soporte,OPEX,224.84
+264,Licencias Perpetuas,CAPEX,841.90
+265,Servicios Nube,OPEX,590.88
+266,Servicios Nube,OPEX,223.50
+267,Suscripciones SaaS,OPEX,162.27
+268,Hardware,CAPEX,2649.38
+269,Desarrollo a Medida,CAPEX,986.34
+270,Soporte,OPEX,2117.81
+271,Suscripciones SaaS,OPEX,3279.05
+272,Capacitacion,OPEX,337.17
+273,Servicios Nube,OPEX,368.67
+274,Hardware,CAPEX,476.45
+275,Desarrollo a Medida,CAPEX,1122.58
+276,Viajes,OPEX,1101.49
+277,Suscripciones SaaS,OPEX,1147.80
+278,Servicios Nube,OPEX,375.56
+279,Licencias Perpetuas,CAPEX,403.43
+280,Viajes,OPEX,716.28
+281,Capacitacion,OPEX,731.21
+282,Viajes,OPEX,749.25
+283,Servicios Nube,OPEX,603.85
+284,Servicios Nube,OPEX,864.27
+285,Soporte,OPEX,474.39
+286,Suscripciones SaaS,OPEX,515.55
+287,Desarrollo a Medida,CAPEX,798.11
+288,Capacitacion,OPEX,559.22
+289,Capacitacion,OPEX,747.08
+290,Hardware,CAPEX,316.93
+291,Viajes,OPEX,622.40
+292,Servicios Nube,OPEX,310.21
+293,Suscripciones SaaS,OPEX,764.86
+294,Capacitacion,OPEX,1547.72
+295,Suscripciones SaaS,OPEX,843.72
+296,Desarrollo a Medida,CAPEX,1156.05
+297,Servicios Nube,OPEX,150.20
+298,Suscripciones SaaS,OPEX,1511.53
+299,Soporte,OPEX,997.18
+300,Capacitacion,OPEX,785.37
+301,Desarrollo a Medida,CAPEX,412.98
+302,Capacitacion,OPEX,3011.71
+303,Licencias Perpetuas,CAPEX,1039.10
+304,Viajes,OPEX,3040.50
+305,Soporte,OPEX,285.56
+306,Capacitacion,OPEX,272.24
+307,Hardware,CAPEX,402.29
+308,Capacitacion,OPEX,1194.02
+309,Desarrollo a Medida,CAPEX,1402.43
+310,Soporte,OPEX,342.89
+311,Licencias Perpetuas,CAPEX,1158.71
+312,Licencias Perpetuas,CAPEX,2280.65
+313,Licencias Perpetuas,CAPEX,896.80
+314,Servicios Nube,OPEX,324.75
+315,Licencias Perpetuas,CAPEX,582.49
+316,Licencias Perpetuas,CAPEX,186.41
+317,Viajes,OPEX,680.90
+318,Desarrollo a Medida,CAPEX,575.80
+319,Suscripciones SaaS,OPEX,613.18
+320,Suscripciones SaaS,OPEX,498.92
+321,Hardware,CAPEX,790.90
+322,Capacitacion,OPEX,776.72
+323,Servicios Nube,OPEX,722.90
+324,Servicios Nube,OPEX,645.07
+325,Suscripciones SaaS,OPEX,418.77
+326,Hardware,CAPEX,1854.67
+327,Licencias Perpetuas,CAPEX,599.81
+328,Soporte,OPEX,202.99
+329,Suscripciones SaaS,OPEX,567.59
+330,Servicios Nube,OPEX,763.64
+331,Soporte,OPEX,523.96
+332,Soporte,OPEX,492.16
+333,Viajes,OPEX,586.68
+334,Capacitacion,OPEX,985.75
+335,Servicios Nube,OPEX,1657.50
+336,Viajes,OPEX,463.07
+337,Soporte,OPEX,837.08
+338,Desarrollo a Medida,CAPEX,1397.86
+339,Desarrollo a Medida,CAPEX,357.67
+340,Licencias Perpetuas,CAPEX,2080.05
+341,Viajes,OPEX,1963.88
+342,Licencias Perpetuas,CAPEX,283.93
+343,Licencias Perpetuas,CAPEX,385.65
+344,Suscripciones SaaS,OPEX,403.84
+345,Capacitacion,OPEX,806.70
+346,Soporte,OPEX,351.73
+347,Hardware,CAPEX,1641.80
+348,Desarrollo a Medida,CAPEX,197.19
+349,Licencias Perpetuas,CAPEX,386.18
+350,Suscripciones SaaS,OPEX,2058.48
+351,Desarrollo a Medida,CAPEX,957.43
+352,Suscripciones SaaS,OPEX,1306.14
+353,Soporte,OPEX,455.67
+354,Licencias Perpetuas,CAPEX,477.43
+355,Desarrollo a Medida,CAPEX,861.80
+356,Suscripciones SaaS,OPEX,721.03
+357,Desarrollo a Medida,CAPEX,774.79
+358,Capacitacion,OPEX,948.18
+359,Licencias Perpetuas,CAPEX,822.48
+360,Viajes,OPEX,587.00
+361,Capacitacion,OPEX,703.59
+362,Desarrollo a Medida,CAPEX,442.11
+363,Soporte,OPEX,612.53
+364,Licencias Perpetuas,CAPEX,217.51
+365,Servicios Nube,OPEX,673.65
+366,Licencias Perpetuas,CAPEX,220.77
+367,Hardware,CAPEX,1206.43
+368,Servicios Nube,OPEX,309.81
+369,Capacitacion,OPEX,193.59
+370,Viajes,OPEX,294.20
+371,Viajes,OPEX,285.37
+372,Suscripciones SaaS,OPEX,412.24
+373,Desarrollo a Medida,CAPEX,427.83
+374,Capacitacion,OPEX,1448.94
+375,Licencias Perpetuas,CAPEX,550.06
+376,Desarrollo a Medida,CAPEX,832.19
+377,Licencias Perpetuas,CAPEX,984.97
+378,Hardware,CAPEX,430.08
+379,Servicios Nube,OPEX,513.04
+380,Suscripciones SaaS,OPEX,778.49
+381,Capacitacion,OPEX,237.03
+382,Licencias Perpetuas,CAPEX,242.97
+383,Desarrollo a Medida,CAPEX,203.12
+384,Desarrollo a Medida,CAPEX,341.90
+385,Servicios Nube,OPEX,1136.44
+386,Hardware,CAPEX,262.29
+387,Suscripciones SaaS,OPEX,970.84
+388,Licencias Perpetuas,CAPEX,1844.30
+389,Capacitacion,OPEX,543.15
+390,Licencias Perpetuas,CAPEX,415.89
+391,Viajes,OPEX,317.21
+392,Desarrollo a Medida,CAPEX,518.94
+393,Desarrollo a Medida,CAPEX,1566.72
+394,Desarrollo a Medida,CAPEX,499.58
+395,Licencias Perpetuas,CAPEX,617.35
+396,Licencias Perpetuas,CAPEX,275.31
+397,Servicios Nube,OPEX,542.20
+398,Suscripciones SaaS,OPEX,481.34
+399,Licencias Perpetuas,CAPEX,553.32
+400,Viajes,OPEX,872.65
+401,Soporte,OPEX,500.54
+402,Soporte,OPEX,879.48
+403,Suscripciones SaaS,OPEX,583.04
+404,Soporte,OPEX,815.69
+405,Servicios Nube,OPEX,361.29
+406,Viajes,OPEX,1181.98
+407,Desarrollo a Medida,CAPEX,852.81
+408,Capacitacion,OPEX,142.08
+409,Suscripciones SaaS,OPEX,553.64
+410,Viajes,OPEX,783.35
+411,Soporte,OPEX,664.07
+412,Suscripciones SaaS,OPEX,1122.47
+413,Desarrollo a Medida,CAPEX,177.66
+414,Viajes,OPEX,492.15
+415,Suscripciones SaaS,OPEX,878.64
+416,Viajes,OPEX,153.45
+417,Licencias Perpetuas,CAPEX,969.86
+418,Capacitacion,OPEX,302.63
+419,Soporte,OPEX,408.65
+420,Servicios Nube,OPEX,601.54
+421,Desarrollo a Medida,CAPEX,928.18
+422,Hardware,CAPEX,1182.29
+423,Soporte,OPEX,458.22
+424,Soporte,OPEX,556.25
+425,Soporte,OPEX,760.25
+426,Hardware,CAPEX,407.25
+427,Capacitacion,OPEX,2981.25
+428,Desarrollo a Medida,CAPEX,551.64
+429,Hardware,CAPEX,716.09
+430,Soporte,OPEX,437.54
+431,Servicios Nube,OPEX,683.52
+432,Soporte,OPEX,2011.49
+433,Suscripciones SaaS,OPEX,976.22
+434,Desarrollo a Medida,CAPEX,449.80
+435,Hardware,CAPEX,1693.08
+436,Suscripciones SaaS,OPEX,1318.03
+437,Soporte,OPEX,681.39
+438,Soporte,OPEX,1509.15
+439,Capacitacion,OPEX,703.34
+440,Desarrollo a Medida,CAPEX,466.96
+441,Servicios Nube,OPEX,442.58
+442,Capacitacion,OPEX,2152.62
+443,Hardware,CAPEX,395.55
+444,Soporte,OPEX,2165.03
+445,Licencias Perpetuas,CAPEX,220.90
+446,Viajes,OPEX,368.70
+447,Soporte,OPEX,1052.29
+448,Licencias Perpetuas,CAPEX,273.62
+449,Desarrollo a Medida,CAPEX,741.50
+450,Viajes,OPEX,512.93
+451,Soporte,OPEX,824.29
+452,Soporte,OPEX,296.01
+453,Hardware,CAPEX,364.88
+454,Soporte,OPEX,1345.02
+455,Hardware,CAPEX,624.19
+456,Suscripciones SaaS,OPEX,4810.99
+457,Suscripciones SaaS,OPEX,2125.43
+458,Servicios Nube,OPEX,1009.84
+459,Hardware,CAPEX,478.30
+460,Desarrollo a Medida,CAPEX,459.34
+461,Suscripciones SaaS,OPEX,499.33
+462,Capacitacion,OPEX,345.93
+463,Servicios Nube,OPEX,451.54
+464,Licencias Perpetuas,CAPEX,419.71
+465,Soporte,OPEX,566.76
+466,Desarrollo a Medida,CAPEX,374.81
+467,Hardware,CAPEX,459.07
+468,Suscripciones SaaS,OPEX,1760.08
+469,Servicios Nube,OPEX,566.68
+470,Suscripciones SaaS,OPEX,205.81
+471,Viajes,OPEX,644.68
+472,Hardware,CAPEX,843.95
+473,Suscripciones SaaS,OPEX,1193.69
+474,Desarrollo a Medida,CAPEX,420.21
+475,Licencias Perpetuas,CAPEX,562.87
+476,Hardware,CAPEX,1362.34
+477,Capacitacion,OPEX,569.71
+478,Suscripciones SaaS,OPEX,239.74
+479,Desarrollo a Medida,CAPEX,781.21
+480,Desarrollo a Medida,CAPEX,778.46
+481,Hardware,CAPEX,2174.92
+482,Capacitacion,OPEX,382.97
+483,Servicios Nube,OPEX,686.70
+484,Viajes,OPEX,308.32
+485,Servicios Nube,OPEX,485.11
+486,Servicios Nube,OPEX,508.82
+487,Soporte,OPEX,561.78
+488,Desarrollo a Medida,CAPEX,550.59
+489,Viajes,OPEX,839.23
+490,Viajes,OPEX,506.27
+491,Licencias Perpetuas,CAPEX,826.22
+492,Capacitacion,OPEX,472.80
+493,Licencias Perpetuas,CAPEX,1177.14
+494,Hardware,CAPEX,1061.79
+495,Hardware,CAPEX,187.55
+496,Desarrollo a Medida,CAPEX,2528.43
+497,Soporte,OPEX,300.20
+498,Licencias Perpetuas,CAPEX,451.96
+499,Servicios Nube,OPEX,1892.97
+500,Soporte,OPEX,1081.36
+501,Desarrollo a Medida,CAPEX,430.53
+502,Servicios Nube,OPEX,378.16
+503,Desarrollo a Medida,CAPEX,656.79
+504,Suscripciones SaaS,OPEX,659.29
+505,Suscripciones SaaS,OPEX,618.69
+506,Servicios Nube,OPEX,1933.56
+507,Licencias Perpetuas,CAPEX,795.16
+508,Viajes,OPEX,602.12
+509,Soporte,OPEX,845.16
+510,Viajes,OPEX,1541.99
+511,Viajes,OPEX,795.31
+512,Suscripciones SaaS,OPEX,689.92
+513,Servicios Nube,OPEX,507.94
+514,Soporte,OPEX,640.76
+515,Servicios Nube,OPEX,799.12
+516,Capacitacion,OPEX,1272.44
+517,Licencias Perpetuas,CAPEX,661.68
+518,Viajes,OPEX,438.06
+519,Suscripciones SaaS,OPEX,966.94
+520,Capacitacion,OPEX,351.03
+521,Servicios Nube,OPEX,983.31
+522,Soporte,OPEX,737.37
+523,Suscripciones SaaS,OPEX,795.67
+524,Servicios Nube,OPEX,1125.50
+525,Servicios Nube,OPEX,585.32
+526,Capacitacion,OPEX,957.49
+527,Capacitacion,OPEX,1172.56
+528,Hardware,CAPEX,1269.57
+529,Servicios Nube,OPEX,722.64
+530,Capacitacion,OPEX,763.37
+531,Soporte,OPEX,584.04
+532,Capacitacion,OPEX,637.88
+533,Hardware,CAPEX,788.23
+534,Hardware,CAPEX,862.03
+535,Licencias Perpetuas,CAPEX,573.81
+536,Soporte,OPEX,319.65
+537,Servicios Nube,OPEX,306.21
+538,Capacitacion,OPEX,1075.58
+539,Suscripciones SaaS,OPEX,738.12
+540,Desarrollo a Medida,CAPEX,697.77
+541,Suscripciones SaaS,OPEX,592.50
+542,Soporte,OPEX,621.69
+543,Viajes,OPEX,1859.19
+544,Soporte,OPEX,223.11
+545,Suscripciones SaaS,OPEX,707.03
+546,Licencias Perpetuas,CAPEX,471.30
+547,Licencias Perpetuas,CAPEX,418.64
+548,Soporte,OPEX,734.21
+549,Suscripciones SaaS,OPEX,367.77
+550,Suscripciones SaaS,OPEX,270.43
+551,Servicios Nube,OPEX,254.83
+552,Capacitacion,OPEX,498.79
+553,Licencias Perpetuas,CAPEX,932.90
+554,Licencias Perpetuas,CAPEX,652.01
+555,Suscripciones SaaS,OPEX,1093.23
+556,Servicios Nube,OPEX,354.66
+557,Servicios Nube,OPEX,762.99
+558,Soporte,OPEX,226.46
+559,Licencias Perpetuas,CAPEX,1022.85
+560,Servicios Nube,OPEX,464.83
+561,Viajes,OPEX,1194.57
+562,Licencias Perpetuas,CAPEX,868.61
+563,Capacitacion,OPEX,2419.62
+564,Desarrollo a Medida,CAPEX,920.32
+565,Capacitacion,OPEX,1527.57
+566,Desarrollo a Medida,CAPEX,498.78
+567,Capacitacion,OPEX,5060.60
+568,Hardware,CAPEX,757.18
+569,Soporte,OPEX,1737.26
+570,Suscripciones SaaS,OPEX,1134.62
+571,Suscripciones SaaS,OPEX,1446.80
+572,Viajes,OPEX,697.94
+573,Viajes,OPEX,671.04
+574,Viajes,OPEX,325.40
+575,Servicios Nube,OPEX,809.57
+576,Capacitacion,OPEX,1264.37
+577,Soporte,OPEX,1379.50
+578,Capacitacion,OPEX,1266.20
+579,Licencias Perpetuas,CAPEX,1292.76
+580,Desarrollo a Medida,CAPEX,608.03
+581,Capacitacion,OPEX,1854.82
+582,Suscripciones SaaS,OPEX,597.55
+583,Hardware,CAPEX,1160.70
+584,Licencias Perpetuas,CAPEX,1618.39
+585,Licencias Perpetuas,CAPEX,224.38
+586,Hardware,CAPEX,2698.09
+587,Hardware,CAPEX,554.79
+588,Soporte,OPEX,1747.35
+589,Capacitacion,OPEX,526.34
+590,Servicios Nube,OPEX,991.93
+591,Capacitacion,OPEX,898.48
+592,Soporte,OPEX,1747.67
+593,Servicios Nube,OPEX,1955.85
+594,Hardware,CAPEX,252.86
+595,Soporte,OPEX,504.61
+596,Hardware,CAPEX,1299.67
+597,Viajes,OPEX,827.24
+598,Servicios Nube,OPEX,931.96
+599,Hardware,CAPEX,2946.96
+600,Desarrollo a Medida,CAPEX,292.21
+601,Servicios Nube,OPEX,2795.29
+602,Licencias Perpetuas,CAPEX,549.91
+603,Hardware,CAPEX,495.99
+604,Suscripciones SaaS,OPEX,519.32
+605,Soporte,OPEX,586.53
+606,Hardware,CAPEX,427.59
+607,Viajes,OPEX,1250.36
+608,Hardware,CAPEX,224.82
+609,Soporte,OPEX,1831.67
+610,Servicios Nube,OPEX,637.58
+611,Viajes,OPEX,698.40
+612,Viajes,OPEX,820.39
+613,Licencias Perpetuas,CAPEX,901.59
+614,Viajes,OPEX,652.88
+615,Desarrollo a Medida,CAPEX,611.85
+616,Capacitacion,OPEX,566.22
+617,Servicios Nube,OPEX,530.30
+618,Desarrollo a Medida,CAPEX,350.87
+619,Hardware,CAPEX,548.25
+620,Hardware,CAPEX,764.51
+621,Servicios Nube,OPEX,704.53
+622,Licencias Perpetuas,CAPEX,337.60
+623,Desarrollo a Medida,CAPEX,1025.40
+624,Hardware,CAPEX,700.64
+625,Soporte,OPEX,712.69
+626,Servicios Nube,OPEX,643.42
+627,Servicios Nube,OPEX,269.01
+628,Soporte,OPEX,2567.02
+629,Desarrollo a Medida,CAPEX,1464.62
+630,Soporte,OPEX,415.15
+631,Desarrollo a Medida,CAPEX,407.87
+632,Capacitacion,OPEX,960.01
+633,Suscripciones SaaS,OPEX,1614.03
+634,Desarrollo a Medida,CAPEX,330.85
+635,Viajes,OPEX,1035.34
+636,Viajes,OPEX,274.90
+637,Hardware,CAPEX,418.39
+638,Capacitacion,OPEX,1460.03
+639,Desarrollo a Medida,CAPEX,403.68
+640,Desarrollo a Medida,CAPEX,426.33
+641,Licencias Perpetuas,CAPEX,1336.29
+642,Viajes,OPEX,610.88
+643,Viajes,OPEX,241.98
+644,Desarrollo a Medida,CAPEX,1005.34
+645,Soporte,OPEX,305.57
+646,Capacitacion,OPEX,437.84
+647,Hardware,CAPEX,411.93
+648,Desarrollo a Medida,CAPEX,365.71
+649,Servicios Nube,OPEX,1152.84
+650,Servicios Nube,OPEX,487.39
+651,Capacitacion,OPEX,493.84
+652,Desarrollo a Medida,CAPEX,3969.42
+653,Soporte,OPEX,349.96
+654,Desarrollo a Medida,CAPEX,207.39
+655,Suscripciones SaaS,OPEX,754.76
+656,Soporte,OPEX,500.15
+657,Servicios Nube,OPEX,203.42
+658,Servicios Nube,OPEX,524.71
+659,Capacitacion,OPEX,630.24
+660,Desarrollo a Medida,CAPEX,1063.40
+661,Suscripciones SaaS,OPEX,946.57
+662,Soporte,OPEX,197.44
+663,Soporte,OPEX,834.51
+664,Soporte,OPEX,1055.16
+665,Suscripciones SaaS,OPEX,400.92
+666,Soporte,OPEX,208.60
+667,Viajes,OPEX,380.00
+668,Soporte,OPEX,558.53
+669,Servicios Nube,OPEX,747.18
+670,Servicios Nube,OPEX,563.51
+671,Servicios Nube,OPEX,697.71
+672,Hardware,CAPEX,788.45
+673,Licencias Perpetuas,CAPEX,276.98
+674,Suscripciones SaaS,OPEX,373.06
+675,Servicios Nube,OPEX,890.57
+676,Licencias Perpetuas,CAPEX,2796.93
+677,Viajes,OPEX,740.56
+678,Suscripciones SaaS,OPEX,272.55
+679,Hardware,CAPEX,728.62
+680,Hardware,CAPEX,929.88
+681,Capacitacion,OPEX,884.16
+682,Soporte,OPEX,187.52
+683,Servicios Nube,OPEX,3708.09
+684,Capacitacion,OPEX,2230.00
+685,Soporte,OPEX,538.06
+686,Capacitacion,OPEX,737.09
+687,Soporte,OPEX,856.71
+688,Suscripciones SaaS,OPEX,1030.16
+689,Viajes,OPEX,424.89
+690,Viajes,OPEX,394.99
+691,Hardware,CAPEX,564.40
+692,Licencias Perpetuas,CAPEX,977.59
+693,Servicios Nube,OPEX,785.92
+694,Viajes,OPEX,937.70
+695,Desarrollo a Medida,CAPEX,766.14
+696,Capacitacion,OPEX,302.63
+697,Viajes,OPEX,435.47
+698,Viajes,OPEX,449.60
+699,Hardware,CAPEX,536.26
+700,Servicios Nube,OPEX,764.60
+701,Viajes,OPEX,788.21
+702,Capacitacion,OPEX,1092.12
+703,Soporte,OPEX,761.13
+704,Viajes,OPEX,1195.99
+705,Licencias Perpetuas,CAPEX,1387.58
+706,Capacitacion,OPEX,1129.32
+707,Licencias Perpetuas,CAPEX,1494.63
+708,Desarrollo a Medida,CAPEX,669.85
+709,Hardware,CAPEX,1417.49
+710,Soporte,OPEX,1023.40
+711,Viajes,OPEX,660.18
+712,Hardware,CAPEX,1389.28
+713,Suscripciones SaaS,OPEX,433.16
+714,Licencias Perpetuas,CAPEX,680.13
+715,Desarrollo a Medida,CAPEX,420.71
+716,Suscripciones SaaS,OPEX,676.98
+717,Capacitacion,OPEX,457.77
+718,Viajes,OPEX,99.56
+719,Viajes,OPEX,2086.72
+720,Viajes,OPEX,717.35
+721,Suscripciones SaaS,OPEX,893.32
+722,Suscripciones SaaS,OPEX,330.33
+723,Licencias Perpetuas,CAPEX,721.74
+724,Servicios Nube,OPEX,479.18
+725,Licencias Perpetuas,CAPEX,211.31
+726,Viajes,OPEX,673.69
+727,Soporte,OPEX,708.68
+728,Servicios Nube,OPEX,654.50
+729,Capacitacion,OPEX,466.91
+730,Viajes,OPEX,645.08
+731,Licencias Perpetuas,CAPEX,600.68
+732,Suscripciones SaaS,OPEX,541.74
+733,Desarrollo a Medida,CAPEX,410.63
+734,Licencias Perpetuas,CAPEX,1662.73
+735,Servicios Nube,OPEX,1160.17
+736,Soporte,OPEX,378.19
+737,Licencias Perpetuas,CAPEX,697.01
+738,Suscripciones SaaS,OPEX,1382.90
+739,Suscripciones SaaS,OPEX,2644.10
+740,Capacitacion,OPEX,460.54
+741,Soporte,OPEX,661.41
+742,Soporte,OPEX,327.03
+743,Soporte,OPEX,3487.16
+744,Capacitacion,OPEX,391.09
+745,Servicios Nube,OPEX,580.18
+746,Suscripciones SaaS,OPEX,607.47
+747,Servicios Nube,OPEX,708.41
+748,Hardware,CAPEX,1857.33
+749,Capacitacion,OPEX,338.90
+750,Soporte,OPEX,529.41
+751,Desarrollo a Medida,CAPEX,459.07
+752,Licencias Perpetuas,CAPEX,1391.62
+753,Capacitacion,OPEX,406.55
+754,Capacitacion,OPEX,508.37
+755,Soporte,OPEX,1298.66
+756,Suscripciones SaaS,OPEX,887.69
+757,Licencias Perpetuas,CAPEX,1205.67
+758,Soporte,OPEX,918.50
+759,Soporte,OPEX,1981.52
+760,Suscripciones SaaS,OPEX,1100.07
+761,Hardware,CAPEX,797.93
+762,Soporte,OPEX,856.94
+763,Servicios Nube,OPEX,504.94
+764,Suscripciones SaaS,OPEX,444.31
+765,Hardware,CAPEX,1737.22
+766,Soporte,OPEX,941.13
+767,Suscripciones SaaS,OPEX,1267.07
+768,Desarrollo a Medida,CAPEX,606.27
+769,Capacitacion,OPEX,559.50
+770,Servicios Nube,OPEX,513.72
+771,Suscripciones SaaS,OPEX,509.77
+772,Capacitacion,OPEX,291.42
+773,Capacitacion,OPEX,1873.86
+774,Desarrollo a Medida,CAPEX,391.90
+775,Viajes,OPEX,1063.19
+776,Licencias Perpetuas,CAPEX,947.39
+777,Capacitacion,OPEX,557.03
+778,Servicios Nube,OPEX,829.15
+779,Desarrollo a Medida,CAPEX,394.01
+780,Hardware,CAPEX,729.08
+781,Capacitacion,OPEX,428.61
+782,Suscripciones SaaS,OPEX,758.62
+783,Suscripciones SaaS,OPEX,1555.32
+784,Licencias Perpetuas,CAPEX,1229.00
+785,Viajes,OPEX,354.31
+786,Hardware,CAPEX,1856.94
+787,Desarrollo a Medida,CAPEX,2061.77
+788,Hardware,CAPEX,826.28
+789,Viajes,OPEX,356.49
+790,Desarrollo a Medida,CAPEX,146.44
+791,Capacitacion,OPEX,1440.37
+792,Servicios Nube,OPEX,1143.60
+793,Viajes,OPEX,505.79
+794,Hardware,CAPEX,1046.07
+795,Capacitacion,OPEX,149.92
+796,Capacitacion,OPEX,1198.25
+797,Soporte,OPEX,571.89
+798,Viajes,OPEX,286.47
+799,Capacitacion,OPEX,841.33
+800,Servicios Nube,OPEX,510.98
+801,Soporte,OPEX,555.66
+802,Viajes,OPEX,402.79
+803,Hardware,CAPEX,313.39
+804,Desarrollo a Medida,CAPEX,386.26
+805,Soporte,OPEX,327.60
+806,Suscripciones SaaS,OPEX,1537.22
+807,Viajes,OPEX,383.73
+808,Desarrollo a Medida,CAPEX,2350.16
+809,Hardware,CAPEX,649.11
+810,Soporte,OPEX,215.78
+811,Capacitacion,OPEX,250.32
+812,Viajes,OPEX,1179.71
+813,Soporte,OPEX,750.83
+814,Suscripciones SaaS,OPEX,688.63
+815,Capacitacion,OPEX,1034.88
+816,Viajes,OPEX,824.34
+817,Soporte,OPEX,786.37
+818,Suscripciones SaaS,OPEX,678.73
+819,Desarrollo a Medida,CAPEX,1383.23
+820,Licencias Perpetuas,CAPEX,298.20
+821,Servicios Nube,OPEX,450.78
+822,Desarrollo a Medida,CAPEX,1145.18
+823,Capacitacion,OPEX,1996.96
+824,Licencias Perpetuas,CAPEX,950.75
+825,Desarrollo a Medida,CAPEX,2061.22
+826,Soporte,OPEX,561.80
+827,Capacitacion,OPEX,690.51
+828,Soporte,OPEX,508.60
+829,Soporte,OPEX,405.91
+830,Viajes,OPEX,418.82
+831,Soporte,OPEX,1921.29
+832,Soporte,OPEX,786.03
+833,Hardware,CAPEX,315.51
+834,Soporte,OPEX,483.27
+835,Desarrollo a Medida,CAPEX,353.46
+836,Licencias Perpetuas,CAPEX,2678.81
+837,Suscripciones SaaS,OPEX,2008.60
+838,Viajes,OPEX,432.13
+839,Soporte,OPEX,1218.96
+840,Capacitacion,OPEX,642.55
+841,Desarrollo a Medida,CAPEX,178.54
+842,Viajes,OPEX,587.30
+843,Servicios Nube,OPEX,563.44
+844,Capacitacion,OPEX,643.80
+845,Suscripciones SaaS,OPEX,1006.59
+846,Soporte,OPEX,590.52
+847,Hardware,CAPEX,978.50
+848,Suscripciones SaaS,OPEX,752.57
+849,Viajes,OPEX,981.20
+850,Capacitacion,OPEX,509.15
+851,Desarrollo a Medida,CAPEX,1727.11
+852,Capacitacion,OPEX,1423.90
+853,Hardware,CAPEX,437.18
+854,Servicios Nube,OPEX,231.38
+855,Viajes,OPEX,941.67
+856,Hardware,CAPEX,1257.24
+857,Servicios Nube,OPEX,875.22
+858,Hardware,CAPEX,519.51
+859,Hardware,CAPEX,523.13
+860,Hardware,CAPEX,860.56
+861,Desarrollo a Medida,CAPEX,290.14
+862,Hardware,CAPEX,417.56
+863,Capacitacion,OPEX,405.10
+864,Desarrollo a Medida,CAPEX,262.14
+865,Viajes,OPEX,328.89
+866,Viajes,OPEX,612.26
+867,Desarrollo a Medida,CAPEX,529.22
+868,Servicios Nube,OPEX,1202.20
+869,Suscripciones SaaS,OPEX,791.05
+870,Hardware,CAPEX,636.84
+871,Capacitacion,OPEX,485.82
+872,Soporte,OPEX,1202.03
+873,Soporte,OPEX,165.51
+874,Hardware,CAPEX,288.90
+875,Desarrollo a Medida,CAPEX,650.91
+876,Desarrollo a Medida,CAPEX,371.66
+877,Capacitacion,OPEX,793.02
+878,Desarrollo a Medida,CAPEX,456.60
+879,Soporte,OPEX,590.01
+880,Suscripciones SaaS,OPEX,781.75
+881,Hardware,CAPEX,579.79
+882,Hardware,CAPEX,620.92
+883,Suscripciones SaaS,OPEX,466.90
+884,Suscripciones SaaS,OPEX,469.91
+885,Servicios Nube,OPEX,516.22
+886,Soporte,OPEX,413.00
+887,Suscripciones SaaS,OPEX,968.97
+888,Servicios Nube,OPEX,577.55
+889,Suscripciones SaaS,OPEX,394.73
+890,Capacitacion,OPEX,1907.93
+891,Capacitacion,OPEX,952.16
+892,Capacitacion,OPEX,879.49
+893,Suscripciones SaaS,OPEX,1164.60
+894,Capacitacion,OPEX,546.28
+895,Desarrollo a Medida,CAPEX,955.78
+896,Desarrollo a Medida,CAPEX,1038.72
+897,Servicios Nube,OPEX,3828.17
+898,Soporte,OPEX,851.56
+899,Capacitacion,OPEX,262.98
+900,Desarrollo a Medida,CAPEX,629.40
+901,Servicios Nube,OPEX,804.91
+902,Hardware,CAPEX,710.39
+903,Desarrollo a Medida,CAPEX,1024.47
+904,Hardware,CAPEX,369.46
+905,Capacitacion,OPEX,1624.05
+906,Desarrollo a Medida,CAPEX,803.17
+907,Soporte,OPEX,769.04
+908,Capacitacion,OPEX,658.34
+909,Capacitacion,OPEX,896.63
+910,Licencias Perpetuas,CAPEX,994.15
+911,Viajes,OPEX,3185.59
+912,Servicios Nube,OPEX,127.32
+913,Capacitacion,OPEX,605.19
+914,Capacitacion,OPEX,729.76
+915,Capacitacion,OPEX,279.46
+916,Soporte,OPEX,328.16
+917,Capacitacion,OPEX,7904.86
+918,Desarrollo a Medida,CAPEX,1351.02
+919,Viajes,OPEX,773.95
+920,Servicios Nube,OPEX,662.60
+921,Capacitacion,OPEX,894.95
+922,Viajes,OPEX,617.47
+923,Soporte,OPEX,736.42
+924,Hardware,CAPEX,535.59
+925,Capacitacion,OPEX,746.78
+926,Soporte,OPEX,369.23
+927,Servicios Nube,OPEX,497.14
+928,Licencias Perpetuas,CAPEX,429.26
+929,Soporte,OPEX,1151.24
+930,Viajes,OPEX,146.66
+931,Servicios Nube,OPEX,819.63
+932,Soporte,OPEX,780.18
+933,Soporte,OPEX,529.01
+934,Licencias Perpetuas,CAPEX,229.21
+935,Servicios Nube,OPEX,145.07
+936,Capacitacion,OPEX,561.12
+937,Capacitacion,OPEX,504.50
+938,Soporte,OPEX,501.33
+939,Desarrollo a Medida,CAPEX,842.72
+940,Hardware,CAPEX,549.33
+941,Licencias Perpetuas,CAPEX,467.42
+942,Capacitacion,OPEX,723.39
+943,Servicios Nube,OPEX,1073.08
+944,Licencias Perpetuas,CAPEX,536.39
+945,Viajes,OPEX,519.73
+946,Capacitacion,OPEX,555.78
+947,Desarrollo a Medida,CAPEX,483.47
+948,Hardware,CAPEX,364.12
+949,Soporte,OPEX,418.38
+950,Soporte,OPEX,532.28
+951,Soporte,OPEX,472.15
+952,Servicios Nube,OPEX,2038.08
+953,Desarrollo a Medida,CAPEX,803.90
+954,Desarrollo a Medida,CAPEX,596.34
+955,Licencias Perpetuas,CAPEX,725.06
+956,Viajes,OPEX,507.92
+957,Licencias Perpetuas,CAPEX,3751.28
+958,Suscripciones SaaS,OPEX,2266.37
+959,Desarrollo a Medida,CAPEX,308.94
+960,Hardware,CAPEX,367.93
+961,Hardware,CAPEX,1545.65
+962,Hardware,CAPEX,362.81
+963,Suscripciones SaaS,OPEX,595.62
+964,Hardware,CAPEX,994.47
+965,Hardware,CAPEX,551.58
+966,Hardware,CAPEX,671.18
+967,Suscripciones SaaS,OPEX,733.40
+968,Suscripciones SaaS,OPEX,1183.70
+969,Hardware,CAPEX,1367.71
+970,Desarrollo a Medida,CAPEX,2132.35
+971,Suscripciones SaaS,OPEX,1521.24
+972,Servicios Nube,OPEX,336.68
+973,Suscripciones SaaS,OPEX,432.78
+974,Suscripciones SaaS,OPEX,246.64
+975,Capacitacion,OPEX,561.07
+976,Licencias Perpetuas,CAPEX,736.62
+977,Licencias Perpetuas,CAPEX,4878.17
+978,Soporte,OPEX,499.17
+979,Desarrollo a Medida,CAPEX,107.01
+980,Capacitacion,OPEX,774.82
+981,Desarrollo a Medida,CAPEX,154.66
+982,Licencias Perpetuas,CAPEX,930.52
+983,Suscripciones SaaS,OPEX,445.71
+984,Desarrollo a Medida,CAPEX,820.40
+985,Hardware,CAPEX,1229.40
+986,Soporte,OPEX,951.80
+987,Licencias Perpetuas,CAPEX,517.22
+988,Desarrollo a Medida,CAPEX,1070.07
+989,Capacitacion,OPEX,487.47
+990,Servicios Nube,OPEX,431.74
+991,Capacitacion,OPEX,590.63
+992,Soporte,OPEX,512.58
+993,Desarrollo a Medida,CAPEX,1088.93
+994,Suscripciones SaaS,OPEX,86.61
+995,Hardware,CAPEX,292.87
+996,Hardware,CAPEX,408.72
+997,Suscripciones SaaS,OPEX,187.07
+998,Soporte,OPEX,986.82
+999,Viajes,OPEX,488.49
+1000,Desarrollo a Medida,CAPEX,727.96
+1001,Capacitacion,OPEX,892.99
+1002,Viajes,OPEX,790.19
+1003,Viajes,OPEX,399.78
+1004,Desarrollo a Medida,CAPEX,383.21
+1005,Desarrollo a Medida,CAPEX,743.67
+1006,Hardware,CAPEX,428.95
+1007,Suscripciones SaaS,OPEX,471.94
+1008,Desarrollo a Medida,CAPEX,855.14
+1009,Licencias Perpetuas,CAPEX,559.73
+1010,Servicios Nube,OPEX,172.17
+1011,Hardware,CAPEX,1050.43
+1012,Servicios Nube,OPEX,2016.94
+1013,Servicios Nube,OPEX,862.98
+1014,Servicios Nube,OPEX,695.92
+1015,Soporte,OPEX,554.06
+1016,Capacitacion,OPEX,577.43
+1017,Hardware,CAPEX,1101.36
+1018,Servicios Nube,OPEX,217.64
+1019,Hardware,CAPEX,447.72
+1020,Desarrollo a Medida,CAPEX,606.94
+1021,Servicios Nube,OPEX,1038.68
+1022,Capacitacion,OPEX,1192.88
+1023,Capacitacion,OPEX,800.79
+1024,Servicios Nube,OPEX,435.10
+1025,Soporte,OPEX,1811.28
+1026,Servicios Nube,OPEX,152.20
+1027,Desarrollo a Medida,CAPEX,628.02
+1028,Viajes,OPEX,543.68
+1029,Hardware,CAPEX,654.07
+1030,Desarrollo a Medida,CAPEX,459.64
+1031,Soporte,OPEX,311.07
+1032,Desarrollo a Medida,CAPEX,1121.25
+1033,Capacitacion,OPEX,859.81
+1034,Licencias Perpetuas,CAPEX,613.58
+1035,Servicios Nube,OPEX,587.08
+1036,Soporte,OPEX,925.21
+1037,Desarrollo a Medida,CAPEX,1347.09
+1038,Hardware,CAPEX,384.77
+1039,Desarrollo a Medida,CAPEX,853.75
+1040,Viajes,OPEX,469.52
+1041,Capacitacion,OPEX,519.87
+1042,Viajes,OPEX,279.50
+1043,Desarrollo a Medida,CAPEX,1128.64
+1044,Hardware,CAPEX,1317.32
+1045,Licencias Perpetuas,CAPEX,1796.29
+1046,Desarrollo a Medida,CAPEX,768.44
+1047,Capacitacion,OPEX,473.79
+1048,Licencias Perpetuas,CAPEX,1019.39
+1049,Hardware,CAPEX,838.49
+1050,Suscripciones SaaS,OPEX,1267.29
+1051,Suscripciones SaaS,OPEX,541.80
+1052,Licencias Perpetuas,CAPEX,1080.77
+1053,Capacitacion,OPEX,612.46
+1054,Hardware,CAPEX,1125.96
+1055,Desarrollo a Medida,CAPEX,395.19
+1056,Hardware,CAPEX,364.70
+1057,Viajes,OPEX,505.48
+1058,Capacitacion,OPEX,1227.99
+1059,Servicios Nube,OPEX,689.03
+1060,Desarrollo a Medida,CAPEX,1274.83
+1061,Suscripciones SaaS,OPEX,1085.61
+1062,Licencias Perpetuas,CAPEX,805.62
+1063,Licencias Perpetuas,CAPEX,665.88
+1064,Soporte,OPEX,527.31
+1065,Suscripciones SaaS,OPEX,627.79
+1066,Servicios Nube,OPEX,403.12
+1067,Viajes,OPEX,740.96
+1068,Desarrollo a Medida,CAPEX,592.54
+1069,Hardware,CAPEX,667.21
+1070,Soporte,OPEX,1126.42
+1071,Servicios Nube,OPEX,309.46
+1072,Hardware,CAPEX,418.10
+1073,Desarrollo a Medida,CAPEX,565.32
+1074,Capacitacion,OPEX,348.57
+1075,Soporte,OPEX,624.18
+1076,Capacitacion,OPEX,648.46
+1077,Desarrollo a Medida,CAPEX,1862.11
+1078,Suscripciones SaaS,OPEX,845.67
+1079,Hardware,CAPEX,590.20
+1080,Viajes,OPEX,777.37
+1081,Licencias Perpetuas,CAPEX,486.85
+1082,Licencias Perpetuas,CAPEX,427.35
+1083,Suscripciones SaaS,OPEX,646.12
+1084,Soporte,OPEX,2836.36
+1085,Soporte,OPEX,672.79
+1086,Soporte,OPEX,525.95
+1087,Capacitacion,OPEX,923.25
+1088,Viajes,OPEX,465.01
+1089,Licencias Perpetuas,CAPEX,468.33
+1090,Capacitacion,OPEX,676.38
+1091,Servicios Nube,OPEX,410.35
+1092,Hardware,CAPEX,332.64
+1093,Soporte,OPEX,497.82
+1094,Capacitacion,OPEX,449.12
+1095,Suscripciones SaaS,OPEX,1144.97
+1096,Servicios Nube,OPEX,500.63
+1097,Viajes,OPEX,935.15
+1098,Servicios Nube,OPEX,223.01
+1099,Hardware,CAPEX,481.30
+1100,Suscripciones SaaS,OPEX,1652.71
+1101,Licencias Perpetuas,CAPEX,659.02
+1102,Capacitacion,OPEX,1238.31
+1103,Viajes,OPEX,895.40
+1104,Soporte,OPEX,701.19
+1105,Suscripciones SaaS,OPEX,2073.86
+1106,Suscripciones SaaS,OPEX,824.80
+1107,Capacitacion,OPEX,590.32
+1108,Servicios Nube,OPEX,746.47
+1109,Viajes,OPEX,897.24
+1110,Servicios Nube,OPEX,307.13
+1111,Hardware,CAPEX,457.25
+1112,Suscripciones SaaS,OPEX,1379.30
+1113,Viajes,OPEX,663.60
+1114,Suscripciones SaaS,OPEX,154.32
+1115,Desarrollo a Medida,CAPEX,1283.02
+1116,Licencias Perpetuas,CAPEX,785.40
+1117,Licencias Perpetuas,CAPEX,280.40
+1118,Servicios Nube,OPEX,386.64
+1119,Soporte,OPEX,581.93
+1120,Hardware,CAPEX,389.59
+1121,Hardware,CAPEX,628.97
+1122,Viajes,OPEX,1975.83
+1123,Licencias Perpetuas,CAPEX,166.49
+1124,Viajes,OPEX,771.10
+1125,Soporte,OPEX,346.18
+1126,Licencias Perpetuas,CAPEX,1040.65
+1127,Suscripciones SaaS,OPEX,145.30
+1128,Capacitacion,OPEX,498.28
+1129,Servicios Nube,OPEX,987.74
+1130,Capacitacion,OPEX,282.63
+1131,Capacitacion,OPEX,531.36
+1132,Servicios Nube,OPEX,386.39
+1133,Servicios Nube,OPEX,486.97
+1134,Suscripciones SaaS,OPEX,475.58
+1135,Servicios Nube,OPEX,538.62
+1136,Servicios Nube,OPEX,947.37
+1137,Capacitacion,OPEX,643.36
+1138,Capacitacion,OPEX,609.66
+1139,Suscripciones SaaS,OPEX,385.45
+1140,Viajes,OPEX,1366.36
+1141,Suscripciones SaaS,OPEX,948.42
+1142,Suscripciones SaaS,OPEX,351.76
+1143,Licencias Perpetuas,CAPEX,381.92
+1144,Hardware,CAPEX,959.78
+1145,Viajes,OPEX,507.67
+1146,Soporte,OPEX,708.89
+1147,Suscripciones SaaS,OPEX,402.84
+1148,Desarrollo a Medida,CAPEX,1152.79
+1149,Viajes,OPEX,965.83
+1150,Viajes,OPEX,667.27
+1151,Soporte,OPEX,304.73
+1152,Viajes,OPEX,912.85
+1153,Licencias Perpetuas,CAPEX,148.53
+1154,Servicios Nube,OPEX,973.99
+1155,Viajes,OPEX,417.82
+1156,Hardware,CAPEX,780.44
+1157,Hardware,CAPEX,391.09
+1158,Licencias Perpetuas,CAPEX,628.39
+1159,Hardware,CAPEX,752.15
+1160,Licencias Perpetuas,CAPEX,301.04
+1161,Capacitacion,OPEX,476.94
+1162,Hardware,CAPEX,1108.97
+1163,Suscripciones SaaS,OPEX,1152.45
+1164,Licencias Perpetuas,CAPEX,203.71
+1165,Soporte,OPEX,307.92
+1166,Viajes,OPEX,1050.10
+1167,Suscripciones SaaS,OPEX,2679.73
+1168,Capacitacion,OPEX,555.53
+1169,Hardware,CAPEX,442.89
+1170,Servicios Nube,OPEX,295.69
+1171,Suscripciones SaaS,OPEX,651.10
+1172,Licencias Perpetuas,CAPEX,590.60
+1173,Licencias Perpetuas,CAPEX,618.25
+1174,Suscripciones SaaS,OPEX,372.48
+1175,Licencias Perpetuas,CAPEX,973.30
+1176,Licencias Perpetuas,CAPEX,949.71
+1177,Hardware,CAPEX,976.90
+1178,Licencias Perpetuas,CAPEX,417.47
+1179,Servicios Nube,OPEX,715.46
+1180,Hardware,CAPEX,545.68
+1181,Suscripciones SaaS,OPEX,600.14
+1182,Capacitacion,OPEX,739.30
+1183,Licencias Perpetuas,CAPEX,501.11
+1184,Capacitacion,OPEX,597.72
+1185,Hardware,CAPEX,755.50
+1186,Soporte,OPEX,462.45
+1187,Suscripciones SaaS,OPEX,1191.25
+1188,Soporte,OPEX,393.95
+1189,Licencias Perpetuas,CAPEX,754.72
+1190,Soporte,OPEX,315.16
+1191,Capacitacion,OPEX,614.32
+1192,Suscripciones SaaS,OPEX,637.80
+1193,Servicios Nube,OPEX,539.82
+1194,Soporte,OPEX,628.89
+1195,Soporte,OPEX,779.88
+1196,Soporte,OPEX,517.20
+1197,Hardware,CAPEX,392.51
+1198,Capacitacion,OPEX,922.54
+1199,Capacitacion,OPEX,608.97
+1200,Hardware,CAPEX,364.65
+1201,Servicios Nube,OPEX,543.00
+1202,Soporte,OPEX,822.66
+1203,Licencias Perpetuas,CAPEX,379.87
+1204,Capacitacion,OPEX,959.88
+1205,Viajes,OPEX,614.11
+1206,Soporte,OPEX,526.59
+1207,Servicios Nube,OPEX,338.88
+1208,Soporte,OPEX,352.58
+1209,Soporte,OPEX,968.25
+1210,Hardware,CAPEX,1678.92
+1211,Viajes,OPEX,1168.90
+1212,Servicios Nube,OPEX,531.36
+1213,Soporte,OPEX,3348.82
+1214,Servicios Nube,OPEX,590.84
+1215,Viajes,OPEX,730.71
+1216,Viajes,OPEX,315.80
+1217,Viajes,OPEX,720.11
+1218,Soporte,OPEX,468.08
+1219,Viajes,OPEX,504.77
+1220,Soporte,OPEX,494.84
+1221,Soporte,OPEX,270.63
+1222,Licencias Perpetuas,CAPEX,1139.58
+1223,Suscripciones SaaS,OPEX,1424.97
+1224,Viajes,OPEX,729.13
+1225,Soporte,OPEX,651.22
+1226,Desarrollo a Medida,CAPEX,940.46
+1227,Viajes,OPEX,1153.58
+1228,Viajes,OPEX,555.54
+1229,Viajes,OPEX,389.89
+1230,Soporte,OPEX,548.42
+1231,Licencias Perpetuas,CAPEX,735.85
+1232,Soporte,OPEX,410.04
+1233,Licencias Perpetuas,CAPEX,664.61
+1234,Servicios Nube,OPEX,532.75
+1235,Servicios Nube,OPEX,572.05
+1236,Servicios Nube,OPEX,1061.39
+1237,Soporte,OPEX,490.44
+1238,Hardware,CAPEX,156.86
+1239,Licencias Perpetuas,CAPEX,746.66
+1240,Suscripciones SaaS,OPEX,542.95
+1241,Servicios Nube,OPEX,1352.83
+1242,Capacitacion,OPEX,765.53
+1243,Servicios Nube,OPEX,936.58
+1244,Desarrollo a Medida,CAPEX,710.49
+1245,Soporte,OPEX,392.09
+1246,Servicios Nube,OPEX,1249.89
+1247,Servicios Nube,OPEX,473.87
+1248,Capacitacion,OPEX,1006.72
+1249,Suscripciones SaaS,OPEX,872.07
+1250,Capacitacion,OPEX,1384.10
+1251,Viajes,OPEX,454.80
+1252,Soporte,OPEX,967.49
+1253,Suscripciones SaaS,OPEX,1540.86
+1254,Suscripciones SaaS,OPEX,180.87
+1255,Suscripciones SaaS,OPEX,1881.64
+1256,Hardware,CAPEX,325.60
+1257,Soporte,OPEX,335.72
+1258,Soporte,OPEX,543.01
+1259,Desarrollo a Medida,CAPEX,451.54
+1260,Viajes,OPEX,240.34
+1261,Viajes,OPEX,198.86
+1262,Viajes,OPEX,336.33
+1263,Suscripciones SaaS,OPEX,323.96
+1264,Soporte,OPEX,840.87
+1265,Viajes,OPEX,910.76
+1266,Servicios Nube,OPEX,1361.74
+1267,Licencias Perpetuas,CAPEX,747.77
+1268,Soporte,OPEX,680.86
+1269,Capacitacion,OPEX,689.74
+1270,Desarrollo a Medida,CAPEX,314.84
+1271,Servicios Nube,OPEX,574.63
+1272,Viajes,OPEX,833.05
+1273,Soporte,OPEX,489.68
+1274,Viajes,OPEX,2318.62
+1275,Licencias Perpetuas,CAPEX,928.36
+1276,Desarrollo a Medida,CAPEX,751.65
+1277,Capacitacion,OPEX,879.99
+1278,Servicios Nube,OPEX,540.81
+1279,Suscripciones SaaS,OPEX,1980.93
+1280,Capacitacion,OPEX,1101.33
+1281,Hardware,CAPEX,874.31
+1282,Suscripciones SaaS,OPEX,333.65
+1283,Soporte,OPEX,553.76
+1284,Licencias Perpetuas,CAPEX,1036.63
+1285,Servicios Nube,OPEX,1111.84
+1286,Licencias Perpetuas,CAPEX,1000.69
+1287,Hardware,CAPEX,2813.68
+1288,Desarrollo a Medida,CAPEX,626.89
+1289,Hardware,CAPEX,793.18
+1290,Soporte,OPEX,551.11
+1291,Soporte,OPEX,1101.48
+1292,Hardware,CAPEX,531.35
+1293,Capacitacion,OPEX,791.31
+1294,Viajes,OPEX,473.69
+1295,Hardware,CAPEX,408.16
+1296,Hardware,CAPEX,812.47
+1297,Desarrollo a Medida,CAPEX,319.95
+1298,Hardware,CAPEX,848.55
+1299,Capacitacion,OPEX,264.90
+1300,Licencias Perpetuas,CAPEX,749.21
+1301,Suscripciones SaaS,OPEX,332.37
+1302,Desarrollo a Medida,CAPEX,1475.04
+1303,Viajes,OPEX,1051.75
+1304,Desarrollo a Medida,CAPEX,292.94
+1305,Servicios Nube,OPEX,512.79
+1306,Suscripciones SaaS,OPEX,1183.00
+1307,Soporte,OPEX,1083.22
+1308,Soporte,OPEX,397.06
+1309,Servicios Nube,OPEX,1892.23
+1310,Hardware,CAPEX,1619.74
+1311,Viajes,OPEX,795.88
+1312,Servicios Nube,OPEX,1074.13
+1313,Desarrollo a Medida,CAPEX,1260.83
+1314,Licencias Perpetuas,CAPEX,454.16
+1315,Suscripciones SaaS,OPEX,1093.84
+1316,Servicios Nube,OPEX,1653.70
+1317,Suscripciones SaaS,OPEX,311.89
+1318,Desarrollo a Medida,CAPEX,761.22
+1319,Suscripciones SaaS,OPEX,707.69
+1320,Desarrollo a Medida,CAPEX,932.91
+1321,Servicios Nube,OPEX,754.78
+1322,Servicios Nube,OPEX,750.32
+1323,Hardware,CAPEX,541.70
+1324,Suscripciones SaaS,OPEX,663.04
+1325,Hardware,CAPEX,565.12
+1326,Servicios Nube,OPEX,693.11
+1327,Viajes,OPEX,482.89
+1328,Capacitacion,OPEX,2292.52
+1329,Viajes,OPEX,193.86
+1330,Capacitacion,OPEX,333.14
+1331,Servicios Nube,OPEX,1722.63
+1332,Viajes,OPEX,3774.59
+1333,Hardware,CAPEX,1154.19
+1334,Hardware,CAPEX,3575.65
+1335,Capacitacion,OPEX,821.05
+1336,Viajes,OPEX,497.04
+1337,Capacitacion,OPEX,1050.99
+1338,Hardware,CAPEX,189.01
+1339,Soporte,OPEX,184.57
+1340,Suscripciones SaaS,OPEX,908.12
+1341,Hardware,CAPEX,286.90
+1342,Capacitacion,OPEX,292.76
+1343,Servicios Nube,OPEX,1695.62
+1344,Suscripciones SaaS,OPEX,655.44
+1345,Hardware,CAPEX,677.12
+1346,Licencias Perpetuas,CAPEX,350.24
+1347,Viajes,OPEX,215.14
+1348,Servicios Nube,OPEX,338.01
+1349,Hardware,CAPEX,587.87
+1350,Licencias Perpetuas,CAPEX,1164.26
+1351,Suscripciones SaaS,OPEX,559.36
+1352,Licencias Perpetuas,CAPEX,2030.57
+1353,Licencias Perpetuas,CAPEX,616.04
+1354,Servicios Nube,OPEX,532.06
+1355,Licencias Perpetuas,CAPEX,505.46
+1356,Soporte,OPEX,745.53
+1357,Viajes,OPEX,1012.53
+1358,Soporte,OPEX,706.38
+1359,Licencias Perpetuas,CAPEX,797.41
+1360,Soporte,OPEX,789.05
+1361,Desarrollo a Medida,CAPEX,507.07
+1362,Capacitacion,OPEX,358.96
+1363,Capacitacion,OPEX,627.22
+1364,Hardware,CAPEX,131.91
+1365,Licencias Perpetuas,CAPEX,1833.98
+1366,Suscripciones SaaS,OPEX,497.33
+1367,Hardware,CAPEX,517.89
+1368,Licencias Perpetuas,CAPEX,902.59
+1369,Suscripciones SaaS,OPEX,207.66
+1370,Desarrollo a Medida,CAPEX,564.38
+1371,Servicios Nube,OPEX,376.14
+1372,Viajes,OPEX,583.60
+1373,Soporte,OPEX,512.81
+1374,Suscripciones SaaS,OPEX,786.05
+1375,Licencias Perpetuas,CAPEX,1243.22
+1376,Suscripciones SaaS,OPEX,1186.40
+1377,Hardware,CAPEX,551.19
+1378,Hardware,CAPEX,195.58
+1379,Suscripciones SaaS,OPEX,442.59
+1380,Viajes,OPEX,648.56
+1381,Capacitacion,OPEX,818.25
+1382,Hardware,CAPEX,1098.54
+1383,Soporte,OPEX,535.58
+1384,Suscripciones SaaS,OPEX,273.39
+1385,Servicios Nube,OPEX,1938.82
+1386,Capacitacion,OPEX,774.89
+1387,Suscripciones SaaS,OPEX,231.81
+1388,Hardware,CAPEX,2157.77
+1389,Capacitacion,OPEX,281.21
+1390,Servicios Nube,OPEX,1942.33
+1391,Capacitacion,OPEX,692.88
+1392,Capacitacion,OPEX,551.16
+1393,Suscripciones SaaS,OPEX,615.55
+1394,Soporte,OPEX,316.56
+1395,Desarrollo a Medida,CAPEX,654.17
+1396,Desarrollo a Medida,CAPEX,774.28
+1397,Soporte,OPEX,587.02
+1398,Viajes,OPEX,1142.14
+1399,Viajes,OPEX,764.81
+1400,Desarrollo a Medida,CAPEX,307.09
+1401,Viajes,OPEX,819.26
+1402,Capacitacion,OPEX,479.03
+1403,Soporte,OPEX,948.26
+1404,Soporte,OPEX,295.56
+1405,Hardware,CAPEX,1297.05
+1406,Licencias Perpetuas,CAPEX,298.32
+1407,Suscripciones SaaS,OPEX,486.38
+1408,Servicios Nube,OPEX,1093.22
+1409,Suscripciones SaaS,OPEX,443.80
+1410,Servicios Nube,OPEX,1386.26
+1411,Viajes,OPEX,939.67
+1412,Capacitacion,OPEX,372.92
+1413,Suscripciones SaaS,OPEX,1188.18
+1414,Desarrollo a Medida,CAPEX,760.29
+1415,Soporte,OPEX,371.85
+1416,Suscripciones SaaS,OPEX,482.19
+1417,Suscripciones SaaS,OPEX,496.51
+1418,Viajes,OPEX,979.96
+1419,Hardware,CAPEX,748.12
+1420,Suscripciones SaaS,OPEX,729.80
+1421,Capacitacion,OPEX,913.83
+1422,Capacitacion,OPEX,366.00
+1423,Suscripciones SaaS,OPEX,476.50
+1424,Desarrollo a Medida,CAPEX,1240.06
+1425,Capacitacion,OPEX,615.75
+1426,Capacitacion,OPEX,579.91
+1427,Viajes,OPEX,287.69
+1428,Suscripciones SaaS,OPEX,643.28
+1429,Hardware,CAPEX,1490.90
+1430,Hardware,CAPEX,475.73
+1431,Suscripciones SaaS,OPEX,322.76
+1432,Hardware,CAPEX,404.49
+1433,Suscripciones SaaS,OPEX,394.44
+1434,Viajes,OPEX,1403.38
+1435,Hardware,CAPEX,663.09
+1436,Suscripciones SaaS,OPEX,1599.75
+1437,Hardware,CAPEX,1399.16
+1438,Viajes,OPEX,162.37
+1439,Servicios Nube,OPEX,732.12
+1440,Licencias Perpetuas,CAPEX,334.10
+1441,Viajes,OPEX,493.81
+1442,Desarrollo a Medida,CAPEX,328.52
+1443,Capacitacion,OPEX,1240.49
+1444,Licencias Perpetuas,CAPEX,446.48
+1445,Suscripciones SaaS,OPEX,431.97
+1446,Licencias Perpetuas,CAPEX,1100.92
+1447,Viajes,OPEX,607.11
+1448,Hardware,CAPEX,170.19
+1449,Desarrollo a Medida,CAPEX,721.43
+1450,Soporte,OPEX,951.17
+1451,Soporte,OPEX,1253.74
+1452,Viajes,OPEX,741.41
+1453,Servicios Nube,OPEX,793.20
+1454,Servicios Nube,OPEX,626.27
+1455,Viajes,OPEX,1449.74
+1456,Soporte,OPEX,733.83
+1457,Licencias Perpetuas,CAPEX,388.84
+1458,Desarrollo a Medida,CAPEX,900.32
+1459,Desarrollo a Medida,CAPEX,4758.56
+1460,Soporte,OPEX,2005.11
+1461,Licencias Perpetuas,CAPEX,1065.29
+1462,Servicios Nube,OPEX,950.19
+1463,Suscripciones SaaS,OPEX,563.32
+1464,Servicios Nube,OPEX,825.08
+1465,Licencias Perpetuas,CAPEX,554.80
+1466,Soporte,OPEX,648.76
+1467,Desarrollo a Medida,CAPEX,504.40
+1468,Soporte,OPEX,615.83
+1469,Capacitacion,OPEX,760.70
+1470,Licencias Perpetuas,CAPEX,585.28
+1471,Capacitacion,OPEX,390.48
+1472,Hardware,CAPEX,846.51
+1473,Desarrollo a Medida,CAPEX,519.43
+1474,Capacitacion,OPEX,542.86
+1475,Suscripciones SaaS,OPEX,147.66
+1476,Licencias Perpetuas,CAPEX,1107.54
+1477,Servicios Nube,OPEX,1423.28
+1478,Capacitacion,OPEX,842.29
+1479,Capacitacion,OPEX,431.82
+1480,Licencias Perpetuas,CAPEX,1703.23
+1481,Desarrollo a Medida,CAPEX,588.28
+1482,Hardware,CAPEX,257.60
+1483,Capacitacion,OPEX,625.50
+1484,Soporte,OPEX,360.08
+1485,Hardware,CAPEX,665.96
+1486,Licencias Perpetuas,CAPEX,665.81
+1487,Capacitacion,OPEX,823.64
+1488,Suscripciones SaaS,OPEX,1109.33
+1489,Viajes,OPEX,933.24
+1490,Hardware,CAPEX,353.13
+1491,Licencias Perpetuas,CAPEX,220.77
+1492,Desarrollo a Medida,CAPEX,284.24
+1493,Hardware,CAPEX,323.57
+1494,Capacitacion,OPEX,644.82
+1495,Hardware,CAPEX,419.20
+1496,Desarrollo a Medida,CAPEX,340.39
+1497,Capacitacion,OPEX,2326.99
+1498,Soporte,OPEX,487.23
+1499,Licencias Perpetuas,CAPEX,277.82
+1500,Licencias Perpetuas,CAPEX,852.72
+1501,Suscripciones SaaS,OPEX,157.17
+1502,Viajes,OPEX,1350.99
+1503,Soporte,OPEX,765.62
+1504,Servicios Nube,OPEX,557.29
+1505,Desarrollo a Medida,CAPEX,530.45
+1506,Viajes,OPEX,576.07
+1507,Suscripciones SaaS,OPEX,332.91
+1508,Licencias Perpetuas,CAPEX,492.72
+1509,Suscripciones SaaS,OPEX,753.44
+1510,Capacitacion,OPEX,1408.95
+1511,Capacitacion,OPEX,789.64
+1512,Viajes,OPEX,752.59
+1513,Servicios Nube,OPEX,1686.16
+1514,Licencias Perpetuas,CAPEX,194.54
+1515,Suscripciones SaaS,OPEX,1358.28
+1516,Licencias Perpetuas,CAPEX,1922.11
+1517,Suscripciones SaaS,OPEX,668.82
+1518,Hardware,CAPEX,1134.16
+1519,Viajes,OPEX,532.29
+1520,Desarrollo a Medida,CAPEX,706.20
+1521,Servicios Nube,OPEX,387.99
+1522,Soporte,OPEX,877.59
+1523,Hardware,CAPEX,850.56
+1524,Suscripciones SaaS,OPEX,222.39
+1525,Servicios Nube,OPEX,456.77
+1526,Desarrollo a Medida,CAPEX,460.21
+1527,Desarrollo a Medida,CAPEX,568.75
+1528,Viajes,OPEX,2220.84
+1529,Soporte,OPEX,890.21
+1530,Licencias Perpetuas,CAPEX,1079.03
+1531,Capacitacion,OPEX,343.92
+1532,Soporte,OPEX,196.91
+1533,Licencias Perpetuas,CAPEX,1728.31
+1534,Suscripciones SaaS,OPEX,421.91
+1535,Suscripciones SaaS,OPEX,878.69
+1536,Licencias Perpetuas,CAPEX,890.09
+1537,Soporte,OPEX,1577.94
+1538,Soporte,OPEX,721.23
+1539,Viajes,OPEX,834.43
+1540,Soporte,OPEX,642.23
+1541,Hardware,CAPEX,989.69
+1542,Suscripciones SaaS,OPEX,565.82
+1543,Hardware,CAPEX,898.91
+1544,Soporte,OPEX,301.45
+1545,Hardware,CAPEX,771.24
+1546,Desarrollo a Medida,CAPEX,1366.12
+1547,Hardware,CAPEX,1126.33
+1548,Licencias Perpetuas,CAPEX,194.85
+1549,Soporte,OPEX,785.52
+1550,Viajes,OPEX,787.60
+1551,Hardware,CAPEX,809.58
+1552,Desarrollo a Medida,CAPEX,204.11
+1553,Hardware,CAPEX,1016.59
+1554,Suscripciones SaaS,OPEX,281.78
+1555,Servicios Nube,OPEX,69.58
+1556,Licencias Perpetuas,CAPEX,1232.34
+1557,Hardware,CAPEX,1699.67
+1558,Capacitacion,OPEX,1814.35
+1559,Hardware,CAPEX,533.72
+1560,Capacitacion,OPEX,812.78
+1561,Hardware,CAPEX,622.29
+1562,Licencias Perpetuas,CAPEX,1374.23
+1563,Suscripciones SaaS,OPEX,478.16
+1564,Servicios Nube,OPEX,795.05
+1565,Hardware,CAPEX,482.04
+1566,Suscripciones SaaS,OPEX,2034.88
+1567,Viajes,OPEX,1137.52
+1568,Licencias Perpetuas,CAPEX,306.59
+1569,Hardware,CAPEX,915.51
+1570,Licencias Perpetuas,CAPEX,198.80
+1571,Capacitacion,OPEX,1632.99
+1572,Desarrollo a Medida,CAPEX,495.49
+1573,Servicios Nube,OPEX,224.42
+1574,Hardware,CAPEX,116.14
+1575,Suscripciones SaaS,OPEX,581.23
+1576,Capacitacion,OPEX,591.25
+1577,Capacitacion,OPEX,670.31
+1578,Hardware,CAPEX,596.63
+1579,Capacitacion,OPEX,1119.88
+1580,Licencias Perpetuas,CAPEX,455.45
+1581,Licencias Perpetuas,CAPEX,406.11
+1582,Suscripciones SaaS,OPEX,899.17
+1583,Desarrollo a Medida,CAPEX,717.16
+1584,Hardware,CAPEX,801.61
+1585,Hardware,CAPEX,487.91
+1586,Hardware,CAPEX,1605.47
+1587,Viajes,OPEX,662.59
+1588,Viajes,OPEX,1013.03
+1589,Suscripciones SaaS,OPEX,449.61
+1590,Desarrollo a Medida,CAPEX,1286.40
+1591,Hardware,CAPEX,535.39
+1592,Suscripciones SaaS,OPEX,556.64
+1593,Servicios Nube,OPEX,283.72
+1594,Capacitacion,OPEX,106.14
+1595,Suscripciones SaaS,OPEX,474.72
+1596,Capacitacion,OPEX,455.85
+1597,Licencias Perpetuas,CAPEX,223.06
+1598,Viajes,OPEX,760.22
+1599,Hardware,CAPEX,542.22
+1600,Capacitacion,OPEX,791.42
+1601,Desarrollo a Medida,CAPEX,230.24
+1602,Hardware,CAPEX,946.85
+1603,Licencias Perpetuas,CAPEX,749.23
+1604,Hardware,CAPEX,923.94
+1605,Capacitacion,OPEX,487.42
+1606,Hardware,CAPEX,634.50
+1607,Servicios Nube,OPEX,691.32
+1608,Hardware,CAPEX,549.62
+1609,Licencias Perpetuas,CAPEX,683.59
+1610,Suscripciones SaaS,OPEX,646.45
+1611,Viajes,OPEX,587.24
+1612,Capacitacion,OPEX,504.16
+1613,Viajes,OPEX,1191.16
+1614,Capacitacion,OPEX,440.59
+1615,Soporte,OPEX,149.80
+1616,Suscripciones SaaS,OPEX,1366.80
+1617,Viajes,OPEX,3436.42
+1618,Licencias Perpetuas,CAPEX,1023.23
+1619,Hardware,CAPEX,1633.45
+1620,Hardware,CAPEX,632.31
+1621,Desarrollo a Medida,CAPEX,440.19
+1622,Suscripciones SaaS,OPEX,369.43
+1623,Soporte,OPEX,307.34
+1624,Capacitacion,OPEX,4883.05
+1625,Soporte,OPEX,378.91
+1626,Viajes,OPEX,466.96
+1627,Viajes,OPEX,749.66
+1628,Suscripciones SaaS,OPEX,566.72
+1629,Servicios Nube,OPEX,568.23
+1630,Capacitacion,OPEX,458.31
+1631,Licencias Perpetuas,CAPEX,988.20
+1632,Soporte,OPEX,559.91
+1633,Licencias Perpetuas,CAPEX,544.17
+1634,Servicios Nube,OPEX,414.56
+1635,Soporte,OPEX,589.39
+1636,Hardware,CAPEX,505.06
+1637,Capacitacion,OPEX,288.73
+1638,Servicios Nube,OPEX,582.16
+1639,Suscripciones SaaS,OPEX,867.78
+1640,Desarrollo a Medida,CAPEX,399.35
+1641,Suscripciones SaaS,OPEX,543.47
+1642,Hardware,CAPEX,642.81
+1643,Servicios Nube,OPEX,679.63
+1644,Desarrollo a Medida,CAPEX,997.12
+1645,Capacitacion,OPEX,826.76
+1646,Servicios Nube,OPEX,685.55
+1647,Capacitacion,OPEX,2043.22
+1648,Viajes,OPEX,311.24
+1649,Hardware,CAPEX,611.66
+1650,Licencias Perpetuas,CAPEX,195.84
+1651,Servicios Nube,OPEX,922.54
+1652,Licencias Perpetuas,CAPEX,443.82
+1653,Hardware,CAPEX,986.79
+1654,Suscripciones SaaS,OPEX,401.65
+1655,Desarrollo a Medida,CAPEX,615.30
+1656,Viajes,OPEX,705.11
+1657,Capacitacion,OPEX,422.52
+1658,Capacitacion,OPEX,508.01
+1659,Hardware,CAPEX,431.57
+1660,Licencias Perpetuas,CAPEX,353.22
+1661,Viajes,OPEX,427.43
+1662,Soporte,OPEX,669.60
+1663,Licencias Perpetuas,CAPEX,239.90
+1664,Desarrollo a Medida,CAPEX,1298.54
+1665,Viajes,OPEX,228.85
+1666,Licencias Perpetuas,CAPEX,2734.53
+1667,Hardware,CAPEX,591.33
+1668,Suscripciones SaaS,OPEX,545.69
+1669,Capacitacion,OPEX,719.80
+1670,Servicios Nube,OPEX,370.80
+1671,Licencias Perpetuas,CAPEX,354.85
+1672,Licencias Perpetuas,CAPEX,2619.61
+1673,Hardware,CAPEX,2228.90
+1674,Licencias Perpetuas,CAPEX,721.43
+1675,Desarrollo a Medida,CAPEX,1835.73
+1676,Viajes,OPEX,502.75
+1677,Soporte,OPEX,802.89
+1678,Suscripciones SaaS,OPEX,377.48
+1679,Suscripciones SaaS,OPEX,236.87
+1680,Desarrollo a Medida,CAPEX,241.54
+1681,Capacitacion,OPEX,779.80
+1682,Licencias Perpetuas,CAPEX,111.36
+1683,Hardware,CAPEX,698.06
+1684,Desarrollo a Medida,CAPEX,405.14
+1685,Desarrollo a Medida,CAPEX,294.79
+1686,Servicios Nube,OPEX,750.63
+1687,Soporte,OPEX,1764.15
+1688,Capacitacion,OPEX,956.36
+1689,Viajes,OPEX,634.57
+1690,Suscripciones SaaS,OPEX,378.78
+1691,Soporte,OPEX,869.61
+1692,Servicios Nube,OPEX,329.55
+1693,Servicios Nube,OPEX,789.36
+1694,Desarrollo a Medida,CAPEX,1087.59
+1695,Suscripciones SaaS,OPEX,1665.81
+1696,Viajes,OPEX,1743.64
+1697,Soporte,OPEX,913.88
+1698,Desarrollo a Medida,CAPEX,754.02
+1699,Licencias Perpetuas,CAPEX,241.08
+1700,Desarrollo a Medida,CAPEX,413.17
+1701,Hardware,CAPEX,357.80
+1702,Servicios Nube,OPEX,328.98
+1703,Licencias Perpetuas,CAPEX,520.60
+1704,Desarrollo a Medida,CAPEX,914.85
+1705,Suscripciones SaaS,OPEX,548.60
+1706,Desarrollo a Medida,CAPEX,2842.10
+1707,Desarrollo a Medida,CAPEX,741.71
+1708,Desarrollo a Medida,CAPEX,328.05
+1709,Desarrollo a Medida,CAPEX,824.37
+1710,Soporte,OPEX,313.27
+1711,Hardware,CAPEX,1637.61
+1712,Desarrollo a Medida,CAPEX,442.13
+1713,Soporte,OPEX,354.36
+1714,Soporte,OPEX,2187.03
+1715,Suscripciones SaaS,OPEX,290.63
+1716,Capacitacion,OPEX,420.75
+1717,Capacitacion,OPEX,117.48
+1718,Servicios Nube,OPEX,529.98
+1719,Hardware,CAPEX,1110.01
+1720,Hardware,CAPEX,732.55
+1721,Desarrollo a Medida,CAPEX,1772.10
+1722,Suscripciones SaaS,OPEX,468.87
+1723,Viajes,OPEX,467.25
+1724,Desarrollo a Medida,CAPEX,663.56
+1725,Servicios Nube,OPEX,1388.32
+1726,Capacitacion,OPEX,373.38
+1727,Suscripciones SaaS,OPEX,1684.99
+1728,Servicios Nube,OPEX,992.39
+1729,Desarrollo a Medida,CAPEX,859.19
+1730,Servicios Nube,OPEX,472.89
+1731,Suscripciones SaaS,OPEX,848.25
+1732,Soporte,OPEX,448.96
+1733,Viajes,OPEX,600.64
+1734,Suscripciones SaaS,OPEX,1102.00
+1735,Capacitacion,OPEX,236.26
+1736,Suscripciones SaaS,OPEX,930.85
+1737,Capacitacion,OPEX,856.98
+1738,Viajes,OPEX,274.87
+1739,Suscripciones SaaS,OPEX,1683.94
+1740,Desarrollo a Medida,CAPEX,1431.83
+1741,Desarrollo a Medida,CAPEX,442.93
+1742,Servicios Nube,OPEX,2494.09
+1743,Suscripciones SaaS,OPEX,1048.42
+1744,Viajes,OPEX,2098.81
+1745,Licencias Perpetuas,CAPEX,1011.15
+1746,Soporte,OPEX,589.38
+1747,Soporte,OPEX,540.87
+1748,Desarrollo a Medida,CAPEX,536.76
+1749,Licencias Perpetuas,CAPEX,198.24
+1750,Hardware,CAPEX,858.90
+1751,Servicios Nube,OPEX,578.56
+1752,Capacitacion,OPEX,989.60
+1753,Soporte,OPEX,3305.61
+1754,Suscripciones SaaS,OPEX,679.46
+1755,Licencias Perpetuas,CAPEX,673.86
+1756,Hardware,CAPEX,813.92
+1757,Viajes,OPEX,1136.92
+1758,Servicios Nube,OPEX,488.00
+1759,Desarrollo a Medida,CAPEX,584.33
+1760,Desarrollo a Medida,CAPEX,925.66
+1761,Suscripciones SaaS,OPEX,1701.08
+1762,Viajes,OPEX,531.62
+1763,Servicios Nube,OPEX,498.15
+1764,Capacitacion,OPEX,1325.64
+1765,Suscripciones SaaS,OPEX,252.57
+1766,Suscripciones SaaS,OPEX,2042.97
+1767,Capacitacion,OPEX,557.44
+1768,Hardware,CAPEX,669.53
+1769,Licencias Perpetuas,CAPEX,417.89
+1770,Licencias Perpetuas,CAPEX,565.63
+1771,Capacitacion,OPEX,849.85
+1772,Hardware,CAPEX,752.34
+1773,Capacitacion,OPEX,1031.54
+1774,Viajes,OPEX,1000.64
+1775,Viajes,OPEX,433.63
+1776,Hardware,CAPEX,529.98
+1777,Desarrollo a Medida,CAPEX,319.76
+1778,Hardware,CAPEX,642.97
+1779,Capacitacion,OPEX,483.91
+1780,Suscripciones SaaS,OPEX,489.10
+1781,Soporte,OPEX,1927.68
+1782,Servicios Nube,OPEX,897.29
+1783,Viajes,OPEX,1224.54
+1784,Suscripciones SaaS,OPEX,332.48
+1785,Desarrollo a Medida,CAPEX,307.45
+1786,Soporte,OPEX,1125.54
+1787,Desarrollo a Medida,CAPEX,1428.98
+1788,Capacitacion,OPEX,1663.37
+1789,Viajes,OPEX,307.12
+1790,Desarrollo a Medida,CAPEX,336.30
+1791,Capacitacion,OPEX,1294.37
+1792,Servicios Nube,OPEX,221.89
+1793,Hardware,CAPEX,469.90
+1794,Desarrollo a Medida,CAPEX,1133.25
+1795,Licencias Perpetuas,CAPEX,924.11
+1796,Hardware,CAPEX,199.80
+1797,Hardware,CAPEX,676.92
+1798,Desarrollo a Medida,CAPEX,1336.33
+1799,Soporte,OPEX,1347.55
+1800,Servicios Nube,OPEX,715.38
+1801,Soporte,OPEX,687.46
+1802,Hardware,CAPEX,129.04
+1803,Servicios Nube,OPEX,752.87
+1804,Viajes,OPEX,179.44
+1805,Desarrollo a Medida,CAPEX,524.16
+1806,Soporte,OPEX,328.88
+1807,Soporte,OPEX,641.14
+1808,Suscripciones SaaS,OPEX,451.28
+1809,Viajes,OPEX,159.21
+1810,Hardware,CAPEX,683.22
+1811,Viajes,OPEX,507.49
+1812,Capacitacion,OPEX,437.05
+1813,Servicios Nube,OPEX,639.42
+1814,Soporte,OPEX,961.14
+1815,Licencias Perpetuas,CAPEX,291.38
+1816,Viajes,OPEX,930.22
+1817,Soporte,OPEX,1040.05
+1818,Viajes,OPEX,412.03
+1819,Capacitacion,OPEX,532.10
+1820,Capacitacion,OPEX,775.19
+1821,Capacitacion,OPEX,1468.24
+1822,Licencias Perpetuas,CAPEX,418.40
+1823,Suscripciones SaaS,OPEX,693.98
+1824,Desarrollo a Medida,CAPEX,659.41
+1825,Hardware,CAPEX,563.05
+1826,Licencias Perpetuas,CAPEX,598.46
+1827,Soporte,OPEX,1277.56
+1828,Licencias Perpetuas,CAPEX,1303.10
+1829,Suscripciones SaaS,OPEX,1520.38
+1830,Soporte,OPEX,1181.26
+1831,Suscripciones SaaS,OPEX,163.12
+1832,Licencias Perpetuas,CAPEX,454.00
+1833,Viajes,OPEX,669.02
+1834,Servicios Nube,OPEX,2144.34
+1835,Licencias Perpetuas,CAPEX,1041.96
+1836,Licencias Perpetuas,CAPEX,1407.58
+1837,Servicios Nube,OPEX,698.42
+1838,Soporte,OPEX,540.26
+1839,Viajes,OPEX,511.52
+1840,Capacitacion,OPEX,406.32
+1841,Hardware,CAPEX,946.00
+1842,Suscripciones SaaS,OPEX,1381.23
+1843,Desarrollo a Medida,CAPEX,658.69
+1844,Hardware,CAPEX,549.66
+1845,Desarrollo a Medida,CAPEX,539.71
+1846,Desarrollo a Medida,CAPEX,321.93
+1847,Licencias Perpetuas,CAPEX,849.95
+1848,Hardware,CAPEX,603.22
+1849,Soporte,OPEX,931.81
+1850,Desarrollo a Medida,CAPEX,473.77
+1851,Viajes,OPEX,464.80
+1852,Servicios Nube,OPEX,848.59
+1853,Viajes,OPEX,692.36
+1854,Licencias Perpetuas,CAPEX,509.35
+1855,Viajes,OPEX,1640.49
+1856,Suscripciones SaaS,OPEX,630.51
+1857,Capacitacion,OPEX,602.80
+1858,Capacitacion,OPEX,316.58
+1859,Licencias Perpetuas,CAPEX,286.59
+1860,Desarrollo a Medida,CAPEX,272.62
+1861,Viajes,OPEX,2380.18
+1862,Suscripciones SaaS,OPEX,1093.02
+1863,Hardware,CAPEX,2387.79
+1864,Servicios Nube,OPEX,115.42
+1865,Licencias Perpetuas,CAPEX,829.03
+1866,Soporte,OPEX,1689.10
+1867,Servicios Nube,OPEX,876.74
+1868,Servicios Nube,OPEX,979.73
+1869,Desarrollo a Medida,CAPEX,518.51
+1870,Hardware,CAPEX,1037.44
+1871,Licencias Perpetuas,CAPEX,2135.34
+1872,Viajes,OPEX,271.30
+1873,Viajes,OPEX,588.75
+1874,Capacitacion,OPEX,355.86
+1875,Suscripciones SaaS,OPEX,369.81
+1876,Viajes,OPEX,385.93
+1877,Hardware,CAPEX,2316.97
+1878,Viajes,OPEX,688.71
+1879,Suscripciones SaaS,OPEX,555.39
+1880,Servicios Nube,OPEX,683.58
+1881,Desarrollo a Medida,CAPEX,512.17
+1882,Hardware,CAPEX,1057.86
+1883,Soporte,OPEX,878.01
+1884,Soporte,OPEX,370.64
+1885,Servicios Nube,OPEX,2360.55
+1886,Hardware,CAPEX,471.64
+1887,Soporte,OPEX,853.57
+1888,Servicios Nube,OPEX,800.34
+1889,Servicios Nube,OPEX,558.22
+1890,Licencias Perpetuas,CAPEX,1353.37
+1891,Suscripciones SaaS,OPEX,166.06
+1892,Servicios Nube,OPEX,754.01
+1893,Servicios Nube,OPEX,969.80
+1894,Servicios Nube,OPEX,587.94
+1895,Soporte,OPEX,944.21
+1896,Servicios Nube,OPEX,909.19
+1897,Hardware,CAPEX,332.66
+1898,Viajes,OPEX,454.25
+1899,Suscripciones SaaS,OPEX,326.31
+1900,Servicios Nube,OPEX,362.58
+1901,Capacitacion,OPEX,1393.29
+1902,Suscripciones SaaS,OPEX,514.31
+1903,Soporte,OPEX,1340.85
+1904,Capacitacion,OPEX,579.76
+1905,Desarrollo a Medida,CAPEX,640.81
+1906,Soporte,OPEX,816.54
+1907,Licencias Perpetuas,CAPEX,204.45
+1908,Servicios Nube,OPEX,413.88
+1909,Capacitacion,OPEX,1584.37
+1910,Viajes,OPEX,876.47
+1911,Desarrollo a Medida,CAPEX,2976.77
+1912,Viajes,OPEX,918.76
+1913,Desarrollo a Medida,CAPEX,852.26
+1914,Licencias Perpetuas,CAPEX,480.20
+1915,Desarrollo a Medida,CAPEX,398.19
+1916,Hardware,CAPEX,1137.31
+1917,Soporte,OPEX,183.79
+1918,Desarrollo a Medida,CAPEX,409.63
+1919,Viajes,OPEX,658.49
+1920,Servicios Nube,OPEX,1557.30
+1921,Capacitacion,OPEX,1314.47
+1922,Desarrollo a Medida,CAPEX,449.84
+1923,Desarrollo a Medida,CAPEX,829.40
+1924,Viajes,OPEX,316.48
+1925,Licencias Perpetuas,CAPEX,1269.79
+1926,Suscripciones SaaS,OPEX,691.01
+1927,Suscripciones SaaS,OPEX,512.82
+1928,Suscripciones SaaS,OPEX,1035.62
+1929,Hardware,CAPEX,653.73
+1930,Soporte,OPEX,989.72
+1931,Viajes,OPEX,975.16
+1932,Soporte,OPEX,551.97
+1933,Viajes,OPEX,856.26
+1934,Licencias Perpetuas,CAPEX,1060.84
+1935,Soporte,OPEX,1271.44
+1936,Hardware,CAPEX,380.38
+1937,Capacitacion,OPEX,2284.59
+1938,Licencias Perpetuas,CAPEX,934.87
+1939,Hardware,CAPEX,1510.52
+1940,Servicios Nube,OPEX,598.01
+1941,Hardware,CAPEX,344.77
+1942,Licencias Perpetuas,CAPEX,2879.68
+1943,Servicios Nube,OPEX,628.94
+1944,Desarrollo a Medida,CAPEX,634.79
+1945,Capacitacion,OPEX,1144.25
+1946,Soporte,OPEX,1251.59
+1947,Soporte,OPEX,639.19
+1948,Hardware,CAPEX,417.85
+1949,Hardware,CAPEX,1210.34
+1950,Suscripciones SaaS,OPEX,834.86
+1951,Soporte,OPEX,764.93
+1952,Desarrollo a Medida,CAPEX,969.64
+1953,Licencias Perpetuas,CAPEX,781.52
+1954,Viajes,OPEX,1430.25
+1955,Desarrollo a Medida,CAPEX,391.76
+1956,Desarrollo a Medida,CAPEX,813.06
+1957,Desarrollo a Medida,CAPEX,642.10
+1958,Hardware,CAPEX,1244.14
+1959,Hardware,CAPEX,929.30
+1960,Servicios Nube,OPEX,866.03
+1961,Viajes,OPEX,270.82
+1962,Suscripciones SaaS,OPEX,479.44
+1963,Suscripciones SaaS,OPEX,314.06
+1964,Desarrollo a Medida,CAPEX,1231.46
+1965,Desarrollo a Medida,CAPEX,1658.34
+1966,Viajes,OPEX,1219.33
+1967,Soporte,OPEX,555.75
+1968,Viajes,OPEX,341.91
+1969,Servicios Nube,OPEX,269.16
+1970,Capacitacion,OPEX,117.76
+1971,Suscripciones SaaS,OPEX,532.77
+1972,Suscripciones SaaS,OPEX,353.06
+1973,Hardware,CAPEX,454.03
+1974,Hardware,CAPEX,343.40
+1975,Suscripciones SaaS,OPEX,296.03
+1976,Soporte,OPEX,320.02
+1977,Capacitacion,OPEX,518.53
+1978,Soporte,OPEX,672.62
+1979,Servicios Nube,OPEX,910.88
+1980,Suscripciones SaaS,OPEX,766.46
+1981,Licencias Perpetuas,CAPEX,571.68
+1982,Suscripciones SaaS,OPEX,1035.44
+1983,Capacitacion,OPEX,367.80
+1984,Licencias Perpetuas,CAPEX,497.82
+1985,Licencias Perpetuas,CAPEX,638.84
+1986,Viajes,OPEX,1184.53
+1987,Viajes,OPEX,455.72
+1988,Desarrollo a Medida,CAPEX,526.76
+1989,Viajes,OPEX,250.98
+1990,Servicios Nube,OPEX,578.89
+1991,Hardware,CAPEX,666.84
+1992,Hardware,CAPEX,657.18
+1993,Soporte,OPEX,497.21
+1994,Viajes,OPEX,468.60
+1995,Viajes,OPEX,410.56
+1996,Hardware,CAPEX,1218.79
+1997,Hardware,CAPEX,1164.78
+1998,Viajes,OPEX,414.77
+1999,Servicios Nube,OPEX,930.57
+2000,Desarrollo a Medida,CAPEX,2372.57
+2001,Hardware,CAPEX,907.31
+2002,Desarrollo a Medida,CAPEX,849.06
+2003,Capacitacion,OPEX,668.43
+2004,Licencias Perpetuas,CAPEX,559.13
+2005,Capacitacion,OPEX,523.50
+2006,Servicios Nube,OPEX,864.18
+2007,Viajes,OPEX,938.87
+2008,Hardware,CAPEX,266.51
+2009,Soporte,OPEX,989.19
+2010,Desarrollo a Medida,CAPEX,362.58
+2011,Servicios Nube,OPEX,475.99
+2012,Servicios Nube,OPEX,626.49
+2013,Desarrollo a Medida,CAPEX,281.17
+2014,Hardware,CAPEX,369.10
+2015,Capacitacion,OPEX,369.42
+2016,Capacitacion,OPEX,453.64
+2017,Hardware,CAPEX,710.47
+2018,Desarrollo a Medida,CAPEX,1706.35
+2019,Hardware,CAPEX,658.81
+2020,Capacitacion,OPEX,210.84
+2021,Desarrollo a Medida,CAPEX,61.19
+2022,Servicios Nube,OPEX,292.88
+2023,Licencias Perpetuas,CAPEX,538.71
+2024,Soporte,OPEX,605.81
+2025,Desarrollo a Medida,CAPEX,464.39
+2026,Servicios Nube,OPEX,559.16
+2027,Desarrollo a Medida,CAPEX,642.66
+2028,Suscripciones SaaS,OPEX,510.38
+2029,Suscripciones SaaS,OPEX,424.88
+2030,Licencias Perpetuas,CAPEX,761.92
+2031,Soporte,OPEX,660.43
+2032,Hardware,CAPEX,667.25
+2033,Hardware,CAPEX,507.37
+2034,Viajes,OPEX,592.10
+2035,Licencias Perpetuas,CAPEX,927.29
+2036,Servicios Nube,OPEX,280.09
+2037,Desarrollo a Medida,CAPEX,576.84
+2038,Licencias Perpetuas,CAPEX,771.78
+2039,Soporte,OPEX,456.89
+2040,Licencias Perpetuas,CAPEX,313.43
+2041,Licencias Perpetuas,CAPEX,584.21
+2042,Soporte,OPEX,519.43
+2043,Viajes,OPEX,567.32
+2044,Viajes,OPEX,94.60
+2045,Licencias Perpetuas,CAPEX,588.96
+2046,Desarrollo a Medida,CAPEX,455.53
+2047,Servicios Nube,OPEX,1713.05
+2048,Viajes,OPEX,1499.67
+2049,Servicios Nube,OPEX,854.48
+2050,Soporte,OPEX,751.11
+2051,Desarrollo a Medida,CAPEX,821.61
+2052,Servicios Nube,OPEX,464.23
+2053,Hardware,CAPEX,323.12
+2054,Capacitacion,OPEX,627.24
+2055,Soporte,OPEX,428.04
+2056,Servicios Nube,OPEX,1837.78
+2057,Viajes,OPEX,374.41
+2058,Soporte,OPEX,1387.64
+2059,Viajes,OPEX,1240.20
+2060,Capacitacion,OPEX,385.69
+2061,Soporte,OPEX,469.42
+2062,Desarrollo a Medida,CAPEX,951.55
+2063,Suscripciones SaaS,OPEX,2114.72
+2064,Desarrollo a Medida,CAPEX,844.93
+2065,Servicios Nube,OPEX,822.24
+2066,Soporte,OPEX,542.29
+2067,Hardware,CAPEX,840.37
+2068,Desarrollo a Medida,CAPEX,502.02
+2069,Hardware,CAPEX,805.71
+2070,Desarrollo a Medida,CAPEX,2389.08
+2071,Viajes,OPEX,1457.93
+2072,Servicios Nube,OPEX,571.08
+2073,Capacitacion,OPEX,531.15
+2074,Capacitacion,OPEX,760.53
+2075,Licencias Perpetuas,CAPEX,822.78
+2076,Viajes,OPEX,245.29
+2077,Licencias Perpetuas,CAPEX,1055.45
+2078,Soporte,OPEX,453.05
+2079,Suscripciones SaaS,OPEX,743.36
+2080,Viajes,OPEX,562.41
+2081,Licencias Perpetuas,CAPEX,1181.95
+2082,Suscripciones SaaS,OPEX,263.38
+2083,Desarrollo a Medida,CAPEX,321.95
+2084,Desarrollo a Medida,CAPEX,216.97
+2085,Hardware,CAPEX,817.02
+2086,Capacitacion,OPEX,657.11
+2087,Desarrollo a Medida,CAPEX,372.71
+2088,Licencias Perpetuas,CAPEX,600.08
+2089,Licencias Perpetuas,CAPEX,745.80
+2090,Licencias Perpetuas,CAPEX,991.14
+2091,Licencias Perpetuas,CAPEX,322.02
+2092,Servicios Nube,OPEX,680.98
+2093,Desarrollo a Medida,CAPEX,864.07
+2094,Desarrollo a Medida,CAPEX,835.68
+2095,Soporte,OPEX,1178.76
+2096,Capacitacion,OPEX,217.47
+2097,Suscripciones SaaS,OPEX,1947.50
+2098,Soporte,OPEX,725.84
+2099,Servicios Nube,OPEX,394.93
+2100,Suscripciones SaaS,OPEX,1037.39
+2101,Capacitacion,OPEX,448.37
+2102,Soporte,OPEX,1508.56
+2103,Hardware,CAPEX,997.32
+2104,Suscripciones SaaS,OPEX,1029.62
+2105,Desarrollo a Medida,CAPEX,408.85
+2106,Servicios Nube,OPEX,850.35
+2107,Servicios Nube,OPEX,145.44
+2108,Hardware,CAPEX,372.81
+2109,Suscripciones SaaS,OPEX,453.96
+2110,Servicios Nube,OPEX,260.02
+2111,Soporte,OPEX,1252.13
+2112,Capacitacion,OPEX,753.07
+2113,Viajes,OPEX,1141.62
+2114,Hardware,CAPEX,345.16
+2115,Servicios Nube,OPEX,981.05
+2116,Servicios Nube,OPEX,487.13
+2117,Suscripciones SaaS,OPEX,1363.69
+2118,Capacitacion,OPEX,743.83
+2119,Licencias Perpetuas,CAPEX,708.33
+2120,Viajes,OPEX,1407.33
+2121,Suscripciones SaaS,OPEX,1386.26
+2122,Servicios Nube,OPEX,556.85
+2123,Capacitacion,OPEX,904.67
+2124,Licencias Perpetuas,CAPEX,378.22
+2125,Desarrollo a Medida,CAPEX,679.58
+2126,Suscripciones SaaS,OPEX,521.71
+2127,Viajes,OPEX,760.27
+2128,Hardware,CAPEX,963.14
+2129,Capacitacion,OPEX,667.03
+2130,Hardware,CAPEX,817.59
+2131,Licencias Perpetuas,CAPEX,569.82
+2132,Hardware,CAPEX,434.80
+2133,Hardware,CAPEX,570.69
+2134,Capacitacion,OPEX,196.73
+2135,Soporte,OPEX,1624.24
+2136,Hardware,CAPEX,555.67
+2137,Capacitacion,OPEX,273.78
+2138,Viajes,OPEX,1694.40
+2139,Suscripciones SaaS,OPEX,2278.16
+2140,Capacitacion,OPEX,1379.61
+2141,Soporte,OPEX,354.38
+2142,Hardware,CAPEX,666.71
+2143,Suscripciones SaaS,OPEX,2582.64
+2144,Hardware,CAPEX,316.79
+2145,Servicios Nube,OPEX,1435.58
+2146,Desarrollo a Medida,CAPEX,306.33
+2147,Desarrollo a Medida,CAPEX,674.95
+2148,Desarrollo a Medida,CAPEX,502.66
+2149,Servicios Nube,OPEX,1049.24
+2150,Capacitacion,OPEX,298.18
+2151,Viajes,OPEX,366.87
+2152,Servicios Nube,OPEX,908.70
+2153,Servicios Nube,OPEX,838.07
+2154,Viajes,OPEX,1825.12
+2155,Licencias Perpetuas,CAPEX,513.50
+2156,Hardware,CAPEX,768.76
+2157,Desarrollo a Medida,CAPEX,693.47
+2158,Licencias Perpetuas,CAPEX,843.20
+2159,Desarrollo a Medida,CAPEX,673.79
+2160,Viajes,OPEX,553.10
+2161,Desarrollo a Medida,CAPEX,759.77
+2162,Viajes,OPEX,151.69
+2163,Servicios Nube,OPEX,407.00
+2164,Soporte,OPEX,919.50
+2165,Desarrollo a Medida,CAPEX,598.80
+2166,Desarrollo a Medida,CAPEX,567.58
+2167,Servicios Nube,OPEX,400.66
+2168,Servicios Nube,OPEX,761.23
+2169,Suscripciones SaaS,OPEX,1107.10
+2170,Licencias Perpetuas,CAPEX,608.48
+2171,Desarrollo a Medida,CAPEX,743.96
+2172,Soporte,OPEX,407.23
+2173,Soporte,OPEX,3934.28
+2174,Viajes,OPEX,187.22
+2175,Hardware,CAPEX,1089.81
+2176,Viajes,OPEX,1428.74
+2177,Servicios Nube,OPEX,1891.30
+2178,Capacitacion,OPEX,180.67
+2179,Soporte,OPEX,238.45
+2180,Capacitacion,OPEX,450.03
+2181,Licencias Perpetuas,CAPEX,1392.23
+2182,Soporte,OPEX,607.09
+2183,Capacitacion,OPEX,303.09
+2184,Viajes,OPEX,553.76
+2185,Soporte,OPEX,819.30
+2186,Soporte,OPEX,810.04
+2187,Licencias Perpetuas,CAPEX,838.81
+2188,Desarrollo a Medida,CAPEX,666.36
+2189,Viajes,OPEX,551.06
+2190,Viajes,OPEX,560.19
+2191,Hardware,CAPEX,1883.04
+2192,Desarrollo a Medida,CAPEX,514.65
+2193,Desarrollo a Medida,CAPEX,763.72
+2194,Capacitacion,OPEX,696.58
+2195,Licencias Perpetuas,CAPEX,397.78
+2196,Capacitacion,OPEX,979.64
+2197,Capacitacion,OPEX,382.39
+2198,Licencias Perpetuas,CAPEX,582.47
+2199,Servicios Nube,OPEX,1849.27
+2200,Licencias Perpetuas,CAPEX,1270.37
+2201,Licencias Perpetuas,CAPEX,635.73
+2202,Suscripciones SaaS,OPEX,147.54
+2203,Capacitacion,OPEX,1184.36
+2204,Desarrollo a Medida,CAPEX,297.92
+2205,Soporte,OPEX,1723.48
+2206,Soporte,OPEX,1052.81
+2207,Licencias Perpetuas,CAPEX,296.22
+2208,Soporte,OPEX,874.39
+2209,Desarrollo a Medida,CAPEX,577.36
+2210,Hardware,CAPEX,993.69
+2211,Servicios Nube,OPEX,520.94
+2212,Soporte,OPEX,427.86
+2213,Soporte,OPEX,958.84
+2214,Desarrollo a Medida,CAPEX,899.78
+2215,Licencias Perpetuas,CAPEX,704.34
+2216,Servicios Nube,OPEX,708.17
+2217,Soporte,OPEX,866.38
+2218,Licencias Perpetuas,CAPEX,1382.31
+2219,Desarrollo a Medida,CAPEX,2960.40
+2220,Capacitacion,OPEX,302.42
+2221,Suscripciones SaaS,OPEX,1038.88
+2222,Capacitacion,OPEX,250.61
+2223,Capacitacion,OPEX,2001.90
+2224,Desarrollo a Medida,CAPEX,450.87
+2225,Viajes,OPEX,2034.02
+2226,Servicios Nube,OPEX,1119.45
+2227,Licencias Perpetuas,CAPEX,556.87
+2228,Hardware,CAPEX,636.51
+2229,Suscripciones SaaS,OPEX,560.74
+2230,Soporte,OPEX,428.87
+2231,Licencias Perpetuas,CAPEX,595.86
+2232,Capacitacion,OPEX,465.18
+2233,Soporte,OPEX,569.82
+2234,Servicios Nube,OPEX,1300.63
+2235,Capacitacion,OPEX,869.87
+2236,Servicios Nube,OPEX,1593.39
+2237,Desarrollo a Medida,CAPEX,904.08
+2238,Servicios Nube,OPEX,808.61
+2239,Servicios Nube,OPEX,412.51
+2240,Suscripciones SaaS,OPEX,1793.59
+2241,Viajes,OPEX,1244.63
+2242,Viajes,OPEX,2894.41
+2243,Viajes,OPEX,900.66
+2244,Servicios Nube,OPEX,3568.80
+2245,Soporte,OPEX,1141.75
+2246,Servicios Nube,OPEX,489.36
+2247,Capacitacion,OPEX,679.34
+2248,Servicios Nube,OPEX,227.27
+2249,Hardware,CAPEX,539.78
+2250,Licencias Perpetuas,CAPEX,832.10
+2251,Suscripciones SaaS,OPEX,170.70
+2252,Soporte,OPEX,600.82
+2253,Desarrollo a Medida,CAPEX,525.82
+2254,Licencias Perpetuas,CAPEX,238.71
+2255,Suscripciones SaaS,OPEX,523.81
+2256,Licencias Perpetuas,CAPEX,330.75
+2257,Desarrollo a Medida,CAPEX,516.79
+2258,Desarrollo a Medida,CAPEX,719.08
+2259,Desarrollo a Medida,CAPEX,447.26
+2260,Capacitacion,OPEX,643.32
+2261,Servicios Nube,OPEX,689.16
+2262,Desarrollo a Medida,CAPEX,904.61
+2263,Servicios Nube,OPEX,610.97
+2264,Suscripciones SaaS,OPEX,3685.34
+2265,Viajes,OPEX,772.64
+2266,Soporte,OPEX,563.95
+2267,Desarrollo a Medida,CAPEX,827.18
+2268,Capacitacion,OPEX,447.13
+2269,Hardware,CAPEX,796.56
+2270,Viajes,OPEX,583.64
+2271,Servicios Nube,OPEX,466.61
+2272,Suscripciones SaaS,OPEX,471.44
+2273,Soporte,OPEX,801.86
+2274,Suscripciones SaaS,OPEX,211.44
+2275,Soporte,OPEX,1213.03
+2276,Hardware,CAPEX,764.42
+2277,Soporte,OPEX,238.32
+2278,Suscripciones SaaS,OPEX,219.27
+2279,Servicios Nube,OPEX,491.91
+2280,Servicios Nube,OPEX,1906.17
+2281,Soporte,OPEX,675.98
+2282,Licencias Perpetuas,CAPEX,694.50
+2283,Capacitacion,OPEX,385.32
+2284,Viajes,OPEX,1091.94
+2285,Desarrollo a Medida,CAPEX,564.02
+2286,Hardware,CAPEX,1214.55
+2287,Desarrollo a Medida,CAPEX,1337.81
+2288,Capacitacion,OPEX,447.51
+2289,Viajes,OPEX,908.23
+2290,Capacitacion,OPEX,419.46
+2291,Servicios Nube,OPEX,547.82
+2292,Licencias Perpetuas,CAPEX,455.95
+2293,Soporte,OPEX,1024.23
+2294,Servicios Nube,OPEX,1191.15
+2295,Hardware,CAPEX,517.62
+2296,Hardware,CAPEX,903.42
+2297,Viajes,OPEX,453.90
+2298,Viajes,OPEX,1032.36
+2299,Desarrollo a Medida,CAPEX,546.68
+2300,Licencias Perpetuas,CAPEX,1290.94
+2301,Desarrollo a Medida,CAPEX,662.65
+2302,Suscripciones SaaS,OPEX,786.09
+2303,Hardware,CAPEX,475.59
+2304,Capacitacion,OPEX,1306.88
+2305,Hardware,CAPEX,1042.67
+2306,Servicios Nube,OPEX,766.66
+2307,Soporte,OPEX,535.80
+2308,Suscripciones SaaS,OPEX,783.26
+2309,Capacitacion,OPEX,461.10
+2310,Desarrollo a Medida,CAPEX,1095.28
+2311,Desarrollo a Medida,CAPEX,537.42
+2312,Capacitacion,OPEX,1058.57
+2313,Suscripciones SaaS,OPEX,1142.85
+2314,Desarrollo a Medida,CAPEX,722.45
+2315,Desarrollo a Medida,CAPEX,981.32
+2316,Hardware,CAPEX,927.59
+2317,Licencias Perpetuas,CAPEX,1250.42
+2318,Soporte,OPEX,644.24
+2319,Licencias Perpetuas,CAPEX,552.81
+2320,Servicios Nube,OPEX,2068.77
+2321,Capacitacion,OPEX,173.18
+2322,Soporte,OPEX,963.59
+2323,Desarrollo a Medida,CAPEX,383.81
+2324,Suscripciones SaaS,OPEX,573.97
+2325,Licencias Perpetuas,CAPEX,1317.09
+2326,Soporte,OPEX,642.41
+2327,Viajes,OPEX,279.09
+2328,Suscripciones SaaS,OPEX,132.35
+2329,Servicios Nube,OPEX,1219.91
+2330,Soporte,OPEX,2715.79
+2331,Servicios Nube,OPEX,2693.93
+2332,Servicios Nube,OPEX,2348.28
+2333,Hardware,CAPEX,211.52
+2334,Desarrollo a Medida,CAPEX,248.26
+2335,Suscripciones SaaS,OPEX,189.11
+2336,Servicios Nube,OPEX,286.06
+2337,Servicios Nube,OPEX,489.98
+2338,Soporte,OPEX,893.57
+2339,Hardware,CAPEX,468.18
+2340,Capacitacion,OPEX,1065.07
+2341,Viajes,OPEX,1352.65
+2342,Hardware,CAPEX,283.05
+2343,Capacitacion,OPEX,947.91
+2344,Hardware,CAPEX,1121.76
+2345,Suscripciones SaaS,OPEX,691.16
+2346,Soporte,OPEX,554.33
+2347,Servicios Nube,OPEX,1045.65
+2348,Servicios Nube,OPEX,563.02
+2349,Suscripciones SaaS,OPEX,367.08
+2350,Soporte,OPEX,415.60
+2351,Licencias Perpetuas,CAPEX,959.36
+2352,Hardware,CAPEX,514.06
+2353,Viajes,OPEX,988.10
+2354,Suscripciones SaaS,OPEX,292.04
+2355,Soporte,OPEX,521.87
+2356,Hardware,CAPEX,370.98
+2357,Viajes,OPEX,647.80
+2358,Desarrollo a Medida,CAPEX,613.73
+2359,Viajes,OPEX,1036.68
+2360,Servicios Nube,OPEX,446.81
+2361,Viajes,OPEX,181.97
+2362,Viajes,OPEX,681.65
+2363,Servicios Nube,OPEX,490.52
+2364,Capacitacion,OPEX,854.98
+2365,Servicios Nube,OPEX,1123.99
+2366,Licencias Perpetuas,CAPEX,1275.99
+2367,Capacitacion,OPEX,294.57
+2368,Soporte,OPEX,1074.64
+2369,Viajes,OPEX,1686.01
+2370,Licencias Perpetuas,CAPEX,1733.40
+2371,Hardware,CAPEX,706.65
+2372,Capacitacion,OPEX,1174.63
+2373,Licencias Perpetuas,CAPEX,2425.09
+2374,Desarrollo a Medida,CAPEX,288.56
+2375,Capacitacion,OPEX,442.05
+2376,Desarrollo a Medida,CAPEX,384.97
+2377,Hardware,CAPEX,1505.99
+2378,Viajes,OPEX,1107.21
+2379,Servicios Nube,OPEX,187.12
+2380,Servicios Nube,OPEX,418.66
+2381,Viajes,OPEX,2144.64
+2382,Servicios Nube,OPEX,446.03
+2383,Suscripciones SaaS,OPEX,461.33
+2384,Viajes,OPEX,603.66
+2385,Suscripciones SaaS,OPEX,708.36
+2386,Desarrollo a Medida,CAPEX,406.93
+2387,Servicios Nube,OPEX,684.49
+2388,Capacitacion,OPEX,1190.05
+2389,Soporte,OPEX,167.53
+2390,Capacitacion,OPEX,766.36
+2391,Licencias Perpetuas,CAPEX,1005.41
+2392,Soporte,OPEX,882.07
+2393,Viajes,OPEX,357.75
+2394,Hardware,CAPEX,679.21
+2395,Suscripciones SaaS,OPEX,1064.03
+2396,Viajes,OPEX,381.03
+2397,Soporte,OPEX,541.38
+2398,Suscripciones SaaS,OPEX,215.60
+2399,Hardware,CAPEX,552.05
+2400,Soporte,OPEX,692.73
+2401,Desarrollo a Medida,CAPEX,1161.05
+2402,Soporte,OPEX,1028.08
+2403,Viajes,OPEX,812.76
+2404,Hardware,CAPEX,601.40
+2405,Desarrollo a Medida,CAPEX,453.17
+2406,Suscripciones SaaS,OPEX,688.62
+2407,Viajes,OPEX,504.11
+2408,Licencias Perpetuas,CAPEX,879.74
+2409,Capacitacion,OPEX,446.08
+2410,Viajes,OPEX,554.29
+2411,Servicios Nube,OPEX,1234.30
+2412,Licencias Perpetuas,CAPEX,359.58
+2413,Viajes,OPEX,528.41
+2414,Capacitacion,OPEX,445.42
+2415,Suscripciones SaaS,OPEX,737.67
+2416,Capacitacion,OPEX,303.76
+2417,Capacitacion,OPEX,638.16
+2418,Hardware,CAPEX,358.80
+2419,Desarrollo a Medida,CAPEX,475.95
+2420,Servicios Nube,OPEX,174.99
+2421,Suscripciones SaaS,OPEX,450.08
+2422,Servicios Nube,OPEX,428.89
+2423,Servicios Nube,OPEX,399.78
+2424,Soporte,OPEX,487.21
+2425,Servicios Nube,OPEX,360.02
+2426,Soporte,OPEX,424.44
+2427,Hardware,CAPEX,574.74
+2428,Viajes,OPEX,181.90
+2429,Desarrollo a Medida,CAPEX,731.05
+2430,Servicios Nube,OPEX,132.78
+2431,Hardware,CAPEX,626.00
+2432,Desarrollo a Medida,CAPEX,607.49
+2433,Desarrollo a Medida,CAPEX,575.41
+2434,Capacitacion,OPEX,619.47
+2435,Hardware,CAPEX,706.40
+2436,Servicios Nube,OPEX,725.91
+2437,Hardware,CAPEX,539.71
+2438,Viajes,OPEX,636.29
+2439,Servicios Nube,OPEX,641.91
+2440,Licencias Perpetuas,CAPEX,607.63
+2441,Servicios Nube,OPEX,389.83
+2442,Soporte,OPEX,452.69
+2443,Suscripciones SaaS,OPEX,4710.42
+2444,Servicios Nube,OPEX,1132.04
+2445,Hardware,CAPEX,245.52
+2446,Suscripciones SaaS,OPEX,700.50
+2447,Licencias Perpetuas,CAPEX,1814.57
+2448,Hardware,CAPEX,1532.31
+2449,Suscripciones SaaS,OPEX,139.79
+2450,Licencias Perpetuas,CAPEX,1012.23
+2451,Capacitacion,OPEX,411.12
+2452,Soporte,OPEX,2643.72
+2453,Capacitacion,OPEX,1192.07
+2454,Servicios Nube,OPEX,721.31
+2455,Viajes,OPEX,319.48
+2456,Licencias Perpetuas,CAPEX,835.50
+2457,Hardware,CAPEX,1344.93
+2458,Licencias Perpetuas,CAPEX,1806.70
+2459,Viajes,OPEX,693.83
+2460,Licencias Perpetuas,CAPEX,384.18
+2461,Viajes,OPEX,619.04
+2462,Suscripciones SaaS,OPEX,599.09
+2463,Licencias Perpetuas,CAPEX,400.99
+2464,Licencias Perpetuas,CAPEX,291.06
+2465,Capacitacion,OPEX,629.16
+2466,Viajes,OPEX,685.10
+2467,Servicios Nube,OPEX,1403.40
+2468,Servicios Nube,OPEX,1979.50
+2469,Servicios Nube,OPEX,800.90
+2470,Desarrollo a Medida,CAPEX,379.66
+2471,Soporte,OPEX,1855.63
+2472,Suscripciones SaaS,OPEX,916.69
+2473,Licencias Perpetuas,CAPEX,489.17
+2474,Licencias Perpetuas,CAPEX,378.80
+2475,Desarrollo a Medida,CAPEX,1856.98
+2476,Viajes,OPEX,322.61
+2477,Capacitacion,OPEX,1167.20
+2478,Suscripciones SaaS,OPEX,104.02
+2479,Hardware,CAPEX,1455.07
+2480,Viajes,OPEX,1414.75
+2481,Suscripciones SaaS,OPEX,348.10
+2482,Licencias Perpetuas,CAPEX,1139.54
+2483,Capacitacion,OPEX,651.52
+2484,Hardware,CAPEX,990.01
+2485,Hardware,CAPEX,867.35
+2486,Soporte,OPEX,2075.12
+2487,Servicios Nube,OPEX,160.85
+2488,Licencias Perpetuas,CAPEX,261.71
+2489,Servicios Nube,OPEX,493.92
+2490,Capacitacion,OPEX,545.99
+2491,Desarrollo a Medida,CAPEX,349.49
+2492,Viajes,OPEX,523.25
+2493,Capacitacion,OPEX,450.72
+2494,Servicios Nube,OPEX,557.69
+2495,Servicios Nube,OPEX,796.16
+2496,Suscripciones SaaS,OPEX,644.15
+2497,Desarrollo a Medida,CAPEX,533.95
+2498,Licencias Perpetuas,CAPEX,465.54
+2499,Suscripciones SaaS,OPEX,1249.11
+2500,Viajes,OPEX,539.80
+2501,Desarrollo a Medida,CAPEX,408.09
+2502,Capacitacion,OPEX,481.89
+2503,Licencias Perpetuas,CAPEX,645.61
+2504,Soporte,OPEX,449.94
+2505,Desarrollo a Medida,CAPEX,599.90
+2506,Viajes,OPEX,777.04
+2507,Desarrollo a Medida,CAPEX,763.99
+2508,Capacitacion,OPEX,694.48
+2509,Servicios Nube,OPEX,394.97
+2510,Licencias Perpetuas,CAPEX,699.62
+2511,Viajes,OPEX,477.82
+2512,Servicios Nube,OPEX,440.72
+2513,Soporte,OPEX,527.66
+2514,Licencias Perpetuas,CAPEX,523.96
+2515,Hardware,CAPEX,155.27
+2516,Desarrollo a Medida,CAPEX,967.46
+2517,Viajes,OPEX,1575.25
+2518,Servicios Nube,OPEX,237.27
+2519,Capacitacion,OPEX,383.97
+2520,Capacitacion,OPEX,1021.63
+2521,Desarrollo a Medida,CAPEX,490.47
+2522,Viajes,OPEX,405.80
+2523,Licencias Perpetuas,CAPEX,748.77
+2524,Servicios Nube,OPEX,694.22
+2525,Soporte,OPEX,513.59
+2526,Desarrollo a Medida,CAPEX,392.91
+2527,Suscripciones SaaS,OPEX,427.99
+2528,Hardware,CAPEX,314.85
+2529,Capacitacion,OPEX,293.09
+2530,Licencias Perpetuas,CAPEX,1232.66
+2531,Licencias Perpetuas,CAPEX,124.68
+2532,Hardware,CAPEX,889.78
+2533,Servicios Nube,OPEX,532.24
+2534,Capacitacion,OPEX,196.00
+2535,Suscripciones SaaS,OPEX,172.35
+2536,Suscripciones SaaS,OPEX,281.11
+2537,Capacitacion,OPEX,1047.28
+2538,Hardware,CAPEX,263.20
+2539,Hardware,CAPEX,259.56
+2540,Desarrollo a Medida,CAPEX,700.59
+2541,Viajes,OPEX,580.44
+2542,Viajes,OPEX,915.50
+2543,Viajes,OPEX,642.53
+2544,Soporte,OPEX,734.47
+2545,Hardware,CAPEX,720.19
+2546,Hardware,CAPEX,842.17
+2547,Licencias Perpetuas,CAPEX,1289.45
+2548,Soporte,OPEX,1126.81
+2549,Desarrollo a Medida,CAPEX,2037.20
+2550,Hardware,CAPEX,853.03
+2551,Viajes,OPEX,788.96
+2552,Servicios Nube,OPEX,259.89
+2553,Hardware,CAPEX,960.91
+2554,Viajes,OPEX,1560.44
+2555,Soporte,OPEX,367.62
+2556,Desarrollo a Medida,CAPEX,236.36
+2557,Hardware,CAPEX,553.11
+2558,Licencias Perpetuas,CAPEX,1335.32
+2559,Soporte,OPEX,476.24
+2560,Soporte,OPEX,400.70
+2561,Viajes,OPEX,676.97
+2562,Hardware,CAPEX,752.30
+2563,Hardware,CAPEX,1297.10
+2564,Soporte,OPEX,532.17
+2565,Licencias Perpetuas,CAPEX,577.13
+2566,Licencias Perpetuas,CAPEX,654.11
+2567,Viajes,OPEX,1150.82
+2568,Capacitacion,OPEX,537.82
+2569,Desarrollo a Medida,CAPEX,657.41
+2570,Licencias Perpetuas,CAPEX,488.54
+2571,Licencias Perpetuas,CAPEX,760.60
+2572,Soporte,OPEX,456.71
+2573,Hardware,CAPEX,858.54
+2574,Hardware,CAPEX,832.00
+2575,Licencias Perpetuas,CAPEX,509.01
+2576,Hardware,CAPEX,1291.18
+2577,Soporte,OPEX,703.62
+2578,Suscripciones SaaS,OPEX,1434.98
+2579,Servicios Nube,OPEX,826.47
+2580,Viajes,OPEX,470.61
+2581,Capacitacion,OPEX,1079.63
+2582,Desarrollo a Medida,CAPEX,1282.61
+2583,Capacitacion,OPEX,1982.77
+2584,Licencias Perpetuas,CAPEX,734.91
+2585,Hardware,CAPEX,551.13
+2586,Servicios Nube,OPEX,500.69
+2587,Hardware,CAPEX,764.36
+2588,Servicios Nube,OPEX,273.63
+2589,Desarrollo a Medida,CAPEX,635.58
+2590,Soporte,OPEX,1216.73
+2591,Servicios Nube,OPEX,2661.57
+2592,Capacitacion,OPEX,736.16
+2593,Desarrollo a Medida,CAPEX,315.86
+2594,Hardware,CAPEX,374.96
+2595,Viajes,OPEX,1214.90
+2596,Servicios Nube,OPEX,968.63
+2597,Viajes,OPEX,645.49
+2598,Hardware,CAPEX,529.06
+2599,Viajes,OPEX,941.96
+2600,Suscripciones SaaS,OPEX,621.38
+2601,Licencias Perpetuas,CAPEX,443.27
+2602,Desarrollo a Medida,CAPEX,677.82
+2603,Viajes,OPEX,627.85
+2604,Desarrollo a Medida,CAPEX,261.96
+2605,Capacitacion,OPEX,359.07
+2606,Viajes,OPEX,1663.80
+2607,Suscripciones SaaS,OPEX,513.46
+2608,Viajes,OPEX,501.81
+2609,Hardware,CAPEX,754.41
+2610,Servicios Nube,OPEX,1232.68
+2611,Licencias Perpetuas,CAPEX,1135.34
+2612,Viajes,OPEX,552.26
+2613,Suscripciones SaaS,OPEX,191.92
+2614,Suscripciones SaaS,OPEX,400.36
+2615,Capacitacion,OPEX,639.96
+2616,Viajes,OPEX,636.04
+2617,Hardware,CAPEX,307.67
+2618,Desarrollo a Medida,CAPEX,349.92
+2619,Soporte,OPEX,572.69
+2620,Suscripciones SaaS,OPEX,911.73
+2621,Desarrollo a Medida,CAPEX,1012.12
+2622,Hardware,CAPEX,816.21
+2623,Hardware,CAPEX,736.14
+2624,Suscripciones SaaS,OPEX,901.23
+2625,Desarrollo a Medida,CAPEX,227.09
+2626,Servicios Nube,OPEX,809.97
+2627,Hardware,CAPEX,504.38
+2628,Servicios Nube,OPEX,1447.49
+2629,Hardware,CAPEX,331.08
+2630,Capacitacion,OPEX,510.92
+2631,Suscripciones SaaS,OPEX,279.89
+2632,Soporte,OPEX,666.76
+2633,Capacitacion,OPEX,643.63
+2634,Capacitacion,OPEX,649.58
+2635,Soporte,OPEX,331.62
+2636,Hardware,CAPEX,1077.80
+2637,Desarrollo a Medida,CAPEX,539.81
+2638,Servicios Nube,OPEX,853.61
+2639,Licencias Perpetuas,CAPEX,324.77
+2640,Viajes,OPEX,773.37
+2641,Capacitacion,OPEX,826.92
+2642,Soporte,OPEX,779.48
+2643,Servicios Nube,OPEX,672.68
+2644,Hardware,CAPEX,1873.88
+2645,Hardware,CAPEX,683.19
+2646,Viajes,OPEX,1000.26
+2647,Servicios Nube,OPEX,451.71
+2648,Hardware,CAPEX,351.98
+2649,Soporte,OPEX,1901.97
+2650,Hardware,CAPEX,1530.01
+2651,Capacitacion,OPEX,472.34
+2652,Hardware,CAPEX,894.95
+2653,Desarrollo a Medida,CAPEX,373.49
+2654,Servicios Nube,OPEX,933.06
+2655,Servicios Nube,OPEX,592.87
+2656,Servicios Nube,OPEX,670.99
+2657,Desarrollo a Medida,CAPEX,627.39
+2658,Viajes,OPEX,421.31
+2659,Desarrollo a Medida,CAPEX,315.03
+2660,Suscripciones SaaS,OPEX,1178.26
+2661,Capacitacion,OPEX,510.95
+2662,Suscripciones SaaS,OPEX,309.92
+2663,Soporte,OPEX,623.34
+2664,Viajes,OPEX,1769.48
+2665,Capacitacion,OPEX,385.33
+2666,Viajes,OPEX,864.66
+2667,Suscripciones SaaS,OPEX,521.70
+2668,Servicios Nube,OPEX,514.33
+2669,Servicios Nube,OPEX,914.40
+2670,Viajes,OPEX,358.29
+2671,Desarrollo a Medida,CAPEX,1059.45
+2672,Viajes,OPEX,252.13
+2673,Viajes,OPEX,613.97
+2674,Viajes,OPEX,245.52
+2675,Servicios Nube,OPEX,957.78
+2676,Hardware,CAPEX,1525.49
+2677,Capacitacion,OPEX,490.08
+2678,Suscripciones SaaS,OPEX,1219.00
+2679,Hardware,CAPEX,310.17
+2680,Desarrollo a Medida,CAPEX,512.90
+2681,Licencias Perpetuas,CAPEX,1140.53
+2682,Licencias Perpetuas,CAPEX,669.59
+2683,Suscripciones SaaS,OPEX,1420.45
+2684,Capacitacion,OPEX,1125.56
+2685,Hardware,CAPEX,988.80
+2686,Desarrollo a Medida,CAPEX,623.07
+2687,Desarrollo a Medida,CAPEX,563.15
+2688,Desarrollo a Medida,CAPEX,1258.40
+2689,Hardware,CAPEX,126.29
+2690,Viajes,OPEX,193.15
+2691,Soporte,OPEX,467.35
+2692,Suscripciones SaaS,OPEX,634.83
+2693,Suscripciones SaaS,OPEX,214.45
+2694,Capacitacion,OPEX,299.28
+2695,Viajes,OPEX,1089.84
+2696,Viajes,OPEX,465.96
+2697,Licencias Perpetuas,CAPEX,792.97
+2698,Soporte,OPEX,340.39
+2699,Soporte,OPEX,1311.57
+2700,Servicios Nube,OPEX,1051.79
+2701,Hardware,CAPEX,635.61
+2702,Capacitacion,OPEX,552.09
+2703,Hardware,CAPEX,817.01
+2704,Desarrollo a Medida,CAPEX,689.02
+2705,Licencias Perpetuas,CAPEX,1228.79
+2706,Suscripciones SaaS,OPEX,436.12
+2707,Licencias Perpetuas,CAPEX,387.56
+2708,Soporte,OPEX,816.08
+2709,Licencias Perpetuas,CAPEX,1049.49
+2710,Soporte,OPEX,591.57
+2711,Viajes,OPEX,513.20
+2712,Suscripciones SaaS,OPEX,584.03
+2713,Suscripciones SaaS,OPEX,674.08
+2714,Servicios Nube,OPEX,2647.87
+2715,Suscripciones SaaS,OPEX,222.08
+2716,Licencias Perpetuas,CAPEX,381.62
+2717,Viajes,OPEX,878.02
+2718,Servicios Nube,OPEX,812.61
+2719,Hardware,CAPEX,350.52
+2720,Hardware,CAPEX,661.09
+2721,Soporte,OPEX,726.66
+2722,Desarrollo a Medida,CAPEX,1070.31
+2723,Viajes,OPEX,608.85
+2724,Hardware,CAPEX,1757.11
+2725,Capacitacion,OPEX,683.23
+2726,Hardware,CAPEX,1330.79
+2727,Licencias Perpetuas,CAPEX,919.38
+2728,Desarrollo a Medida,CAPEX,499.80
+2729,Suscripciones SaaS,OPEX,888.65
+2730,Suscripciones SaaS,OPEX,1920.30
+2731,Servicios Nube,OPEX,1076.73
+2732,Hardware,CAPEX,141.56
+2733,Licencias Perpetuas,CAPEX,893.46
+2734,Suscripciones SaaS,OPEX,701.34
+2735,Hardware,CAPEX,713.17
+2736,Hardware,CAPEX,360.29
+2737,Soporte,OPEX,852.79
+2738,Desarrollo a Medida,CAPEX,369.08
+2739,Soporte,OPEX,622.22
+2740,Soporte,OPEX,668.57
+2741,Servicios Nube,OPEX,579.94
+2742,Hardware,CAPEX,769.16
+2743,Viajes,OPEX,499.72
+2744,Capacitacion,OPEX,723.18
+2745,Desarrollo a Medida,CAPEX,332.67
+2746,Viajes,OPEX,802.23
+2747,Servicios Nube,OPEX,800.19
+2748,Suscripciones SaaS,OPEX,304.04
+2749,Suscripciones SaaS,OPEX,815.05
+2750,Capacitacion,OPEX,787.16
+2751,Soporte,OPEX,243.65
+2752,Viajes,OPEX,923.12
+2753,Desarrollo a Medida,CAPEX,847.99
+2754,Hardware,CAPEX,615.50
+2755,Licencias Perpetuas,CAPEX,316.40
+2756,Desarrollo a Medida,CAPEX,927.22
+2757,Servicios Nube,OPEX,3359.80
+2758,Licencias Perpetuas,CAPEX,421.19
+2759,Hardware,CAPEX,914.11
+2760,Hardware,CAPEX,285.28
+2761,Hardware,CAPEX,627.68
+2762,Servicios Nube,OPEX,259.50
+2763,Servicios Nube,OPEX,293.84
+2764,Suscripciones SaaS,OPEX,873.71
+2765,Desarrollo a Medida,CAPEX,258.99
+2766,Servicios Nube,OPEX,1100.75
+2767,Desarrollo a Medida,CAPEX,912.94
+2768,Suscripciones SaaS,OPEX,599.94
+2769,Capacitacion,OPEX,670.07
+2770,Soporte,OPEX,289.89
+2771,Licencias Perpetuas,CAPEX,575.04
+2772,Viajes,OPEX,207.00
+2773,Hardware,CAPEX,443.14
+2774,Capacitacion,OPEX,1035.19
+2775,Licencias Perpetuas,CAPEX,312.70
+2776,Hardware,CAPEX,3917.48
+2777,Licencias Perpetuas,CAPEX,2260.24
+2778,Desarrollo a Medida,CAPEX,912.75
+2779,Licencias Perpetuas,CAPEX,1257.13
+2780,Viajes,OPEX,305.74
+2781,Capacitacion,OPEX,266.38
+2782,Suscripciones SaaS,OPEX,1059.22
+2783,Servicios Nube,OPEX,274.21
+2784,Desarrollo a Medida,CAPEX,956.51
+2785,Servicios Nube,OPEX,2037.37
+2786,Viajes,OPEX,758.60
+2787,Suscripciones SaaS,OPEX,507.66
+2788,Capacitacion,OPEX,461.77
+2789,Hardware,CAPEX,984.28
+2790,Soporte,OPEX,535.85
+2791,Suscripciones SaaS,OPEX,922.96
+2792,Suscripciones SaaS,OPEX,743.35
+2793,Hardware,CAPEX,1405.29
+2794,Suscripciones SaaS,OPEX,856.44
+2795,Servicios Nube,OPEX,852.02
+2796,Licencias Perpetuas,CAPEX,492.41
+2797,Viajes,OPEX,1152.18
+2798,Hardware,CAPEX,692.50
+2799,Servicios Nube,OPEX,2460.15
+2800,Hardware,CAPEX,715.25
+2801,Hardware,CAPEX,993.68
+2802,Soporte,OPEX,782.85
+2803,Desarrollo a Medida,CAPEX,237.37
+2804,Soporte,OPEX,1396.65
+2805,Soporte,OPEX,505.28
+2806,Capacitacion,OPEX,606.29
+2807,Hardware,CAPEX,559.59
+2808,Suscripciones SaaS,OPEX,707.81
+2809,Hardware,CAPEX,888.78
+2810,Hardware,CAPEX,275.17
+2811,Licencias Perpetuas,CAPEX,1056.50
+2812,Hardware,CAPEX,695.22
+2813,Servicios Nube,OPEX,1105.84
+2814,Capacitacion,OPEX,515.34
+2815,Servicios Nube,OPEX,408.02
+2816,Viajes,OPEX,1414.23
+2817,Viajes,OPEX,2109.07
+2818,Desarrollo a Medida,CAPEX,1086.36
+2819,Servicios Nube,OPEX,702.75
+2820,Desarrollo a Medida,CAPEX,785.53
+2821,Suscripciones SaaS,OPEX,494.86
+2822,Licencias Perpetuas,CAPEX,680.18
+2823,Licencias Perpetuas,CAPEX,502.69
+2824,Servicios Nube,OPEX,625.52
+2825,Licencias Perpetuas,CAPEX,274.81
+2826,Viajes,OPEX,571.71
+2827,Suscripciones SaaS,OPEX,1031.55
+2828,Desarrollo a Medida,CAPEX,1445.25
+2829,Hardware,CAPEX,2059.78
+2830,Soporte,OPEX,326.22
+2831,Servicios Nube,OPEX,384.67
+2832,Capacitacion,OPEX,805.19
+2833,Desarrollo a Medida,CAPEX,745.71
+2834,Suscripciones SaaS,OPEX,1141.16
+2835,Suscripciones SaaS,OPEX,589.77
+2836,Licencias Perpetuas,CAPEX,561.11
+2837,Hardware,CAPEX,292.88
+2838,Suscripciones SaaS,OPEX,1154.99
+2839,Desarrollo a Medida,CAPEX,297.11
+2840,Viajes,OPEX,681.11
+2841,Licencias Perpetuas,CAPEX,1062.73
+2842,Soporte,OPEX,705.19
+2843,Soporte,OPEX,730.52
+2844,Licencias Perpetuas,CAPEX,871.07
+2845,Desarrollo a Medida,CAPEX,589.32
+2846,Hardware,CAPEX,1756.66
+2847,Licencias Perpetuas,CAPEX,472.81
+2848,Hardware,CAPEX,489.91
+2849,Viajes,OPEX,2627.79
+2850,Suscripciones SaaS,OPEX,1055.58
+2851,Soporte,OPEX,478.54
+2852,Soporte,OPEX,501.90
+2853,Servicios Nube,OPEX,329.73
+2854,Soporte,OPEX,2722.77
+2855,Capacitacion,OPEX,801.44
+2856,Capacitacion,OPEX,462.19
+2857,Viajes,OPEX,457.49
+2858,Licencias Perpetuas,CAPEX,323.17
+2859,Suscripciones SaaS,OPEX,400.95
+2860,Capacitacion,OPEX,763.32
+2861,Suscripciones SaaS,OPEX,308.86
+2862,Servicios Nube,OPEX,604.55
+2863,Hardware,CAPEX,819.53
+2864,Licencias Perpetuas,CAPEX,634.89
+2865,Viajes,OPEX,658.54
+2866,Soporte,OPEX,460.44
+2867,Licencias Perpetuas,CAPEX,315.59
+2868,Hardware,CAPEX,790.85
+2869,Hardware,CAPEX,607.47
+2870,Capacitacion,OPEX,1601.37
+2871,Servicios Nube,OPEX,647.88
+2872,Hardware,CAPEX,782.84
+2873,Servicios Nube,OPEX,540.98
+2874,Hardware,CAPEX,728.35
+2875,Licencias Perpetuas,CAPEX,763.06
+2876,Desarrollo a Medida,CAPEX,442.88
+2877,Soporte,OPEX,601.02
+2878,Capacitacion,OPEX,820.83
+2879,Hardware,CAPEX,906.95
+2880,Licencias Perpetuas,CAPEX,570.38
+2881,Suscripciones SaaS,OPEX,1165.73
+2882,Servicios Nube,OPEX,1265.75
+2883,Licencias Perpetuas,CAPEX,1756.31
+2884,Soporte,OPEX,593.09
+2885,Licencias Perpetuas,CAPEX,680.60
+2886,Soporte,OPEX,895.22
+2887,Suscripciones SaaS,OPEX,468.47
+2888,Servicios Nube,OPEX,431.82
+2889,Suscripciones SaaS,OPEX,547.42
+2890,Viajes,OPEX,337.36
+2891,Servicios Nube,OPEX,208.50
+2892,Soporte,OPEX,1336.46
+2893,Suscripciones SaaS,OPEX,339.72
+2894,Licencias Perpetuas,CAPEX,658.35
+2895,Soporte,OPEX,1194.19
+2896,Desarrollo a Medida,CAPEX,900.13
+2897,Desarrollo a Medida,CAPEX,338.31
+2898,Viajes,OPEX,331.23
+2899,Hardware,CAPEX,1812.92
+2900,Hardware,CAPEX,1277.66
+2901,Soporte,OPEX,1246.66
+2902,Soporte,OPEX,370.70
+2903,Viajes,OPEX,1527.75
+2904,Capacitacion,OPEX,794.89
+2905,Capacitacion,OPEX,999.77
+2906,Hardware,CAPEX,2198.51
+2907,Servicios Nube,OPEX,281.03
+2908,Soporte,OPEX,318.32
+2909,Servicios Nube,OPEX,271.45
+2910,Soporte,OPEX,1452.99
+2911,Desarrollo a Medida,CAPEX,371.98
+2912,Licencias Perpetuas,CAPEX,382.58
+2913,Licencias Perpetuas,CAPEX,1020.45
+2914,Desarrollo a Medida,CAPEX,734.59
+2915,Viajes,OPEX,354.22
+2916,Licencias Perpetuas,CAPEX,1111.30
+2917,Capacitacion,OPEX,899.77
+2918,Hardware,CAPEX,752.60
+2919,Suscripciones SaaS,OPEX,532.57
+2920,Capacitacion,OPEX,1172.15
+2921,Suscripciones SaaS,OPEX,138.23
+2922,Servicios Nube,OPEX,488.24
+2923,Suscripciones SaaS,OPEX,819.20
+2924,Servicios Nube,OPEX,352.39
+2925,Desarrollo a Medida,CAPEX,2906.61
+2926,Licencias Perpetuas,CAPEX,1382.12
+2927,Capacitacion,OPEX,115.45
+2928,Viajes,OPEX,610.98
+2929,Soporte,OPEX,1017.17
+2930,Viajes,OPEX,4514.91
+2931,Capacitacion,OPEX,442.47
+2932,Suscripciones SaaS,OPEX,1125.09
+2933,Soporte,OPEX,308.77
+2934,Desarrollo a Medida,CAPEX,847.62
+2935,Capacitacion,OPEX,163.96
+2936,Soporte,OPEX,621.35
+2937,Servicios Nube,OPEX,812.16
+2938,Viajes,OPEX,962.36
+2939,Servicios Nube,OPEX,579.17
+2940,Servicios Nube,OPEX,1221.00
+2941,Licencias Perpetuas,CAPEX,377.75
+2942,Viajes,OPEX,253.81
+2943,Viajes,OPEX,312.55
+2944,Servicios Nube,OPEX,1293.93
+2945,Soporte,OPEX,167.39
+2946,Soporte,OPEX,612.78
+2947,Licencias Perpetuas,CAPEX,2192.48
+2948,Suscripciones SaaS,OPEX,752.27
+2949,Servicios Nube,OPEX,677.26
+2950,Viajes,OPEX,1182.28
+2951,Servicios Nube,OPEX,313.18
+2952,Hardware,CAPEX,674.27
+2953,Desarrollo a Medida,CAPEX,562.53
+2954,Desarrollo a Medida,CAPEX,569.11
+2955,Licencias Perpetuas,CAPEX,1412.17
+2956,Desarrollo a Medida,CAPEX,612.79
+2957,Soporte,OPEX,657.97
+2958,Licencias Perpetuas,CAPEX,1001.67
+2959,Viajes,OPEX,789.13
+2960,Desarrollo a Medida,CAPEX,271.45
+2961,Desarrollo a Medida,CAPEX,607.41
+2962,Licencias Perpetuas,CAPEX,328.61
+2963,Capacitacion,OPEX,984.60
+2964,Capacitacion,OPEX,937.31
+2965,Soporte,OPEX,317.31
+2966,Viajes,OPEX,710.64
+2967,Capacitacion,OPEX,423.38
+2968,Desarrollo a Medida,CAPEX,2159.53
+2969,Viajes,OPEX,328.60
+2970,Servicios Nube,OPEX,751.80
+2971,Hardware,CAPEX,203.47
+2972,Suscripciones SaaS,OPEX,2162.53
+2973,Hardware,CAPEX,640.60
+2974,Capacitacion,OPEX,659.79
+2975,Licencias Perpetuas,CAPEX,532.58
+2976,Soporte,OPEX,774.91
+2977,Licencias Perpetuas,CAPEX,533.42
+2978,Servicios Nube,OPEX,495.29
+2979,Suscripciones SaaS,OPEX,461.39
+2980,Capacitacion,OPEX,316.70
+2981,Suscripciones SaaS,OPEX,2602.51
+2982,Soporte,OPEX,556.53
+2983,Viajes,OPEX,382.90
+2984,Servicios Nube,OPEX,1849.92
+2985,Licencias Perpetuas,CAPEX,601.16
+2986,Desarrollo a Medida,CAPEX,354.62
+2987,Desarrollo a Medida,CAPEX,562.06
+2988,Capacitacion,OPEX,501.90
+2989,Capacitacion,OPEX,1069.64
+2990,Licencias Perpetuas,CAPEX,919.28
+2991,Viajes,OPEX,1212.61
+2992,Capacitacion,OPEX,477.59
+2993,Hardware,CAPEX,872.70
+2994,Desarrollo a Medida,CAPEX,671.08
+2995,Suscripciones SaaS,OPEX,503.67
+2996,Capacitacion,OPEX,749.99
+2997,Servicios Nube,OPEX,503.45
+2998,Soporte,OPEX,986.94
+2999,Desarrollo a Medida,CAPEX,1097.53
+3000,Viajes,OPEX,1034.13
+3001,Licencias Perpetuas,CAPEX,886.08
+3002,Capacitacion,OPEX,824.35
+3003,Suscripciones SaaS,OPEX,1434.95
+3004,Desarrollo a Medida,CAPEX,757.54
+3005,Hardware,CAPEX,897.63
+3006,Soporte,OPEX,1598.98
+3007,Hardware,CAPEX,336.32
+3008,Desarrollo a Medida,CAPEX,955.06
+3009,Desarrollo a Medida,CAPEX,693.31
+3010,Desarrollo a Medida,CAPEX,598.92
+3011,Servicios Nube,OPEX,1214.44
+3012,Servicios Nube,OPEX,1834.06
+3013,Servicios Nube,OPEX,1582.59
+3014,Viajes,OPEX,710.91
+3015,Capacitacion,OPEX,1144.84
+3016,Suscripciones SaaS,OPEX,1843.09
+3017,Desarrollo a Medida,CAPEX,433.61
+3018,Suscripciones SaaS,OPEX,803.71
+3019,Servicios Nube,OPEX,291.19
+3020,Desarrollo a Medida,CAPEX,219.16
+3021,Servicios Nube,OPEX,1820.10
+3022,Capacitacion,OPEX,216.20
+3023,Viajes,OPEX,719.35
+3024,Suscripciones SaaS,OPEX,1008.58
+3025,Capacitacion,OPEX,813.71
+3026,Licencias Perpetuas,CAPEX,350.60
+3027,Hardware,CAPEX,1464.10
+3028,Servicios Nube,OPEX,384.42
+3029,Desarrollo a Medida,CAPEX,267.72
+3030,Desarrollo a Medida,CAPEX,784.95
+3031,Desarrollo a Medida,CAPEX,702.75
+3032,Desarrollo a Medida,CAPEX,550.87
+3033,Capacitacion,OPEX,278.97
+3034,Hardware,CAPEX,1187.04
+3035,Hardware,CAPEX,716.98
+3036,Hardware,CAPEX,1071.64
+3037,Licencias Perpetuas,CAPEX,202.48
+3038,Servicios Nube,OPEX,367.98
+3039,Desarrollo a Medida,CAPEX,1066.98
+3040,Capacitacion,OPEX,797.18
+3041,Viajes,OPEX,794.92
+3042,Soporte,OPEX,407.73
+3043,Suscripciones SaaS,OPEX,408.47
+3044,Viajes,OPEX,674.05
+3045,Suscripciones SaaS,OPEX,707.44
+3046,Soporte,OPEX,348.94
+3047,Hardware,CAPEX,660.02
+3048,Servicios Nube,OPEX,1676.89
+3049,Capacitacion,OPEX,1257.71
+3050,Soporte,OPEX,534.70
+3051,Capacitacion,OPEX,380.50
+3052,Soporte,OPEX,630.03
+3053,Servicios Nube,OPEX,168.31
+3054,Viajes,OPEX,326.49
+3055,Soporte,OPEX,2749.34
+3056,Capacitacion,OPEX,700.37
+3057,Servicios Nube,OPEX,746.49
+3058,Capacitacion,OPEX,1773.08
+3059,Soporte,OPEX,514.26
+3060,Hardware,CAPEX,653.54
+3061,Desarrollo a Medida,CAPEX,798.06
+3062,Licencias Perpetuas,CAPEX,863.87
+3063,Suscripciones SaaS,OPEX,631.00
+3064,Licencias Perpetuas,CAPEX,949.80
+3065,Soporte,OPEX,190.39
+3066,Hardware,CAPEX,454.32
+3067,Capacitacion,OPEX,635.72
+3068,Hardware,CAPEX,751.63
+3069,Licencias Perpetuas,CAPEX,288.89
+3070,Soporte,OPEX,1060.33
+3071,Licencias Perpetuas,CAPEX,2024.37
+3072,Viajes,OPEX,504.88
+3073,Capacitacion,OPEX,576.61
+3074,Servicios Nube,OPEX,202.22
+3075,Capacitacion,OPEX,798.06
+3076,Soporte,OPEX,936.04
+3077,Desarrollo a Medida,CAPEX,786.94
+3078,Soporte,OPEX,460.79
+3079,Servicios Nube,OPEX,657.87
+3080,Licencias Perpetuas,CAPEX,348.25
+3081,Hardware,CAPEX,547.94
+3082,Servicios Nube,OPEX,512.83
+3083,Servicios Nube,OPEX,1754.83
+3084,Suscripciones SaaS,OPEX,2422.44
+3085,Soporte,OPEX,1119.42
+3086,Suscripciones SaaS,OPEX,546.93
+3087,Servicios Nube,OPEX,818.84
+3088,Hardware,CAPEX,1092.51
+3089,Licencias Perpetuas,CAPEX,1489.12
+3090,Licencias Perpetuas,CAPEX,630.65
+3091,Hardware,CAPEX,474.25
+3092,Suscripciones SaaS,OPEX,899.99
+3093,Hardware,CAPEX,837.03
+3094,Soporte,OPEX,562.76
+3095,Hardware,CAPEX,685.10
+3096,Suscripciones SaaS,OPEX,372.13
+3097,Desarrollo a Medida,CAPEX,1054.24
+3098,Hardware,CAPEX,501.32
+3099,Soporte,OPEX,431.82
+3100,Desarrollo a Medida,CAPEX,940.64
+3101,Desarrollo a Medida,CAPEX,526.73
+3102,Suscripciones SaaS,OPEX,365.47
+3103,Viajes,OPEX,661.79
+3104,Capacitacion,OPEX,2563.03
+3105,Licencias Perpetuas,CAPEX,494.68
+3106,Desarrollo a Medida,CAPEX,307.48
+3107,Hardware,CAPEX,1839.37
+3108,Hardware,CAPEX,540.15
+3109,Desarrollo a Medida,CAPEX,680.67
+3110,Viajes,OPEX,545.26
+3111,Desarrollo a Medida,CAPEX,291.10
+3112,Soporte,OPEX,401.06
+3113,Soporte,OPEX,445.51
+3114,Desarrollo a Medida,CAPEX,410.95
+3115,Suscripciones SaaS,OPEX,552.45
+3116,Capacitacion,OPEX,1074.45
+3117,Viajes,OPEX,749.73
+3118,Soporte,OPEX,280.43
+3119,Soporte,OPEX,2733.31
+3120,Capacitacion,OPEX,1838.27
+3121,Hardware,CAPEX,317.47
+3122,Desarrollo a Medida,CAPEX,733.78
+3123,Desarrollo a Medida,CAPEX,646.86
+3124,Servicios Nube,OPEX,787.73
+3125,Servicios Nube,OPEX,1120.86
+3126,Soporte,OPEX,2819.38
+3127,Capacitacion,OPEX,293.53
+3128,Suscripciones SaaS,OPEX,492.65
+3129,Viajes,OPEX,621.40
+3130,Suscripciones SaaS,OPEX,415.31
+3131,Suscripciones SaaS,OPEX,837.45
+3132,Desarrollo a Medida,CAPEX,690.73
+3133,Viajes,OPEX,338.91
+3134,Viajes,OPEX,1351.36
+3135,Soporte,OPEX,560.05
+3136,Capacitacion,OPEX,357.77
+3137,Capacitacion,OPEX,129.85
+3138,Licencias Perpetuas,CAPEX,231.70
+3139,Capacitacion,OPEX,672.37
+3140,Capacitacion,OPEX,486.07
+3141,Desarrollo a Medida,CAPEX,2067.67
+3142,Desarrollo a Medida,CAPEX,1151.65
+3143,Desarrollo a Medida,CAPEX,1663.73
+3144,Servicios Nube,OPEX,1125.55
+3145,Soporte,OPEX,1014.43
+3146,Licencias Perpetuas,CAPEX,791.96
+3147,Soporte,OPEX,618.65
+3148,Hardware,CAPEX,249.72
+3149,Soporte,OPEX,4724.72
+3150,Capacitacion,OPEX,711.56
+3151,Capacitacion,OPEX,886.75
+3152,Soporte,OPEX,158.42
+3153,Capacitacion,OPEX,934.22
+3154,Servicios Nube,OPEX,505.30
+3155,Suscripciones SaaS,OPEX,421.85
+3156,Servicios Nube,OPEX,567.29
+3157,Suscripciones SaaS,OPEX,524.45
+3158,Desarrollo a Medida,CAPEX,1293.31
+3159,Licencias Perpetuas,CAPEX,220.41
+3160,Soporte,OPEX,621.16
+3161,Viajes,OPEX,1237.19
+3162,Licencias Perpetuas,CAPEX,747.03
+3163,Desarrollo a Medida,CAPEX,580.55
+3164,Licencias Perpetuas,CAPEX,360.07
+3165,Suscripciones SaaS,OPEX,1629.10
+3166,Soporte,OPEX,1042.18
+3167,Soporte,OPEX,224.71
+3168,Soporte,OPEX,416.91
+3169,Desarrollo a Medida,CAPEX,821.42
+3170,Servicios Nube,OPEX,1204.85
+3171,Capacitacion,OPEX,411.05
+3172,Licencias Perpetuas,CAPEX,999.28
+3173,Hardware,CAPEX,1408.43
+3174,Soporte,OPEX,2141.98
+3175,Soporte,OPEX,457.42
+3176,Desarrollo a Medida,CAPEX,742.91
+3177,Soporte,OPEX,431.67
+3178,Viajes,OPEX,584.72
+3179,Servicios Nube,OPEX,591.21
+3180,Hardware,CAPEX,544.43
+3181,Servicios Nube,OPEX,159.82
+3182,Desarrollo a Medida,CAPEX,495.90
+3183,Viajes,OPEX,1778.58
+3184,Servicios Nube,OPEX,1093.60
+3185,Capacitacion,OPEX,637.29
+3186,Desarrollo a Medida,CAPEX,869.34
+3187,Licencias Perpetuas,CAPEX,1183.35
+3188,Desarrollo a Medida,CAPEX,692.35
+3189,Servicios Nube,OPEX,488.42
+3190,Soporte,OPEX,554.21
+3191,Desarrollo a Medida,CAPEX,237.78
+3192,Soporte,OPEX,573.27
+3193,Suscripciones SaaS,OPEX,443.12
+3194,Licencias Perpetuas,CAPEX,360.28
+3195,Viajes,OPEX,709.36
+3196,Licencias Perpetuas,CAPEX,799.98
+3197,Licencias Perpetuas,CAPEX,796.07
+3198,Capacitacion,OPEX,575.64
+3199,Hardware,CAPEX,1846.16
+3200,Servicios Nube,OPEX,776.21
+3201,Hardware,CAPEX,236.28
+3202,Desarrollo a Medida,CAPEX,298.34
+3203,Soporte,OPEX,1017.93
+3204,Licencias Perpetuas,CAPEX,1431.09
+3205,Hardware,CAPEX,582.46
+3206,Viajes,OPEX,637.08
+3207,Suscripciones SaaS,OPEX,810.71
+3208,Licencias Perpetuas,CAPEX,614.40
+3209,Licencias Perpetuas,CAPEX,303.89
+3210,Servicios Nube,OPEX,3041.40
+3211,Suscripciones SaaS,OPEX,305.40
+3212,Servicios Nube,OPEX,1053.63
+3213,Soporte,OPEX,361.49
+3214,Servicios Nube,OPEX,308.41
+3215,Suscripciones SaaS,OPEX,453.02
+3216,Licencias Perpetuas,CAPEX,236.77
+3217,Licencias Perpetuas,CAPEX,952.38
+3218,Desarrollo a Medida,CAPEX,765.09
+3219,Viajes,OPEX,1084.75
+3220,Licencias Perpetuas,CAPEX,463.48
+3221,Viajes,OPEX,530.25
+3222,Servicios Nube,OPEX,596.49
+3223,Suscripciones SaaS,OPEX,1244.89
+3224,Soporte,OPEX,446.89
+3225,Suscripciones SaaS,OPEX,481.47
+3226,Hardware,CAPEX,837.67
+3227,Licencias Perpetuas,CAPEX,735.95
+3228,Capacitacion,OPEX,541.29
+3229,Servicios Nube,OPEX,443.43
+3230,Licencias Perpetuas,CAPEX,514.30
+3231,Servicios Nube,OPEX,263.58
+3232,Desarrollo a Medida,CAPEX,478.62
+3233,Capacitacion,OPEX,389.18
+3234,Servicios Nube,OPEX,812.02
+3235,Soporte,OPEX,224.19
+3236,Soporte,OPEX,1828.66
+3237,Capacitacion,OPEX,605.61
+3238,Hardware,CAPEX,638.66
+3239,Hardware,CAPEX,787.47
+3240,Licencias Perpetuas,CAPEX,689.07
+3241,Viajes,OPEX,548.75
+3242,Licencias Perpetuas,CAPEX,931.23
+3243,Licencias Perpetuas,CAPEX,835.88
+3244,Hardware,CAPEX,1051.48
+3245,Soporte,OPEX,867.20
+3246,Suscripciones SaaS,OPEX,295.61
+3247,Suscripciones SaaS,OPEX,562.43
+3248,Servicios Nube,OPEX,414.45
+3249,Capacitacion,OPEX,1137.21
+3250,Servicios Nube,OPEX,738.51
+3251,Viajes,OPEX,789.78
+3252,Desarrollo a Medida,CAPEX,1190.78
+3253,Servicios Nube,OPEX,786.90
+3254,Capacitacion,OPEX,2178.31
+3255,Desarrollo a Medida,CAPEX,452.23
+3256,Soporte,OPEX,929.82
+3257,Capacitacion,OPEX,1572.89
+3258,Desarrollo a Medida,CAPEX,455.29
+3259,Capacitacion,OPEX,1157.27
+3260,Servicios Nube,OPEX,1534.77
+3261,Desarrollo a Medida,CAPEX,439.86
+3262,Soporte,OPEX,341.85
+3263,Desarrollo a Medida,CAPEX,582.19
+3264,Viajes,OPEX,364.63
+3265,Viajes,OPEX,383.90
+3266,Licencias Perpetuas,CAPEX,660.92
+3267,Licencias Perpetuas,CAPEX,1038.88
+3268,Soporte,OPEX,709.33
+3269,Viajes,OPEX,487.62
+3270,Suscripciones SaaS,OPEX,998.45
+3271,Licencias Perpetuas,CAPEX,1062.64
+3272,Viajes,OPEX,1488.67
+3273,Suscripciones SaaS,OPEX,834.52
+3274,Servicios Nube,OPEX,610.60
+3275,Licencias Perpetuas,CAPEX,790.97
+3276,Suscripciones SaaS,OPEX,364.94
+3277,Capacitacion,OPEX,615.29
+3278,Hardware,CAPEX,441.22
+3279,Soporte,OPEX,433.38
+3280,Soporte,OPEX,553.07
+3281,Desarrollo a Medida,CAPEX,897.16
+3282,Suscripciones SaaS,OPEX,614.27
+3283,Hardware,CAPEX,424.99
+3284,Hardware,CAPEX,591.62
+3285,Capacitacion,OPEX,1314.67
+3286,Viajes,OPEX,336.40
+3287,Suscripciones SaaS,OPEX,382.19
+3288,Servicios Nube,OPEX,395.29
+3289,Viajes,OPEX,769.41
+3290,Servicios Nube,OPEX,687.53
+3291,Capacitacion,OPEX,943.54
+3292,Soporte,OPEX,927.28
+3293,Desarrollo a Medida,CAPEX,1450.38
+3294,Hardware,CAPEX,1225.67
+3295,Capacitacion,OPEX,776.05
+3296,Capacitacion,OPEX,1235.61
+3297,Desarrollo a Medida,CAPEX,643.92
+3298,Desarrollo a Medida,CAPEX,546.34
+3299,Viajes,OPEX,514.25
+3300,Viajes,OPEX,265.94
+3301,Viajes,OPEX,773.74
+3302,Servicios Nube,OPEX,2208.25
+3303,Servicios Nube,OPEX,806.43
+3304,Soporte,OPEX,1182.83
+3305,Hardware,CAPEX,567.64
+3306,Licencias Perpetuas,CAPEX,108.85
+3307,Servicios Nube,OPEX,540.34
+3308,Hardware,CAPEX,3505.50
+3309,Capacitacion,OPEX,1001.92
+3310,Licencias Perpetuas,CAPEX,146.81
+3311,Soporte,OPEX,2633.37
+3312,Licencias Perpetuas,CAPEX,691.65
+3313,Licencias Perpetuas,CAPEX,247.83
+3314,Desarrollo a Medida,CAPEX,835.25
+3315,Desarrollo a Medida,CAPEX,693.70
+3316,Soporte,OPEX,394.56
+3317,Suscripciones SaaS,OPEX,223.38
+3318,Licencias Perpetuas,CAPEX,274.16
+3319,Soporte,OPEX,1221.03
+3320,Licencias Perpetuas,CAPEX,762.64
+3321,Suscripciones SaaS,OPEX,1449.07
+3322,Servicios Nube,OPEX,2160.40
+3323,Soporte,OPEX,1170.48
+3324,Licencias Perpetuas,CAPEX,1295.74
+3325,Viajes,OPEX,658.21
+3326,Servicios Nube,OPEX,651.89
+3327,Desarrollo a Medida,CAPEX,798.15
+3328,Hardware,CAPEX,789.11
+3329,Capacitacion,OPEX,273.83
+3330,Desarrollo a Medida,CAPEX,434.60
+3331,Servicios Nube,OPEX,199.07
+3332,Servicios Nube,OPEX,350.88
+3333,Viajes,OPEX,543.86
+3334,Hardware,CAPEX,93.21
+3335,Soporte,OPEX,381.84
+3336,Soporte,OPEX,168.79
+3337,Viajes,OPEX,1243.92
+3338,Licencias Perpetuas,CAPEX,186.31
+3339,Servicios Nube,OPEX,1116.33
+3340,Suscripciones SaaS,OPEX,276.07
+3341,Hardware,CAPEX,519.27
+3342,Servicios Nube,OPEX,3827.31
+3343,Hardware,CAPEX,201.65
+3344,Suscripciones SaaS,OPEX,517.00
+3345,Servicios Nube,OPEX,1063.26
+3346,Licencias Perpetuas,CAPEX,339.19
+3347,Servicios Nube,OPEX,313.57
+3348,Licencias Perpetuas,CAPEX,1351.41
+3349,Hardware,CAPEX,3108.35
+3350,Hardware,CAPEX,909.00
+3351,Viajes,OPEX,496.09
+3352,Soporte,OPEX,1167.90
+3353,Servicios Nube,OPEX,667.36
+3354,Capacitacion,OPEX,1296.35
+3355,Soporte,OPEX,535.63
+3356,Desarrollo a Medida,CAPEX,423.39
+3357,Licencias Perpetuas,CAPEX,621.02
+3358,Soporte,OPEX,914.02
+3359,Hardware,CAPEX,803.90
+3360,Licencias Perpetuas,CAPEX,681.60
+3361,Servicios Nube,OPEX,881.70
+3362,Hardware,CAPEX,601.61
+3363,Desarrollo a Medida,CAPEX,405.34
+3364,Viajes,OPEX,522.90
+3365,Hardware,CAPEX,1354.95
+3366,Soporte,OPEX,918.67
+3367,Desarrollo a Medida,CAPEX,820.01
+3368,Desarrollo a Medida,CAPEX,879.08
+3369,Soporte,OPEX,1014.62
+3370,Licencias Perpetuas,CAPEX,123.71
+3371,Hardware,CAPEX,358.02
+3372,Desarrollo a Medida,CAPEX,1120.49
+3373,Desarrollo a Medida,CAPEX,784.41
+3374,Licencias Perpetuas,CAPEX,1435.08
+3375,Hardware,CAPEX,489.73
+3376,Viajes,OPEX,491.41
+3377,Hardware,CAPEX,659.83
+3378,Hardware,CAPEX,347.67
+3379,Soporte,OPEX,1937.60
+3380,Licencias Perpetuas,CAPEX,498.44
+3381,Desarrollo a Medida,CAPEX,851.01
+3382,Capacitacion,OPEX,1314.20
+3383,Suscripciones SaaS,OPEX,1500.40
+3384,Soporte,OPEX,162.61
+3385,Servicios Nube,OPEX,485.94
+3386,Hardware,CAPEX,802.97
+3387,Soporte,OPEX,335.87
+3388,Servicios Nube,OPEX,829.01
+3389,Hardware,CAPEX,1317.60
+3390,Soporte,OPEX,324.20
+3391,Capacitacion,OPEX,214.55
+3392,Licencias Perpetuas,CAPEX,270.67
+3393,Soporte,OPEX,502.83
+3394,Viajes,OPEX,1456.55
+3395,Capacitacion,OPEX,651.62
+3396,Servicios Nube,OPEX,297.42
+3397,Viajes,OPEX,560.31
+3398,Soporte,OPEX,528.66
+3399,Licencias Perpetuas,CAPEX,522.41
+3400,Licencias Perpetuas,CAPEX,575.21
+3401,Soporte,OPEX,211.85
+3402,Capacitacion,OPEX,812.18
+3403,Capacitacion,OPEX,1251.56
+3404,Viajes,OPEX,553.51
+3405,Desarrollo a Medida,CAPEX,639.59
+3406,Servicios Nube,OPEX,139.80
+3407,Capacitacion,OPEX,675.78
+3408,Viajes,OPEX,355.04
+3409,Desarrollo a Medida,CAPEX,587.50
+3410,Desarrollo a Medida,CAPEX,343.27
+3411,Desarrollo a Medida,CAPEX,644.13
+3412,Hardware,CAPEX,429.30
+3413,Viajes,OPEX,372.90
+3414,Suscripciones SaaS,OPEX,239.18
+3415,Suscripciones SaaS,OPEX,913.93
+3416,Licencias Perpetuas,CAPEX,642.14
+3417,Servicios Nube,OPEX,418.59
+3418,Servicios Nube,OPEX,1624.15
+3419,Servicios Nube,OPEX,137.53
+3420,Licencias Perpetuas,CAPEX,782.87
+3421,Suscripciones SaaS,OPEX,161.81
+3422,Servicios Nube,OPEX,2011.03
+3423,Capacitacion,OPEX,769.39
+3424,Capacitacion,OPEX,297.11
+3425,Desarrollo a Medida,CAPEX,515.06
+3426,Hardware,CAPEX,1097.78
+3427,Capacitacion,OPEX,746.54
+3428,Capacitacion,OPEX,286.73
+3429,Servicios Nube,OPEX,1348.13
+3430,Servicios Nube,OPEX,1205.18
+3431,Suscripciones SaaS,OPEX,734.23
+3432,Suscripciones SaaS,OPEX,1010.16
+3433,Viajes,OPEX,1061.55
+3434,Hardware,CAPEX,582.40
+3435,Viajes,OPEX,371.27
+3436,Suscripciones SaaS,OPEX,697.66
+3437,Servicios Nube,OPEX,512.75
+3438,Capacitacion,OPEX,222.64
+3439,Licencias Perpetuas,CAPEX,912.13
+3440,Desarrollo a Medida,CAPEX,888.45
+3441,Suscripciones SaaS,OPEX,524.54
+3442,Desarrollo a Medida,CAPEX,731.77
+3443,Soporte,OPEX,559.80
+3444,Servicios Nube,OPEX,497.06
+3445,Desarrollo a Medida,CAPEX,168.73
+3446,Licencias Perpetuas,CAPEX,3214.21
+3447,Suscripciones SaaS,OPEX,417.40
+3448,Soporte,OPEX,186.27
+3449,Soporte,OPEX,971.42
+3450,Capacitacion,OPEX,958.15
+3451,Hardware,CAPEX,363.13
+3452,Licencias Perpetuas,CAPEX,376.74
+3453,Servicios Nube,OPEX,602.54
+3454,Capacitacion,OPEX,392.10
+3455,Suscripciones SaaS,OPEX,3208.83
+3456,Suscripciones SaaS,OPEX,1628.92
+3457,Suscripciones SaaS,OPEX,901.25
+3458,Desarrollo a Medida,CAPEX,495.97
+3459,Licencias Perpetuas,CAPEX,803.27
+3460,Viajes,OPEX,1552.65
+3461,Suscripciones SaaS,OPEX,268.53
+3462,Hardware,CAPEX,1121.37
+3463,Hardware,CAPEX,913.10
+3464,Desarrollo a Medida,CAPEX,1537.44
+3465,Viajes,OPEX,226.53
+3466,Desarrollo a Medida,CAPEX,1664.35
+3467,Capacitacion,OPEX,744.71
+3468,Soporte,OPEX,382.00
+3469,Hardware,CAPEX,414.17
+3470,Viajes,OPEX,628.79
+3471,Hardware,CAPEX,131.56
+3472,Capacitacion,OPEX,1715.08
+3473,Suscripciones SaaS,OPEX,743.33
+3474,Viajes,OPEX,814.96
+3475,Capacitacion,OPEX,372.10
+3476,Soporte,OPEX,578.70
+3477,Hardware,CAPEX,491.55
+3478,Hardware,CAPEX,491.28
+3479,Capacitacion,OPEX,697.90
+3480,Capacitacion,OPEX,474.03
+3481,Suscripciones SaaS,OPEX,268.00
+3482,Soporte,OPEX,571.38
+3483,Suscripciones SaaS,OPEX,1488.26
+3484,Licencias Perpetuas,CAPEX,1363.23
+3485,Capacitacion,OPEX,428.81
+3486,Desarrollo a Medida,CAPEX,507.58
+3487,Hardware,CAPEX,105.16
+3488,Soporte,OPEX,596.56
+3489,Hardware,CAPEX,532.95
+3490,Suscripciones SaaS,OPEX,2173.02
+3491,Suscripciones SaaS,OPEX,1527.23
+3492,Soporte,OPEX,1526.72
+3493,Suscripciones SaaS,OPEX,1195.82
+3494,Capacitacion,OPEX,428.95
+3495,Hardware,CAPEX,1385.85
+3496,Hardware,CAPEX,764.97
+3497,Capacitacion,OPEX,484.61
+3498,Servicios Nube,OPEX,179.79
+3499,Hardware,CAPEX,298.46
+3500,Soporte,OPEX,745.48
+3501,Suscripciones SaaS,OPEX,725.57
+3502,Capacitacion,OPEX,1040.22
+3503,Capacitacion,OPEX,1026.95
+3504,Desarrollo a Medida,CAPEX,384.02
+3505,Desarrollo a Medida,CAPEX,969.99
+3506,Suscripciones SaaS,OPEX,503.55
+3507,Licencias Perpetuas,CAPEX,306.32
+3508,Suscripciones SaaS,OPEX,931.05
+3509,Servicios Nube,OPEX,1346.22
+3510,Hardware,CAPEX,338.60
+3511,Soporte,OPEX,607.47
+3512,Servicios Nube,OPEX,492.82
+3513,Hardware,CAPEX,2117.57
+3514,Licencias Perpetuas,CAPEX,402.72
+3515,Hardware,CAPEX,586.70
+3516,Suscripciones SaaS,OPEX,1894.98
+3517,Hardware,CAPEX,849.69
+3518,Servicios Nube,OPEX,461.64
+3519,Soporte,OPEX,994.03
+3520,Viajes,OPEX,1470.43
+3521,Licencias Perpetuas,CAPEX,755.05
+3522,Capacitacion,OPEX,816.55
+3523,Capacitacion,OPEX,576.13
+3524,Desarrollo a Medida,CAPEX,531.82
+3525,Viajes,OPEX,336.14
+3526,Capacitacion,OPEX,721.49
+3527,Soporte,OPEX,191.54
+3528,Hardware,CAPEX,455.29
+3529,Suscripciones SaaS,OPEX,545.81
+3530,Suscripciones SaaS,OPEX,648.63
+3531,Desarrollo a Medida,CAPEX,274.73
+3532,Licencias Perpetuas,CAPEX,380.25
+3533,Soporte,OPEX,678.39
+3534,Soporte,OPEX,436.47
+3535,Capacitacion,OPEX,710.82
+3536,Desarrollo a Medida,CAPEX,470.04
+3537,Soporte,OPEX,694.90
+3538,Soporte,OPEX,1917.72
+3539,Hardware,CAPEX,483.49
+3540,Suscripciones SaaS,OPEX,612.18
+3541,Licencias Perpetuas,CAPEX,1551.98
+3542,Soporte,OPEX,970.74
+3543,Servicios Nube,OPEX,532.04
+3544,Soporte,OPEX,481.15
+3545,Hardware,CAPEX,707.66
+3546,Servicios Nube,OPEX,135.12
+3547,Servicios Nube,OPEX,609.39
+3548,Hardware,CAPEX,321.21
+3549,Viajes,OPEX,554.06
+3550,Suscripciones SaaS,OPEX,420.15
+3551,Desarrollo a Medida,CAPEX,2103.80
+3552,Licencias Perpetuas,CAPEX,900.88
+3553,Hardware,CAPEX,851.96
+3554,Viajes,OPEX,112.19
+3555,Soporte,OPEX,731.36
+3556,Suscripciones SaaS,OPEX,951.64
+3557,Desarrollo a Medida,CAPEX,892.66
+3558,Licencias Perpetuas,CAPEX,332.52
+3559,Hardware,CAPEX,883.71
+3560,Servicios Nube,OPEX,565.90
+3561,Soporte,OPEX,127.17
+3562,Licencias Perpetuas,CAPEX,961.15
+3563,Servicios Nube,OPEX,551.06
+3564,Servicios Nube,OPEX,445.30
+3565,Desarrollo a Medida,CAPEX,697.22
+3566,Suscripciones SaaS,OPEX,277.90
+3567,Licencias Perpetuas,CAPEX,573.21
+3568,Licencias Perpetuas,CAPEX,972.39
+3569,Suscripciones SaaS,OPEX,948.76
+3570,Suscripciones SaaS,OPEX,540.11
+3571,Servicios Nube,OPEX,399.01
+3572,Licencias Perpetuas,CAPEX,606.40
+3573,Hardware,CAPEX,861.96
+3574,Hardware,CAPEX,1255.19
+3575,Viajes,OPEX,627.69
+3576,Suscripciones SaaS,OPEX,612.65
+3577,Licencias Perpetuas,CAPEX,1164.42
+3578,Desarrollo a Medida,CAPEX,400.97
+3579,Desarrollo a Medida,CAPEX,366.52
+3580,Soporte,OPEX,2145.68
+3581,Hardware,CAPEX,485.99
+3582,Soporte,OPEX,530.48
+3583,Desarrollo a Medida,CAPEX,663.77
+3584,Licencias Perpetuas,CAPEX,390.89
+3585,Licencias Perpetuas,CAPEX,663.94
+3586,Servicios Nube,OPEX,517.94
+3587,Servicios Nube,OPEX,676.64
+3588,Servicios Nube,OPEX,625.76
+3589,Soporte,OPEX,948.51
+3590,Licencias Perpetuas,CAPEX,485.77
+3591,Soporte,OPEX,1985.83
+3592,Desarrollo a Medida,CAPEX,2078.19
+3593,Servicios Nube,OPEX,1122.58
+3594,Penalizaciones,OPEX,1283.60
+3595,Penalizaciones,OPEX,3795.54
+3596,Penalizaciones,OPEX,1066.26
+3597,Penalizaciones,OPEX,1244.71
+3598,Penalizaciones,OPEX,658.32
+3599,Penalizaciones,OPEX,6226.28
+3600,Penalizaciones,OPEX,1661.87
+3601,Penalizaciones,OPEX,4454.68
+3602,Penalizaciones,OPEX,994.41
+3603,Penalizaciones,OPEX,3908.16
