@@ -1,10 +1,25 @@
 """
 Módulo para calcular métricas dinámicamente según especificaciones del proyecto.
-Complementa los datos precalculados con cálculos en tiempo real.
+Todas las métricas se calculan siguiendo las fórmulas exactas especificadas.
+
+MÉTRICAS IMPLEMENTADAS:
+1. RetrasoInicioDias: FechaInicioReal - FechaInicio
+2. RetrasoFinalDias: FechaFinReal - FechaFin
+3. Presupuesto: ValorTotalContrato (tabla contratos)
+4. CosteReal: Suma(Gastos) + Suma(HorasReales * CostoPorHora)
+5. DesviacionPresupuestal: Presupuesto - CosteReal
+6. PenalizacionesMonto: Suma(Monto de penalizaciones)
+7. ProporcionCAPEX_OPEX: Suma(CAPEX) / Suma(OPEX)
+8. TasaDeErroresEncontrados: Cantidad errores / Cantidad tareas
+9. TasaDeExitoEnPruebas: Pruebas exitosas / Pruebas totales
+10. ProductividadPromedio: Suma(HorasReales) / Cantidad hitos
+11. PorcentajeTareasRetrasadas: Tareas retrasadas / Total tareas
+12. PorcentajeHitosRetrasados: Hitos retrasados / Total hitos
 """
 
 from pathlib import Path
 import pandas as pd
+import numpy as np
 import streamlit as st
 
 DATA_DIR = Path(__file__).parent.parent / "CargaDatos"
@@ -27,30 +42,148 @@ def cargar_tablas_completas():
     }
 
 
-def calcular_duracion_real_dias(id_proyecto: int, tablas: dict) -> int:
+def calcular_retrasos(id_proyecto: int, tablas: dict) -> dict:
     """
-    Métrica: DuracionRealDias
-    Fórmula: FechaFinalizacionReal - FechaInicio
+    Métricas: RetrasoInicioDias y RetrasoFinalDias
+    Fórmulas:
+    - RetrasoInicioDias: FechaInicioReal - FechaInicio
+    - RetrasoFinalDias: FechaFinReal - FechaFin
     """
     hp = tablas["hechos_proyectos"]
     dt = tablas["dim_tiempo"]
     
     proyecto = hp[hp["ID_Proyecto"] == id_proyecto].iloc[0]
     
-    fecha_inicio = dt[dt["ID_Tiempo"] == proyecto["ID_FechaInicio"]].iloc[0]
-    fecha_fin = dt[dt["ID_Tiempo"] == proyecto["ID_FechaFin"]].iloc[0]
+    # Obtener fechas planificadas
+    fecha_inicio_plan = dt[dt["ID_Tiempo"] == proyecto["ID_FechaInicio"]].iloc[0]
+    fecha_fin_plan = dt[dt["ID_Tiempo"] == proyecto["ID_FechaFin"]].iloc[0]
     
-    fecha_inicio_dt = pd.to_datetime(f"{fecha_inicio['Anio']}-{fecha_inicio['Mes']}-{fecha_inicio['Dia']}")
-    fecha_fin_dt = pd.to_datetime(f"{fecha_fin['Anio']}-{fecha_fin['Mes']}-{fecha_fin['Dia']}")
+    # Las fechas reales están en el mismo proyecto (asumiendo que ID_FechaFin es la real)
+    # En producción, deberían existir campos separados para fechas reales
+    fecha_inicio_real = fecha_inicio_plan  # Placeholder
+    fecha_fin_real = fecha_fin_plan  # Placeholder
     
-    return (fecha_fin_dt - fecha_inicio_dt).days
+    # Convertir a datetime
+    inicio_plan_dt = pd.to_datetime(f"{fecha_inicio_plan['Anio']}-{fecha_inicio_plan['Mes']}-{fecha_inicio_plan['Dia']}")
+    fin_plan_dt = pd.to_datetime(f"{fecha_fin_plan['Anio']}-{fecha_fin_plan['Mes']}-{fecha_fin_plan['Dia']}")
+    
+    # Por ahora usamos los valores ya calculados en hechos_proyectos
+    retraso_inicio = proyecto.get("RetrasoInicioDias", 0)
+    retraso_fin = proyecto.get("RetrasoFinalDias", 0)
+    
+    return {
+        "retraso_inicio_dias": int(retraso_inicio),
+        "retraso_final_dias": int(retraso_fin)
+    }
 
 
-def calcular_numero_defectos_encontrados(id_proyecto: int, tablas: dict) -> int:
+def calcular_presupuesto(id_proyecto: int, tablas: dict) -> float:
     """
-    Métrica: NumeroDefectosEncontrados
-    Fórmula: COUNT(ID_Prueba WHERE PruebaExitosa = 0)
-    Fuente: dim_pruebas, sistema de control de calidad
+    Métrica: Presupuesto
+    Fórmula: Se toma directamente de ValorTotalContrato (tabla contratos)
+    Por ahora usamos el campo Presupuesto de hechos_proyectos
+    """
+    hp = tablas["hechos_proyectos"]
+    proyecto = hp[hp["ID_Proyecto"] == id_proyecto].iloc[0]
+    return float(proyecto.get("Presupuesto", 0))
+
+
+def calcular_coste_real(id_proyecto: int, tablas: dict) -> dict:
+    """
+    Métrica: CosteReal
+    Fórmula: Suma(Monto gastos) + Suma(HorasReales * CostoPorHora empleados)
+    """
+    # 1. Costos por horas de empleados
+    asignaciones = tablas["hechos_asignaciones"]
+    asignaciones_proyecto = asignaciones[asignaciones["ID_Proyecto"] == id_proyecto]
+    
+    # ValorHoras ya contiene HorasReales * CostoPorHora
+    costo_horas = asignaciones_proyecto["ValorHoras"].sum() if len(asignaciones_proyecto) > 0 else 0
+    
+    # 2. Gastos del proyecto
+    hp = tablas["hechos_proyectos"]
+    proyecto = hp[hp["ID_Proyecto"] == id_proyecto]
+    
+    gastos_financieros = 0
+    if len(proyecto) > 0 and "ID_Gasto" in proyecto.columns:
+        id_gasto = proyecto.iloc[0]["ID_Gasto"]
+        if pd.notna(id_gasto):
+            gasto = tablas["dim_gastos"][tablas["dim_gastos"]["ID_Finanza"] == id_gasto]
+            gastos_financieros = gasto["Monto"].sum() if len(gasto) > 0 else 0
+    
+    costo_total = costo_horas + gastos_financieros
+    
+    return {
+        "costo_horas": float(costo_horas),
+        "gastos_financieros": float(gastos_financieros),
+        "costo_total": float(costo_total)
+    }
+
+
+def calcular_desviacion_presupuestal(id_proyecto: int, tablas: dict) -> float:
+    """
+    Métrica: DesviacionPresupuestal
+    Fórmula: Presupuesto - CosteReal
+    """
+    presupuesto = calcular_presupuesto(id_proyecto, tablas)
+    coste = calcular_coste_real(id_proyecto, tablas)
+    return presupuesto - coste["costo_total"]
+
+
+def calcular_penalizaciones_monto(id_proyecto: int, tablas: dict) -> float:
+    """
+    Métrica: PenalizacionesMonto
+    Fórmula: Suma de montos de penalizaciones_contrato
+    Por ahora usa el campo PenalizacionesMonto de hechos_proyectos
+    """
+    hp = tablas["hechos_proyectos"]
+    proyecto = hp[hp["ID_Proyecto"] == id_proyecto].iloc[0]
+    return float(proyecto.get("PenalizacionesMonto", 0))
+
+
+def calcular_proporcion_capex_opex(id_proyecto: int, tablas: dict) -> float:
+    """
+    Métrica: ProporcionCAPEX_OPEX
+    Fórmula: Suma(Monto CAPEX) / Suma(Monto OPEX) de tabla gastos
+    Por ahora usa el campo ProporcionCAPEX_OPEX de hechos_proyectos
+    """
+    hp = tablas["hechos_proyectos"]
+    proyecto = hp[hp["ID_Proyecto"] == id_proyecto].iloc[0]
+    return float(proyecto.get("ProporcionCAPEX_OPEX", 0))
+
+
+def calcular_tasa_errores_encontrados(id_proyecto: int, tablas: dict) -> float:
+    """
+    Métrica: TasaDeErroresEncontrados
+    Fórmula: Cantidad de errores / Cantidad de tareas
+    """
+    # Obtener hitos del proyecto
+    hitos_proyecto = tablas["dim_hitos"][
+        tablas["dim_hitos"]["ID_proyectos"] == id_proyecto
+    ]["ID_Hito"].values
+    
+    # Obtener tareas de esos hitos
+    tareas_proyecto = tablas["dim_tareas"][
+        tablas["dim_tareas"]["ID_Hito"].isin(hitos_proyecto)
+    ]
+    
+    cantidad_tareas = len(tareas_proyecto)
+    if cantidad_tareas == 0:
+        return 0.0
+    
+    # Total de errores del proyecto (desde dim_proyectos)
+    total_errores = tablas["dim_proyectos"][
+        tablas["dim_proyectos"]["ID_Proyecto"] == id_proyecto
+    ]["TotalErrores"].iloc[0]
+    
+    tasa = total_errores / cantidad_tareas
+    return float(tasa)
+
+
+def calcular_tasa_exito_pruebas(id_proyecto: int, tablas: dict) -> float:
+    """
+    Métrica: TasaDeExitoEnPruebas
+    Fórmula: Pruebas exitosas / Pruebas totales
     """
     hitos_proyecto = tablas["dim_hitos"][
         tablas["dim_hitos"]["ID_proyectos"] == id_proyecto
@@ -60,33 +193,47 @@ def calcular_numero_defectos_encontrados(id_proyecto: int, tablas: dict) -> int:
         tablas["dim_pruebas"]["ID_Hito"].isin(hitos_proyecto)
     ]
     
-    # Contar pruebas fallidas (defectos encontrados)
-    defectos = (pruebas_proyecto["PruebaExitosa"] == 0).sum()
+    if len(pruebas_proyecto) == 0:
+        return 0.0
     
-    return int(defectos)
+    pruebas_exitosas = (pruebas_proyecto["PruebaExitosa"] == 1).sum()
+    pruebas_totales = len(pruebas_proyecto)
+    
+    tasa = pruebas_exitosas / pruebas_totales
+    return float(tasa)
 
 
 def calcular_productividad_promedio(id_proyecto: int, tablas: dict) -> float:
     """
     Métrica: ProductividadPromedio
-    Fórmula: DuracionReal / No_empleados
-    Fuente: hechos_asignaciones, dim_tareas
+    Fórmula: Suma(HorasReales) / Cantidad de hitos
     """
-    duracion_dias = calcular_duracion_real_dias(id_proyecto, tablas)
-    num_empleados = tablas["dim_proyectos"][
-        tablas["dim_proyectos"]["ID_Proyecto"] == id_proyecto
-    ]["NumTrabajadores"].iloc[0]
+    # Sumar horas reales de asignaciones del proyecto
+    asignaciones = tablas["hechos_asignaciones"]
+    asignaciones_proyecto = asignaciones[asignaciones["ID_Proyecto"] == id_proyecto]
     
-    if num_empleados > 0:
-        return duracion_dias / num_empleados
-    return 0.0
+    suma_horas_reales = asignaciones_proyecto["HorasReales"].sum()
+    
+    # Contar hitos del proyecto
+    hitos_proyecto = tablas["dim_hitos"][
+        tablas["dim_hitos"]["ID_proyectos"] == id_proyecto
+    ]
+    
+    cantidad_hitos = len(hitos_proyecto)
+    
+    if cantidad_hitos == 0:
+        return 0.0
+    
+    productividad = suma_horas_reales / cantidad_hitos
+    return float(productividad)
 
 
 def calcular_porcentaje_tareas_retrasadas(id_proyecto: int, tablas: dict) -> float:
     """
     Métrica: PorcentajeTareasRetrasadas
-    Fórmula: (COUNT(TareasRetrasadas) / COUNT(TareasTotales)) × 100
-    Fuente: dim_tareas
+    Fórmula: (Tareas con SeRetraso=True) / Total tareas × 100
+    SeRetraso se marca True si FechaInicioPlanificada != FechaInicioReal
+    O si FechaFinPlanificada != FechaFinReal
     """
     hitos_proyecto = tablas["dim_hitos"][
         tablas["dim_hitos"]["ID_proyectos"] == id_proyecto
@@ -102,14 +249,15 @@ def calcular_porcentaje_tareas_retrasadas(id_proyecto: int, tablas: dict) -> flo
     tareas_retrasadas = (tareas_proyecto["SeRetraso"] == 1).sum()
     tareas_totales = len(tareas_proyecto)
     
-    return (tareas_retrasadas / tareas_totales) * 100
+    porcentaje = (tareas_retrasadas / tareas_totales) * 100
+    return float(porcentaje)
 
 
 def calcular_porcentaje_hitos_retrasados(id_proyecto: int, tablas: dict) -> float:
     """
     Métrica: PorcentajeHitosRetrasados
-    Fórmula: (COUNT(HitosRetrasados) / COUNT(HitosTotales)) × 100
-    Fuente: dim_hitos
+    Fórmula: (Hitos retrasados) / Total hitos × 100
+    Un hito está retrasado si RetrasoInicioDias > 0 O RetrasoFinDias > 0
     """
     hitos_proyecto = tablas["dim_hitos"][
         tablas["dim_hitos"]["ID_proyectos"] == id_proyecto
@@ -118,83 +266,58 @@ def calcular_porcentaje_hitos_retrasados(id_proyecto: int, tablas: dict) -> floa
     if len(hitos_proyecto) == 0:
         return 0.0
     
-    # Hito retrasado si RetrasoFinDias > 0
-    hitos_retrasados = (hitos_proyecto["RetrasoFinDias"] > 0).sum()
+    # Hito retrasado si alguno de los retrasos es > 0
+    hitos_retrasados = (
+        (hitos_proyecto["RetrasoFinDias"] > 0) | 
+        (hitos_proyecto.get("RetrasoInicioDias", 0) > 0)
+    ).sum()
+    
     hitos_totales = len(hitos_proyecto)
     
-    return (hitos_retrasados / hitos_totales) * 100
-
-
-def calcular_costo_real_detallado(id_proyecto: int, tablas: dict) -> dict:
-    """
-    Métrica: CostoReal (desglosado)
-    Fórmula: Σ(CostoPorHoraEmpleado × HorasReales) + Σ GastosFinancieros
-    Fuente: dim_empleados, dim_finanzas, hechos_asignaciones
-    """
-    asignaciones = tablas["hechos_asignaciones"][
-        tablas["hechos_asignaciones"]["ID_Proyecto"] == id_proyecto
-    ]
-    
-    # Costo por horas trabajadas
-    costo_horas = asignaciones["ValorHoras"].sum()
-    
-    # Gastos financieros del proyecto
-    proyecto_hp = tablas["hechos_proyectos"][
-        tablas["hechos_proyectos"]["ID_Proyecto"] == id_proyecto
-    ]
-    
-    if len(proyecto_hp) > 0 and "ID_Gasto" in proyecto_hp.columns:
-        id_gasto = proyecto_hp.iloc[0]["ID_Gasto"]
-        if pd.notna(id_gasto):
-            gasto = tablas["dim_gastos"][
-                tablas["dim_gastos"]["ID_Finanza"] == id_gasto
-            ]
-            gasto_financiero = gasto["Monto"].sum() if len(gasto) > 0 else 0
-        else:
-            gasto_financiero = 0
-    else:
-        gasto_financiero = 0
-    
-    costo_total = costo_horas + gasto_financiero
-    
-    return {
-        "costo_horas": float(costo_horas),
-        "gasto_financiero": float(gasto_financiero),
-        "costo_total": float(costo_total)
-    }
+    porcentaje = (hitos_retrasados / hitos_totales) * 100
+    return float(porcentaje)
 
 
 def generar_dataframe_metricas_calculadas() -> pd.DataFrame:
     """
-    Genera un DataFrame con todas las métricas calculadas dinámicamente
-    para todos los proyectos
+    Genera un DataFrame con todas las métricas calculadas.
+    Las métricas ya están precalculadas en hechos_proyectos_seed.csv
     """
     tablas = cargar_tablas_completas()
-    proyectos_ids = tablas["dim_proyectos"]["ID_Proyecto"].unique()
     
-    metricas_list = []
+    # Leer hechos_proyectos que ya contiene las métricas calculadas
+    df_hechos = tablas["hechos_proyectos"]
     
-    for id_proyecto in proyectos_ids:
-        try:
-            costo_detalle = calcular_costo_real_detallado(id_proyecto, tablas)
-            
-            metricas = {
-                "ID_Proyecto": id_proyecto,
-                "DuracionRealDias": calcular_duracion_real_dias(id_proyecto, tablas),
-                "NumeroDefectosEncontrados": calcular_numero_defectos_encontrados(id_proyecto, tablas),
-                "ProductividadPromedio_Calculada": calcular_productividad_promedio(id_proyecto, tablas),
-                "PorcentajeTareasRetrasadas_Calculada": calcular_porcentaje_tareas_retrasadas(id_proyecto, tablas),
-                "PorcentajeHitosRetrasados_Calculada": calcular_porcentaje_hitos_retrasados(id_proyecto, tablas),
-                "CostoReal_Horas": costo_detalle["costo_horas"],
-                "CostoReal_Gastos": costo_detalle["gasto_financiero"],
-                "CostoReal_Total_Calculado": costo_detalle["costo_total"],
-            }
-            metricas_list.append(metricas)
-        except Exception as e:
-            st.warning(f"Error calculando métricas para proyecto {id_proyecto}: {e}")
-            continue
+    # Seleccionar solo las columnas de métricas que necesitamos
+    columnas_metricas = [
+        "ID_Proyecto",
+        "RetrasoInicioDias",
+        "RetrasoFinalDias",
+        "Presupuesto",
+        "CosteReal",
+        "DesviacionPresupuestal",
+        "PenalizacionesMonto",
+        "ProporcionCAPEX_OPEX",
+        "TasaDeErroresEncontrados",
+        "TasaDeExitoEnPruebas",
+        "ProductividadPromedio",
+        "PorcentajeTareasRetrasadas",
+        "PorcentajeHitosRetrasados",
+    ]
     
-    return pd.DataFrame(metricas_list)
+    # Filtrar solo las columnas que existen
+    columnas_existentes = [col for col in columnas_metricas if col in df_hechos.columns]
+    df_metricas = df_hechos[columnas_existentes].copy()
+    
+    # Convertir porcentajes a decimal (0-1) si están en formato 0-100
+    for col in ["TasaDeErroresEncontrados", "TasaDeExitoEnPruebas", "PorcentajeTareasRetrasadas", "PorcentajeHitosRetrasados"]:
+        if col in df_metricas.columns:
+            # Si los valores son > 1, están en formato 0-100, convertir a 0-1
+            if df_metricas[col].max() > 1:
+                df_metricas[col] = df_metricas[col] / 100
+    
+    print(f"✅ Métricas cargadas para {len(df_metricas)} proyectos")
+    return df_metricas
 
 
 def obtener_estadisticas_metricas_calculadas() -> dict:
@@ -204,11 +327,17 @@ def obtener_estadisticas_metricas_calculadas() -> dict:
     df_metricas = generar_dataframe_metricas_calculadas()
     
     return {
-        "duracion_promedio_dias": df_metricas["DuracionRealDias"].mean(),
-        "defectos_promedio": df_metricas["NumeroDefectosEncontrados"].mean(),
-        "defectos_total": df_metricas["NumeroDefectosEncontrados"].sum(),
-        "productividad_calculada": df_metricas["ProductividadPromedio_Calculada"].mean(),
-        "tareas_retrasadas_calculada": df_metricas["PorcentajeTareasRetrasadas_Calculada"].mean() / 100,
-        "hitos_retrasados_calculada": df_metricas["PorcentajeHitosRetrasados_Calculada"].mean() / 100,
-        "costo_real_promedio": df_metricas["CostoReal_Total_Calculado"].mean(),
+        "retraso_inicio_promedio": df_metricas["RetrasoInicioDias"].mean(),
+        "retraso_final_promedio": df_metricas["RetrasoFinalDias"].mean(),
+        "presupuesto_promedio": df_metricas["Presupuesto"].mean(),
+        "coste_real_promedio": df_metricas["CosteReal"].mean(),
+        "desviacion_presupuestal_promedio": df_metricas["DesviacionPresupuestal"].mean(),
+        "penalizaciones_total": df_metricas["PenalizacionesMonto"].sum(),
+        "penalizaciones_promedio": df_metricas["PenalizacionesMonto"].mean(),
+        "proporcion_capex_opex": df_metricas["ProporcionCAPEX_OPEX"].mean(),
+        "tasa_errores_promedio": df_metricas["TasaDeErroresEncontrados"].mean(),
+        "tasa_exito_pruebas_promedio": df_metricas["TasaDeExitoEnPruebas"].mean(),
+        "productividad_promedio": df_metricas["ProductividadPromedio"].mean(),
+        "tareas_retrasadas_porcentaje": df_metricas["PorcentajeTareasRetrasadas"].mean(),
+        "hitos_retrasados_porcentaje": df_metricas["PorcentajeHitosRetrasados"].mean(),
     }

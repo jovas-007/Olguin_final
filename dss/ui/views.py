@@ -13,6 +13,8 @@ from dss.prediction import (
     generar_plan_testing,
     buscar_proyectos_similares
 )
+from dss.predicciones_simple import generar_todas_predicciones
+from dss.okrs import calcular_todos_okrs
 from dss.ui.components import mostrar_tarjeta_kpi
 from dss.metricas_calculadas import (
     generar_dataframe_metricas_calculadas,
@@ -24,6 +26,9 @@ from dss.metricas_calculadas import (
 def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):
     kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
     vistas = build_olap_views(df_proyectos, df_asignaciones, filtros)
+    
+    # Generar predicciones y recomendaciones
+    predicciones = generar_todas_predicciones(kpis, vistas)
 
     # Header principal con diseño mejorado
     st.markdown("""
@@ -34,6 +39,10 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             </h1>
             <p style='color: rgba(255,255,255,0.9); text-align: center; margin: 10px 0 0 0; font-size: 1.1em;'>
                 Cuadro de Mando Integral - Análisis Estratégico de Desempeño
+            </p>
+            <p style='color: rgba(255,255,255,0.85); text-align: center; margin: 8px 0 0 0; font-size: 0.95em;'>
+                <strong>Misión:</strong> Optimizar procesos con tecnología | 
+                <strong>Visión:</strong> Decisiones basadas en datos y excelencia sostenible
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -48,6 +57,9 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva Financiera</h2>
             <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
                 Eficiencia financiera, sostenibilidad y optimización de recursos
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 5px 0 0 0; font-size: 0.9em; font-style: italic;'>
+                Visión: Excelencia sostenible en gestión económica de proyectos
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -75,6 +87,22 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             "Minimiza riesgos económicos y refuerza acuerdos de calidad.",
         )
     
+    # Recomendaciones Financieras
+    pred_fin = predicciones["financiera"]
+    st.markdown(f"""
+        <div style='background: rgba(17, 153, 142, 0.1); padding: 15px; border-radius: 8px; 
+                    border-left: 4px solid #11998e; margin-top: 15px;'>
+            <h4 style='margin: 0 0 10px 0; color: #11998e;'>
+                {pred_fin['color']} Predicción de Riesgo: {pred_fin['nivel']}
+            </h4>
+            <p style='margin: 5px 0; font-size: 0.9em;'><strong>Score de Riesgo:</strong> {pred_fin['score']:.1f}/100</p>
+            <p style='margin: 10px 0 5px 0; font-weight: 600;'>Recomendaciones:</p>
+            <ul style='margin: 5px 0; padding-left: 20px;'>
+                {"".join([f"<li>{rec}</li>" for rec in pred_fin['recomendaciones']])}
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+    
     st.markdown("<br>", unsafe_allow_html=True)
     
     # PERSPECTIVA DEL CLIENTE
@@ -84,6 +112,9 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva del Cliente</h2>
             <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
                 Cumplimiento de compromisos, confianza y fidelización
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 5px 0 0 0; font-size: 0.9em; font-style: italic;'>
+                Visión: Decisiones basadas en datos para maximizar satisfacción
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -103,6 +134,22 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             1 - KPI_TARGETS["proyectos_cancelados"],
             "Gestión de riesgos temprana evita cancelaciones y refuerza la reputación.",
         )
+    
+    # Recomendaciones de Satisfacción del Cliente
+    pred_cli = predicciones["cliente"]
+    st.markdown(f"""
+        <div style='background: rgba(41, 128, 185, 0.1); padding: 15px; border-radius: 8px; 
+                    border-left: 4px solid #2980b9; margin-top: 15px;'>
+            <h4 style='margin: 0 0 10px 0; color: #2980b9;'>
+                {pred_cli['color']} Predicción de Satisfacción: {pred_cli['nivel']}
+            </h4>
+            <p style='margin: 5px 0; font-size: 0.9em;'><strong>Score de Satisfacción:</strong> {pred_cli['score']:.1f}/100</p>
+            <p style='margin: 10px 0 5px 0; font-weight: 600;'>Recomendaciones:</p>
+            <ul style='margin: 5px 0; padding-left: 20px;'>
+                {"".join([f"<li>{rec}</li>" for rec in pred_cli['recomendaciones']])}
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -113,6 +160,9 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva de Procesos Internos</h2>
             <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
                 Operación ágil, trazabilidad y calidad del producto
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 5px 0 0 0; font-size: 0.9em; font-style: italic;'>
+                Misión: Optimizar procesos internos con tecnología avanzada
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -140,6 +190,22 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             "Calidad del producto mejora satisfacción y reduce reprocesos.",
         )
     
+    # Recomendaciones de Eficiencia de Procesos
+    pred_proc = predicciones["procesos"]
+    st.markdown(f"""
+        <div style='background: rgba(248, 87, 166, 0.1); padding: 15px; border-radius: 8px; 
+                    border-left: 4px solid #f857a6; margin-top: 15px;'>
+            <h4 style='margin: 0 0 10px 0; color: #f857a6;'>
+                {pred_proc['color']} Predicción de Eficiencia: {pred_proc['nivel']}
+            </h4>
+            <p style='margin: 5px 0; font-size: 0.9em;'><strong>Score de Eficiencia:</strong> {pred_proc['score']:.1f}/100</p>
+            <p style='margin: 10px 0 5px 0; font-weight: 600;'>Recomendaciones:</p>
+            <ul style='margin: 5px 0; padding-left: 20px;'>
+                {"".join([f"<li>{rec}</li>" for rec in pred_proc['recomendaciones']])}
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+    
     st.markdown("<br>", unsafe_allow_html=True)
     
     # PERSPECTIVA DE APRENDIZAJE E INNOVACIÓN
@@ -149,6 +215,9 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             <h2 style='color: white; margin: 0; font-size: 1.8em;'>Perspectiva de Aprendizaje e Innovación</h2>
             <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0;'>
                 Colaboración interdisciplinaria, mejora continua y escalabilidad
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 5px 0 0 0; font-size: 0.9em; font-style: italic;'>
+                Visión: Excelencia sostenible mediante desarrollo del capital humano
             </p>
         </div>
     """, unsafe_allow_html=True)
@@ -175,10 +244,30 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             KPI_TARGETS["horas_relacion"],
             "Planificación precisa favorece proyectos medibles y escalables.",
         )
-
-    st.markdown("---")
     
-    # VISUALIZACIONES CLAVE con diseño mejorado
+    # Recomendaciones de Desarrollo del Equipo
+    pred_learn = predicciones["aprendizaje"]
+    st.markdown(f"""
+        <div style='background: rgba(250, 112, 154, 0.1); padding: 15px; border-radius: 8px; 
+                    border-left: 4px solid #fa709a; margin-top: 15px;'>
+            <h4 style='margin: 0 0 10px 0; color: #fa709a;'>
+                {pred_learn['color']} Predicción de Capacidad del Equipo: {pred_learn['nivel']}
+            </h4>
+            <p style='margin: 5px 0; font-size: 0.9em;'><strong>Score de Capacidad:</strong> {pred_learn['score']:.1f}/100</p>
+            <p style='margin: 10px 0 5px 0; font-weight: 600;'>Recomendaciones:</p>
+            <ul style='margin: 5px 0; padding-left: 20px;'>
+                {"".join([f"<li>{rec}</li>" for rec in pred_learn['recomendaciones']])}
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+
+
+def render_analisis_visual(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):
+    """Vista de análisis visual estratégico con gráficos y visualizaciones clave"""
+    kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
+    vistas = build_olap_views(df_proyectos, df_asignaciones, filtros)
+    
+    # Header
     st.markdown("""
         <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                     padding: 20px 25px; border-radius: 12px; margin: 25px 0;
@@ -223,14 +312,9 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             </div>
         """, unsafe_allow_html=True)
         if not vistas["proyectos_a_tiempo"].empty and len(vistas["proyectos_a_tiempo"]) > 0:
-            # Verificar que la columna Fecha existe y tiene valores
             if "Fecha" in vistas["proyectos_a_tiempo"].columns and "A_Tiempo" in vistas["proyectos_a_tiempo"].columns:
                 chart_data = vistas["proyectos_a_tiempo"].set_index("Fecha")[["A_Tiempo"]]
-                st.line_chart(
-                    chart_data,
-                    use_container_width=True,
-                    height=400
-                )
+                st.line_chart(chart_data, use_container_width=True, height=400)
                 st.caption("Seguimiento temporal del cumplimiento de plazos para gestión proactiva de riesgos.")
             else:
                 st.warning("Datos de evolución temporal incompletos - faltan columnas requeridas.")
@@ -303,15 +387,24 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
     st.caption("Distribución estratégica de gastos para equilibrar inversiones a largo plazo (CAPEX) y operativas (OPEX).")
 
 
-
-
 def render_detalle(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):
     vistas = build_olap_views(df_proyectos, df_asignaciones, filtros)
     detalle = get_detail_table(df_proyectos, filtros)
 
     # Header principal
-    st.header("Análisis Detallado de Proyectos")
-    st.caption("Vista operativa completa con desglose de métricas clave por proyecto")
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); 
+                    padding: 25px; border-radius: 12px; margin-bottom: 25px;'>
+            <h1 style='color: white; margin: 0; font-size: 2.2em;'>Análisis Detallado OLAP</h1>
+            <p style='color: rgba(255,255,255,0.95); margin: 8px 0 0 0; font-size: 1.05em;'>
+                Vistas multidimensionales con drill-down, roll-up, slicing, dicing y pivot
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 8px 0 0 0; font-size: 0.95em;'>
+                <strong>Misión:</strong> Optimizar procesos mediante análisis tecnológico avanzado | 
+                <strong>Visión:</strong> Datos accionables para decisiones estratégicas
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("---")
     
@@ -494,11 +587,19 @@ def render_detalle(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, fi
 
 
 def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
-    st.header("Predicción de Defectos con IA")
-    st.caption(
-        "Sistema de predicción basado en Machine Learning y distribución de Rayleigh. "
-        "Optimiza procesos con tecnología para decisiones basadas en datos."
-    )
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); 
+                    padding: 25px; border-radius: 12px; margin-bottom: 25px;'>
+            <h1 style='color: white; margin: 0; font-size: 2.2em;'> Predicción de Defectos con IA</h1>
+            <p style='color: rgba(255,255,255,0.95); margin: 8px 0 0 0; font-size: 1.05em;'>
+                Modelo de Machine Learning basado en distribución de Rayleigh
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 8px 0 0 0; font-size: 0.95em;'>
+                <strong>Misión:</strong> Optimizar calidad mediante predicción tecnológica | 
+                <strong>Visión:</strong> Prevención proactiva basada en datos históricos
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
 
     modelo = entrenar_modelo(df_proyectos)
     metricas_modelo = obtener_metricas_modelo(df_proyectos, modelo)
@@ -761,33 +862,68 @@ def render_metricas_calculadas(filtros: dict):
     Vista que muestra todas las métricas calculadas dinámicamente
     según las especificaciones del proyecto
     """
-    st.header("Métricas Calculadas Dinámicamente")
-    st.caption("Métricas calculadas en tiempo real desde las tablas de dimensiones y hechos")
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+                    padding: 25px; border-radius: 12px; margin-bottom: 25px;'>
+            <h1 style='color: white; margin: 0; font-size: 2.2em;'>Métricas Calculadas</h1>
+            <p style='color: rgba(255,255,255,0.95); margin: 8px 0 0 0; font-size: 1.05em;'>
+                Indicadores técnicos: retrasos, presupuesto, costos, eficiencia y productividad
+            </p>
+            <p style='color: rgba(255,255,255,0.85); margin: 8px 0 0 0; font-size: 0.95em;'>
+                <strong>Misión:</strong> Optimizar rendimiento con medición precisa | 
+                <strong>Visión:</strong> Mejora continua basada en métricas objetivas
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
     
     # Obtener dataframe con todas las métricas calculadas
     df_metricas = generar_dataframe_metricas_calculadas()
     stats = obtener_estadisticas_metricas_calculadas()
     
-    # Merge con datos de proyectos para filtrar
+    # Obtener información básica de proyectos para filtros y visualización
     tablas = cargar_tablas_completas()
-    df_proyectos_info = tablas["hechos_proyectos"].merge(
-        tablas["dim_proyectos"], on="ID_Proyecto"
-    ).merge(
-        tablas["dim_clientes"], on="ID_Cliente"
-    ).merge(
-        tablas["dim_tiempo"], left_on="ID_FechaFin", right_on="ID_Tiempo"
+    
+    # Merge simple solo con dim_proyectos para obtener CodigoProyecto
+    df_completo = df_metricas.merge(
+        tablas["dim_proyectos"][["ID_Proyecto", "CodigoProyecto", "ID_Cliente"]], 
+        on="ID_Proyecto", 
+        how="left"
     )
     
-    df_completo = df_metricas.merge(df_proyectos_info, on="ID_Proyecto")
+    # Agregar información de cliente
+    df_completo = df_completo.merge(
+        tablas["dim_clientes"][["ID_Cliente", "CodigoClienteReal"]], 
+        on="ID_Cliente", 
+        how="left"
+    )
+    
+    # Agregar información temporal para filtros
+    df_tiempo_fin = tablas["dim_tiempo"][["ID_Tiempo", "Anio", "Mes"]].copy()
+    df_tiempo_fin = df_tiempo_fin.rename(columns={"Anio": "AnioFin", "Mes": "MesFin"})
+    
+    df_hechos_fechas = tablas["hechos_proyectos"][["ID_Proyecto", "ID_FechaFin"]]
+    df_completo = df_completo.merge(df_hechos_fechas, on="ID_Proyecto", how="left")
+    df_completo = df_completo.merge(df_tiempo_fin, left_on="ID_FechaFin", right_on="ID_Tiempo", how="left")
+    
+    # Verificar si hay datos
+    if df_completo.empty:
+        st.warning("No hay datos disponibles para las métricas calculadas. Verifica que las tablas del DWH contengan información.")
+        return
+    
+    # Debug: Mostrar columnas disponibles (solo en desarrollo)
+    with st.expander("Información de Debug - Columnas Disponibles"):
+        st.write(f"**Columnas en df_completo:** {', '.join(list(df_completo.columns))}")
+        st.write(f"**Número de registros:** {len(df_completo)}")
+        st.dataframe(df_completo.head(3))
     
     # Aplicar filtros
-    if filtros.get("anio"):
-        df_completo = df_completo[df_completo["Anio"].isin(filtros["anio"])]
-    if filtros.get("mes"):
-        df_completo = df_completo[df_completo["Mes"].isin(filtros["mes"])]
-    if filtros.get("cliente"):
+    if filtros.get("anio") and "AnioFin" in df_completo.columns:
+        df_completo = df_completo[df_completo["AnioFin"].isin(filtros["anio"])]
+    if filtros.get("mes") and "MesFin" in df_completo.columns:
+        df_completo = df_completo[df_completo["MesFin"].isin(filtros["mes"])]
+    if filtros.get("cliente") and "CodigoClienteReal" in df_completo.columns:
         df_completo = df_completo[df_completo["CodigoClienteReal"].isin(filtros["cliente"])]
-    if filtros.get("proyecto"):
+    if filtros.get("proyecto") and "CodigoProyecto" in df_completo.columns:
         df_completo = df_completo[df_completo["CodigoProyecto"].isin(filtros["proyecto"])]
     
     # Panel de resumen
@@ -797,145 +933,357 @@ def render_metricas_calculadas(filtros: dict):
     
     with col1:
         st.metric(
-            "Duración Promedio",
-            f"{stats['duracion_promedio_dias']:.1f} días",
-            help="DuracionRealDias: Número de días reales de ejecución del proyecto"
+            "Retraso Inicio Promedio",
+            f"{stats['retraso_inicio_promedio']:.1f} días",
+            help="RetrasoInicioDias: Diferencia entre fecha inicio planificada y real"
         )
     
     with col2:
         st.metric(
-            "Defectos Encontrados",
-            f"{stats['defectos_total']:.0f} total",
-            delta=f"{stats['defectos_promedio']:.1f} promedio",
-            help="NumeroDefectosEncontrados: Total de defectos o errores identificados (pruebas fallidas)"
+            "Retraso Final Promedio",
+            f"{stats['retraso_final_promedio']:.1f} días",
+            help="RetrasoFinalDias: Diferencia entre fecha fin planificada y real"
         )
     
     with col3:
         st.metric(
-            "Productividad Calculada",
-            f"{stats['productividad_calculada']:.2f}",
-            help="ProductividadPromedio: DuracionReal / No_empleados"
+            "Productividad Promedio",
+            f"{stats['productividad_promedio']:.1f} hrs/hito",
+            help="ProductividadPromedio: Σ(HorasReales) / Cantidad hitos"
         )
     
     with col4:
         st.metric(
             "Costo Real Promedio",
-            f"${stats['costo_real_promedio']:,.2f}",
-            help="CostoReal: Σ(CostoPorHora × HorasReales) + Σ GastosFinancieros"
+            f"${stats['coste_real_promedio']:,.2f}",
+            help="CosteReal: Σ(CostoPorHora × HorasReales) + Σ GastosFinancieros"
         )
     
-    # Métricas de retrasos
-    st.subheader("Análisis de Retrasos")
-    col_a, col_b = st.columns(2)
+    # Métricas financieras
+    st.subheader("Análisis Financiero")
+    col_a, col_b, col_c = st.columns(3)
     
     with col_a:
         st.metric(
-            "Tareas Retrasadas (Calculado)",
-            f"{stats['tareas_retrasadas_calculada']*100:.2f}%",
-            delta=f"{stats['tareas_retrasadas_calculada']*100 - 10:.2f}% vs objetivo 10%",
-            delta_color="inverse",
-            help="PorcentajeTareasRetrasadas: (COUNT(TareasRetrasadas) / COUNT(TareasTotales)) × 100"
+            "Presupuesto Promedio",
+            f"${stats['presupuesto_promedio']:,.2f}",
+            help="Presupuesto: ValorTotalContrato del proyecto"
         )
     
     with col_b:
         st.metric(
-            "Hitos Retrasados (Calculado)",
-            f"{stats['hitos_retrasados_calculada']*100:.2f}%",
-            delta=f"{stats['hitos_retrasados_calculada']*100 - 10:.2f}% vs objetivo 10%",
+            "Desviación Presupuestal",
+            f"${stats['desviacion_presupuestal_promedio']:,.2f}",
+            delta=f"{(stats['desviacion_presupuestal_promedio']/stats['presupuesto_promedio']*100) if stats['presupuesto_promedio'] > 0 else 0:.1f}%",
+            help="DesviacionPresupuestal: Presupuesto - CosteReal"
+        )
+    
+    with col_c:
+        st.metric(
+            "Penalizaciones Totales",
+            f"${stats['penalizaciones_total']:,.2f}",
+            delta=f"${stats['penalizaciones_promedio']:,.2f} promedio",
             delta_color="inverse",
-            help="PorcentajeHitosRetrasados: (COUNT(HitosRetrasados) / COUNT(HitosTotales)) × 100"
+            help="PenalizacionesMonto: Suma de penalizaciones contractuales"
+        )
+    
+    # Métricas de calidad y eficiencia
+    st.subheader("Calidad y Eficiencia de Procesos")
+    col_d, col_e, col_f = st.columns(3)
+    
+    with col_d:
+        st.metric(
+            "Tareas Retrasadas",
+            f"{stats['tareas_retrasadas_porcentaje']*100:.2f}%",
+            delta=f"{stats['tareas_retrasadas_porcentaje']*100 - 10:.2f}% vs objetivo 10%",
+            delta_color="inverse",
+            help="PorcentajeTareasRetrasadas: Tareas con retraso / Total tareas × 100"
+        )
+    
+    with col_e:
+        st.metric(
+            "Hitos Retrasados",
+            f"{stats['hitos_retrasados_porcentaje']*100:.2f}%",
+            delta=f"{stats['hitos_retrasados_porcentaje']*100 - 10:.2f}% vs objetivo 10%",
+            delta_color="inverse",
+            help="PorcentajeHitosRetrasados: Hitos retrasados / Total hitos × 100"
+        )
+    
+    with col_f:
+        st.metric(
+            "Tasa de Errores",
+            f"{stats['tasa_errores_promedio']*100:.2f}%",
+            delta=f"{stats['tasa_errores_promedio']*100 - 5:.2f}% vs objetivo 5%",
+            delta_color="inverse",
+            help="TasaDeErroresEncontrados: Errores / Total tareas × 100"
         )
     
     # Tabla detallada de métricas por proyecto
     st.subheader("Detalle por Proyecto")
     
-    # Preparar tabla para mostrar
-    tabla_display = df_completo[[
-        "CodigoProyecto",
-        "DuracionRealDias",
-        "NumeroDefectosEncontrados",
-        "ProductividadPromedio_Calculada",
-        "PorcentajeTareasRetrasadas_Calculada",
-        "PorcentajeHitosRetrasados_Calculada",
-        "CostoReal_Total_Calculado"
-    ]].copy()
+    # Verificar que tengamos la columna de identificación del proyecto
+    col_proyecto = None
+    if "CodigoProyecto" in df_completo.columns:
+        col_proyecto = "CodigoProyecto"
+    elif "ID_Proyecto" in df_completo.columns:
+        col_proyecto = "ID_Proyecto"
+    else:
+        st.error("No se encontró columna de identificación de proyecto")
+        return
     
-    tabla_display = tabla_display.rename(columns={
-        "CodigoProyecto": "Proyecto",
-        "DuracionRealDias": "Duración (días)",
-        "NumeroDefectosEncontrados": "Defectos",
-        "ProductividadPromedio_Calculada": "Productividad",
-        "PorcentajeTareasRetrasadas_Calculada": "% Tareas Retrasadas",
-        "PorcentajeHitosRetrasados_Calculada": "% Hitos Retrasados",
-        "CostoReal_Total_Calculado": "Costo Real Total"
-    })
+    # Preparar tabla para mostrar con las nuevas métricas
+    columnas_mostrar = [col_proyecto, "RetrasoInicioDias", "RetrasoFinalDias", "Presupuesto", 
+                        "CosteReal", "DesviacionPresupuestal", "ProductividadPromedio",
+                        "TasaDeErroresEncontrados", "TasaDeExitoEnPruebas"]
     
-    # Formatear columnas
-    tabla_display["% Tareas Retrasadas"] = tabla_display["% Tareas Retrasadas"].apply(lambda x: f"{x:.2f}%")
-    tabla_display["% Hitos Retrasados"] = tabla_display["% Hitos Retrasados"].apply(lambda x: f"{x:.2f}%")
-    tabla_display["Costo Real Total"] = tabla_display["Costo Real Total"].apply(lambda x: f"${x:,.2f}")
-    tabla_display["Productividad"] = tabla_display["Productividad"].apply(lambda x: f"{x:.2f}")
+    # Filtrar solo columnas que existan en el dataframe
+    columnas_existentes = [col for col in columnas_mostrar if col in df_completo.columns]
     
-    st.dataframe(tabla_display, use_container_width=True)
+    if not columnas_existentes:
+        st.warning("No se encontraron las columnas esperadas en los datos")
+        return
     
-    # Comparación: Métricas Precalculadas vs Calculadas
-    st.subheader("Comparación: Precalculadas vs Calculadas")
-    st.info(
-        "Esta sección compara las métricas que vienen precalculadas en los datos "
-        "con las calculadas dinámicamente según las fórmulas especificadas."
-    )
+    tabla_display = df_completo[columnas_existentes].copy()
     
-    col_comp1, col_comp2 = st.columns(2)
+    # Preparar diccionario de renombrado dinámicamente
+    rename_dict = {
+        col_proyecto: "Proyecto",
+        "RetrasoInicioDias": "Retraso Inicio (días)",
+        "RetrasoFinalDias": "Retraso Final (días)",
+        "Presupuesto": "Presupuesto ($)",
+        "CosteReal": "Costo Real ($)",
+        "DesviacionPresupuestal": "Desviación ($)",
+        "ProductividadPromedio": "Productividad (hrs/hito)",
+        "TasaDeErroresEncontrados": "Tasa Errores (%)",
+        "TasaDeExitoEnPruebas": "Éxito Pruebas (%)"
+    }
     
-    with col_comp1:
-        st.markdown("#### Productividad")
-        comparacion_prod = df_completo[[
-            "CodigoProyecto",
-            "ProductividadPromedio",
-            "ProductividadPromedio_Calculada"
-        ]].head(10)
-        st.dataframe(comparacion_prod, use_container_width=True)
+    # Filtrar solo las claves que existan en las columnas
+    rename_dict_filtrado = {k: v for k, v in rename_dict.items() if k in tabla_display.columns}
+    tabla_display = tabla_display.rename(columns=rename_dict_filtrado)
     
-    with col_comp2:
-        st.markdown("#### Tareas Retrasadas (%)")
-        comparacion_tareas = df_completo[[
-            "CodigoProyecto",
-            "PorcentajeTareasRetrasadas",
-            "PorcentajeTareasRetrasadas_Calculada"
-        ]].head(10)
-        st.dataframe(comparacion_tareas, use_container_width=True)
+    # Formatear columnas numéricas para mejor visualización
+    if "Presupuesto ($)" in tabla_display.columns:
+        tabla_display["Presupuesto ($)"] = tabla_display["Presupuesto ($)"].apply(lambda x: f"${x:,.2f}" if pd.notna(x) else "N/A")
+    if "Costo Real ($)" in tabla_display.columns:
+        tabla_display["Costo Real ($)"] = tabla_display["Costo Real ($)"].apply(lambda x: f"${x:,.2f}" if pd.notna(x) else "N/A")
+    if "Desviación ($)" in tabla_display.columns:
+        tabla_display["Desviación ($)"] = tabla_display["Desviación ($)"].apply(lambda x: f"${x:,.2f}" if pd.notna(x) else "N/A")
+    if "Tasa Errores (%)" in tabla_display.columns:
+        tabla_display["Tasa Errores (%)"] = tabla_display["Tasa Errores (%)"].apply(lambda x: f"{x*100:.2f}%" if pd.notna(x) else "N/A")
+    if "Éxito Pruebas (%)" in tabla_display.columns:
+        tabla_display["Éxito Pruebas (%)"] = tabla_display["Éxito Pruebas (%)"].apply(lambda x: f"{x*100:.2f}%" if pd.notna(x) else "N/A")
     
-    # Gráficos
-    st.subheader("Visualizaciones")
+    st.dataframe(tabla_display, use_container_width=True, height=400)
+    
+    # Gráficos de visualización
+    st.subheader("Visualizaciones de Métricas")
     
     col_viz1, col_viz2 = st.columns(2)
     
     with col_viz1:
-        st.markdown("#### Defectos por Proyecto")
-        chart_data = df_completo[["CodigoProyecto", "NumeroDefectosEncontrados"]].set_index("CodigoProyecto")
-        st.bar_chart(chart_data, use_container_width=True)
+        st.markdown("#### Retrasos de Inicio por Proyecto")
+        if "RetrasoInicioDias" in df_completo.columns and col_proyecto in df_completo.columns:
+            chart_data = df_completo[[col_proyecto, "RetrasoInicioDias"]].set_index(col_proyecto).head(15)
+            st.bar_chart(chart_data, use_container_width=True)
+            st.caption("Días de retraso entre fecha inicio planificada y real")
+        else:
+            st.info("Datos no disponibles para esta visualización")
     
     with col_viz2:
-        st.markdown("#### Duración Real (días)")
-        chart_data2 = df_completo[["CodigoProyecto", "DuracionRealDias"]].set_index("CodigoProyecto")
-        st.bar_chart(chart_data2, use_container_width=True)
+        st.markdown("#### Productividad por Proyecto")
+        if "ProductividadPromedio" in df_completo.columns and col_proyecto in df_completo.columns:
+            chart_data2 = df_completo[[col_proyecto, "ProductividadPromedio"]].set_index(col_proyecto).head(15)
+            st.bar_chart(chart_data2, use_container_width=True)
+            st.caption("Horas promedio por hito alcanzado")
+        else:
+            st.info("Datos no disponibles para esta visualización")
     
-    # Desglose de costos
-    st.subheader("Desglose de Costos Reales")
-    costos_desglose = df_completo[[
-        "CodigoProyecto",
-        "CostoReal_Horas",
-        "CostoReal_Gastos"
-    ]].set_index("CodigoProyecto")
+    # Desglose financiero
+    st.subheader("Análisis Financiero por Proyecto")
     
-    costos_desglose = costos_desglose.rename(columns={
-        "CostoReal_Horas": "Costo Horas Trabajadas",
-        "CostoReal_Gastos": "Gastos Financieros"
-    })
+    col_fin1, col_fin2 = st.columns(2)
     
-    st.bar_chart(costos_desglose, use_container_width=True)
-    st.caption(
-        "CostoReal = Σ(CostoPorHoraEmpleado × HorasReales) + Σ GastosFinancieros. "
-        "Muestra la composición del costo real entre horas trabajadas y gastos financieros."
-    )
+    with col_fin1:
+        st.markdown("#### Presupuesto vs Costo Real")
+        if all(col in df_completo.columns for col in [col_proyecto, "Presupuesto", "CosteReal"]):
+            comparacion_financiera = df_completo[[col_proyecto, "Presupuesto", "CosteReal"]].set_index(col_proyecto).head(10)
+            st.bar_chart(comparacion_financiera, use_container_width=True)
+            st.caption("Comparación entre presupuesto planificado y costo real ejecutado")
+        else:
+            st.info("Datos no disponibles para esta visualización")
+    
+    with col_fin2:
+        st.markdown("#### Desviación Presupuestal")
+        if all(col in df_completo.columns for col in [col_proyecto, "DesviacionPresupuestal"]):
+            desviaciones = df_completo[[col_proyecto, "DesviacionPresupuestal"]].set_index(col_proyecto).head(10)
+            st.bar_chart(desviaciones, use_container_width=True, color="#ff5858")
+            st.caption("Desviación = Presupuesto - CosteReal (valores negativos indican sobrecosto)")
+        else:
+            st.info("Datos no disponibles para esta visualización")
 
+
+def render_okrs(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):
+    """
+    Vista que muestra los OKRs (Objectives and Key Results) con progreso y estado
+    """
+    # Calcular KPIs
+    kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
+    
+    # Calcular progreso de OKRs
+    okrs_progreso = calcular_todos_okrs(kpis)
+    
+    # Header
+    st.markdown("""
+        <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    padding: 30px; border-radius: 15px; margin-bottom: 30px;'>
+            <h1 style='color: white; margin: 0; text-align: center; font-size: 2.5em;'>
+                OKRs - Objectives and Key Results
+            </h1>
+            <p style='color: rgba(255,255,255,0.9); text-align: center; margin: 10px 0 0 0; font-size: 1.1em;'>
+                Objetivos estratégicos y resultados clave medibles
+            </p>
+            <p style='color: rgba(255,255,255,0.85); text-align: center; margin: 8px 0 0 0; font-size: 0.95em;'>
+                 <strong>Misión:</strong> Optimizar procesos con objetivos claros | 
+                 <strong>Visión:</strong> Excelencia sostenible mediante resultados medibles
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Mostrar cada OKR
+    okr_configs = [
+        ("O1_Excelencia_Financiera", "#11998e", "#38ef7d"),
+        ("O2_Satisfaccion_Cliente", "#2980b9", "#6dd5fa"),
+        ("O3_Procesos_Eficientes", "#f857a6", "#ff5858"),
+        ("O4_Equipos_Alto_Desempeño", "#fa709a", "#fee140")
+    ]
+    
+    for okr_key, color1, color2 in okr_configs:
+        okr_data = okrs_progreso[okr_key]
+        progreso = okr_data["progreso_general"]
+        
+        # Determinar color de progreso
+        if progreso >= 85:
+            progreso_color = "#10b981"  # Verde
+            estado_emoji = "●"
+        elif progreso >= 70:
+            progreso_color = "#f59e0b"  # Amarillo
+            estado_emoji = "●"
+        else:
+            progreso_color = "#ef4444"  # Rojo
+            estado_emoji = "●"
+        
+        # Header del OKR
+        st.markdown(f"""
+            <div style='background: linear-gradient(to right, {color1}, {color2}); 
+                        padding: 15px 20px; border-radius: 10px; margin: 20px 0 15px 0;'>
+                <h2 style='color: white; margin: 0; font-size: 1.6em;'>{okr_data["objetivo"]}</h2>
+                <p style='color: rgba(255,255,255,0.95); margin: 5px 0 0 0; font-size: 0.95em;'>
+                    {okr_data["descripcion"]}
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+        # Progreso general
+        st.markdown(f"""
+            <div style='background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;
+                        border: 2px solid {progreso_color};'>
+                <div style='display: flex; justify-content: space-between; align-items: center;'>
+                    <span style='font-size: 1.1em; font-weight: 600;'>
+                        {estado_emoji} Progreso General
+                    </span>
+                    <span style='font-size: 1.3em; font-weight: bold; color: {progreso_color};'>
+                        {progreso:.1f}%
+                    </span>
+                </div>
+                <div style='background: #e5e7eb; height: 20px; border-radius: 10px; margin-top: 10px; overflow: hidden;'>
+                    <div style='background: {progreso_color}; height: 100%; width: {progreso}%; 
+                                transition: width 0.3s ease;'></div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+        
+        # Key Results
+        st.markdown("**Key Results:**")
+        
+        cols = st.columns(len(okr_data["key_results"]))
+        
+        for idx, kr_data in enumerate(okr_data["key_results"]):
+            with cols[idx]:
+                kr_progreso = kr_data["progreso"]
+                
+                # Color del KR
+                if kr_progreso >= 90:
+                    kr_color = "#10b981"
+                    kr_emoji = "✓"
+                elif kr_progreso >= 75:
+                    kr_color = "#3b82f6"
+                    kr_emoji = "●"
+                elif kr_progreso >= 50:
+                    kr_color = "#f59e0b"
+                    kr_emoji = "!"
+                else:
+                    kr_color = "#ef4444"
+                    kr_emoji = "✗"
+                
+                st.markdown(f"""
+                    <div style='background: rgba(0,0,0,0.02); padding: 12px; border-radius: 8px; 
+                                border-left: 4px solid {kr_color}; margin-bottom: 10px;'>
+                        <div style='font-weight: 600; margin-bottom: 5px;'>
+                            {kr_emoji} {kr_data["kr"]}
+                        </div>
+                        <div style='font-size: 0.85em; color: #666; margin-bottom: 8px;'>
+                            {kr_data["descripcion"]}
+                        </div>
+                        <div style='display: flex; justify-content: space-between; font-size: 0.85em;'>
+                            <span>Actual: <strong>{kr_data["metrica_valor"]:.2f}</strong></span>
+                            <span>Target: <strong>{kr_data["target"]:.2f}</strong></span>
+                        </div>
+                        <div style='background: #e5e7eb; height: 8px; border-radius: 4px; margin-top: 8px; overflow: hidden;'>
+                            <div style='background: {kr_color}; height: 100%; width: {kr_progreso}%;'></div>
+                        </div>
+                        <div style='text-align: center; margin-top: 5px; font-weight: 600; color: {kr_color};'>
+                            {kr_progreso:.1f}%
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Resumen global
+    st.markdown("---")
+    st.subheader("Resumen Global de OKRs")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    for idx, (okr_key, _, _) in enumerate(okr_configs):
+        okr_data = okrs_progreso[okr_key]
+        progreso = okr_data["progreso_general"]
+        
+        if progreso >= 85:
+            estado = "EXCELENTE"
+            color_fondo = "#d1fae5"
+            color_texto = "#065f46"
+        elif progreso >= 70:
+            estado = "EN CAMINO"
+            color_fondo = "#fef3c7"
+            color_texto = "#92400e"
+        else:
+            estado = "REQUIERE ATENCIÓN"
+            color_fondo = "#fee2e2"
+            color_texto = "#991b1b"
+        
+        with [col1, col2, col3, col4][idx]:
+            st.markdown(f"""
+                <div style='background: {color_fondo}; padding: 15px; border-radius: 8px; text-align: center;'>
+                    <div style='font-size: 2em; font-weight: bold; color: {color_texto};'>
+                        {progreso:.0f}%
+                    </div>
+                    <div style='font-size: 0.9em; color: {color_texto}; margin-top: 5px;'>
+                        {estado}
+                    </div>
+                    <div style='font-size: 0.8em; color: #666; margin-top: 8px;'>
+                        {okr_data["objetivo"][:30]}...
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)

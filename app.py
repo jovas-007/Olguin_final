@@ -3,7 +3,7 @@ import streamlit as st
 from dss.analytics import get_kpis
 from dss.auth import login
 from dss.data_sources import cargar_df_asignaciones, cargar_df_proyectos
-from dss.ui.views import render_detalle, render_prediccion, render_scorecard, render_metricas_calculadas
+from dss.ui.views import render_detalle, render_prediccion, render_scorecard, render_metricas_calculadas, render_okrs, render_analisis_visual
 
 st.set_page_config(page_title="DSS – Dashboard de desempeño de proyectos de software", layout="wide")
 
@@ -11,7 +11,7 @@ st.set_page_config(page_title="DSS – Dashboard de desempeño de proyectos de s
 def main():
     st.title("DSS – Dashboard de desempeño de proyectos de software")
     st.caption(
-        "Misión: Optimizar procesos con tecnologa; Visión: decisiones basadas en datos y excelencia sostenible."
+        "Misión: Optimizar procesos con tecnología | Visión: Decisiones basadas en datos y excelencia sostenible"
     )
 
     login()
@@ -36,7 +36,7 @@ def main():
 
     kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
 
-    tabs = ["Resumen general", "Análisis detallado", "Métricas Calculadas"]
+    tabs = ["Balanced Scorecard", "Análisis Visual", "Análisis Detallado", "Métricas Calculadas", "OKRs"]
     if st.session_state.auth.get("role") == "project_manager":
         tabs.append("Predicción de defectos")
 
@@ -45,12 +45,16 @@ def main():
     with tab_objs[0]:
         render_scorecard(df_proyectos, df_asignaciones, filtros)
     with tab_objs[1]:
-        render_detalle(df_proyectos, df_asignaciones, filtros)
+        render_analisis_visual(df_proyectos, df_asignaciones, filtros)
     with tab_objs[2]:
+        render_detalle(df_proyectos, df_asignaciones, filtros)
+    with tab_objs[3]:
         render_metricas_calculadas(filtros)
+    with tab_objs[4]:
+        render_okrs(df_proyectos, df_asignaciones, filtros)
 
     if "Predicción de defectos" in tabs:
-        with tab_objs[3]:
+        with tab_objs[5]:
             render_prediccion(df_proyectos, kpis)
 
 

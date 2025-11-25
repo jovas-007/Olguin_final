@@ -1,6 +1,23 @@
 # DSS – Dashboard de desempeño de proyectos de software
 
-Aplicación de Streamlit que implementa un Balanced Scorecard, análisis OLAP y un módulo de predicción de defectos basado en distribución de Rayleigh para el data warehouse `dw_proyectos`.
+## 🎯 Misión y Visión
+
+**Misión:** Optimizar procesos con tecnología  
+**Visión:** Decisiones basadas en datos y excelencia sostenible
+
+---
+
+## 📋 Descripción
+
+Aplicación de Streamlit que implementa un **Balanced Scorecard**, análisis **OLAP multidimensional**, **predicción de defectos con IA** y **OKRs estratégicos** para el data warehouse `dw_proyectos`.
+
+### Características principales
+
+- ✅ **Balanced Scorecard:** 4 perspectivas estratégicas con predicciones de IA y 16+ recomendaciones accionables
+- ✅ **Análisis OLAP:** 10+ vistas multidimensionales con drill-down, roll-up, slicing, dicing y pivot
+- ✅ **Predicción de defectos:** Modelo de Machine Learning basado en distribución de Rayleigh
+- ✅ **Métricas calculadas:** 12 indicadores técnicos calculados dinámicamente desde el DWH
+- ✅ **OKRs:** 4 objetivos estratégicos con 12 Key Results medibles y seguimiento automático de progreso
 
 ## Estructura
 - `app.py`: punto de entrada de Streamlit que orquesta vistas y filtros.

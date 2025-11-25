@@ -15,15 +15,31 @@ DB_CONFIG = {
 }
 
 KPI_TARGETS = {
-    "cumplimiento_presupuesto": 0.9,
-    "desviacion_presupuestal": 0.05,
-    "penalizaciones_sobre_presupuesto": 0.02,
-    "proyectos_a_tiempo": 0.85,
-    "proyectos_cancelados": 0.05,
-    "porcentaje_tareas_retrasadas": 0.1,
-    "porcentaje_hitos_retrasados": 0.1,
-    "tasa_errores": 0.05,
-    "productividad_promedio": 0.75,
-    "tasa_exito_pruebas": 0.9,
-    "horas_relacion": 1.1,
+    # Métricas de Tiempo
+    "retraso_inicio_dias": 0,  # Target: 0 días de retraso en inicio
+    "retraso_final_dias": 0,  # Target: 0 días de retraso al finalizar
+    
+    # Métricas Financieras
+    "cumplimiento_presupuesto": 0.95,  # 95% de cumplimiento
+    "desviacion_presupuestal": 0.05,  # Máximo 5% de desviación
+    "penalizaciones_sobre_presupuesto": 0.02,  # Máximo 2%
+    
+    # Métricas de Distribución Financiera
+    "proporcion_capex_opex": 0.6,  # 60% CAPEX, 40% OPEX
+    
+    # Métricas de Calidad
+    "tasa_errores": 0.05,  # Máximo 5% de tasa de errores
+    "tasa_exito_pruebas": 0.9,  # Mínimo 90% de éxito en pruebas
+    
+    # Métricas de Productividad
+    "productividad_promedio": 40,  # 40 horas por hito (baseline)
+    
+    # Métricas de Retrasos
+    "porcentaje_tareas_retrasadas": 0.1,  # Máximo 10%
+    "porcentaje_hitos_retrasados": 0.1,  # Máximo 10%
+    
+    # Métricas Complementarias (mantenidas para compatibilidad)
+    "proyectos_a_tiempo": 0.85,  # 85% de proyectos a tiempo
+    "proyectos_cancelados": 0.05,  # Máximo 5% cancelados
+    "horas_relacion": 1.1,  # Relación horas reales/planificadas <= 110%
 }
