@@ -113,12 +113,12 @@ def predecir_satisfaccion_cliente(kpis: Dict, vistas: Dict) -> Dict:
         recomendaciones.append("Implementar metodologías ágiles para mayor flexibilidad")
         recomendaciones.append("Realizar revisiones de hitos más frecuentes")
     
-    if proyectos_cancelados > 0.30:
-        recomendaciones.append("CRÍTICO: Más del 30% de proyectos cancelados")
+    if proyectos_cancelados > 0.25:
+        recomendaciones.append("CRÍTICO: Más del 25% de proyectos cancelados")
         recomendaciones.append("Revisar proceso de selección y aprobación de proyectos")
         recomendaciones.append("Fortalecer análisis de viabilidad y ROI pre-proyecto")
-    elif proyectos_cancelados > 0.20:
-        recomendaciones.append("Tasa de cancelación elevada (>20%)")
+    elif proyectos_cancelados > 0.15:
+        recomendaciones.append("Tasa de cancelación elevada (>15%)")
         recomendaciones.append("Mejorar comunicación con stakeholders")
         recomendaciones.append("Establecer checkpoints de go/no-go tempranos")
     elif proyectos_cancelados > 0.10:
