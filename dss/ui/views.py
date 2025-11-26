@@ -135,6 +135,7 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             1 - kpis["proyectos_cancelados"],
             1 - KPI_TARGETS["proyectos_cancelados"],
             "Gestión de riesgos temprana evita cancelaciones y refuerza la reputación.",
+            menor_mejor=False  # Mayor % de NO cancelados es mejor
         )
     
     # Recomendaciones de Satisfacción del Cliente

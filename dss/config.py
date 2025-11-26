@@ -40,6 +40,6 @@ KPI_TARGETS = {
     
     # Métricas Complementarias (mantenidas para compatibilidad)
     "proyectos_a_tiempo": 0.85,  # 85% de proyectos a tiempo
-    "proyectos_cancelados": 0.05,  # Máximo 5% cancelados
+    "proyectos_cancelados": 0.30,  # Máximo 30% cancelados
     "horas_relacion": 1.1,  # Relación horas reales/planificadas <= 110%
 }

@@ -93,7 +93,8 @@ def predecir_satisfaccion_cliente(kpis: Dict, vistas: Dict) -> Dict:
     proyectos_cancelados = kpis.get("proyectos_cancelados", 0)
     
     # Score de satisfacción (0-100)
-    satisfaccion_score = proyectos_a_tiempo * 70 + (1 - proyectos_cancelados) * 30
+    # Ajustado para objetivo de 30% cancelados
+    satisfaccion_score = proyectos_a_tiempo * 60 + (1 - proyectos_cancelados) * 40
     
     if satisfaccion_score >= 85:
         nivel = "EXCELENTE"
@@ -112,10 +113,17 @@ def predecir_satisfaccion_cliente(kpis: Dict, vistas: Dict) -> Dict:
         recomendaciones.append("Implementar metodologías ágiles para mayor flexibilidad")
         recomendaciones.append("Realizar revisiones de hitos más frecuentes")
     
-    if proyectos_cancelados > 0.05:
-        recomendaciones.append("Fortalecer análisis de viabilidad pre-proyecto")
+    if proyectos_cancelados > 0.30:
+        recomendaciones.append("CRÍTICO: Más del 30% de proyectos cancelados")
+        recomendaciones.append("Revisar proceso de selección y aprobación de proyectos")
+        recomendaciones.append("Fortalecer análisis de viabilidad y ROI pre-proyecto")
+    elif proyectos_cancelados > 0.20:
+        recomendaciones.append("Tasa de cancelación elevada (>20%)")
         recomendaciones.append("Mejorar comunicación con stakeholders")
         recomendaciones.append("Establecer checkpoints de go/no-go tempranos")
+    elif proyectos_cancelados > 0.10:
+        recomendaciones.append("Monitorear tasa de cancelación")
+        recomendaciones.append("Reforzar gestión de expectativas desde inicio")
     
     if not recomendaciones:
         recomendaciones.append("Excelente gestión de entregas")
