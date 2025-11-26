@@ -1133,13 +1133,54 @@ def render_okrs(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtr
         </div>
     """, unsafe_allow_html=True)
     
-    # Mostrar cada OKR
+    # Resumen global ANTES de mostrar cada OKR
+    st.markdown("---")
+    st.subheader("Resumen Global de OKRs")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
     okr_configs = [
         ("O1_Excelencia_Financiera", "#11998e", "#38ef7d"),
         ("O2_Satisfaccion_Cliente", "#2980b9", "#6dd5fa"),
         ("O3_Procesos_Eficientes", "#f857a6", "#ff5858"),
         ("O4_Equipos_Alto_Desempeño", "#fa709a", "#fee140")
     ]
+    
+    for idx, (okr_key, _, _) in enumerate(okr_configs):
+        okr_data = okrs_progreso[okr_key]
+        progreso = okr_data["progreso_general"]
+        
+        if progreso >= 85:
+            estado = "EXCELENTE"
+            color_fondo = "#d1fae5"
+            color_texto = "#065f46"
+        elif progreso >= 70:
+            estado = "EN CAMINO"
+            color_fondo = "#fef3c7"
+            color_texto = "#92400e"
+        else:
+            estado = "REQUIERE ATENCIÓN"
+            color_fondo = "#fee2e2"
+            color_texto = "#991b1b"
+        
+        with [col1, col2, col3, col4][idx]:
+            st.markdown(f"""
+                <div style='background: {color_fondo}; padding: 15px; border-radius: 8px; text-align: center;'>
+                    <div style='font-size: 2em; font-weight: bold; color: {color_texto};'>
+                        {progreso:.0f}%
+                    </div>
+                    <div style='font-size: 0.9em; color: {color_texto}; margin-top: 5px;'>
+                        {estado}
+                    </div>
+                    <div style='font-size: 0.8em; color: #666; margin-top: 8px;'>
+                        {okr_data["objetivo"][:30]}...
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
+    
+    st.markdown("<br><br>", unsafe_allow_html=True)
+    
+    # Mostrar cada OKR con detalle
     
     for okr_key, color1, color2 in okr_configs:
         okr_data = okrs_progreso[okr_key]
@@ -1232,41 +1273,3 @@ def render_okrs(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtr
                 """, unsafe_allow_html=True)
         
         st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Resumen global
-    st.markdown("---")
-    st.subheader("Resumen Global de OKRs")
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    for idx, (okr_key, _, _) in enumerate(okr_configs):
-        okr_data = okrs_progreso[okr_key]
-        progreso = okr_data["progreso_general"]
-        
-        if progreso >= 85:
-            estado = "EXCELENTE"
-            color_fondo = "#d1fae5"
-            color_texto = "#065f46"
-        elif progreso >= 70:
-            estado = "EN CAMINO"
-            color_fondo = "#fef3c7"
-            color_texto = "#92400e"
-        else:
-            estado = "REQUIERE ATENCIÓN"
-            color_fondo = "#fee2e2"
-            color_texto = "#991b1b"
-        
-        with [col1, col2, col3, col4][idx]:
-            st.markdown(f"""
-                <div style='background: {color_fondo}; padding: 15px; border-radius: 8px; text-align: center;'>
-                    <div style='font-size: 2em; font-weight: bold; color: {color_texto};'>
-                        {progreso:.0f}%
-                    </div>
-                    <div style='font-size: 0.9em; color: {color_texto}; margin-top: 5px;'>
-                        {estado}
-                    </div>
-                    <div style='font-size: 0.8em; color: #666; margin-top: 8px;'>
-                        {okr_data["objetivo"][:30]}...
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)
