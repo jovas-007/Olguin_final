@@ -37,6 +37,8 @@ def get_kpis(df_proy: pd.DataFrame, df_asig: pd.DataFrame, filtros: Dict) -> Dic
     cumplimiento = 1 - (proyectos["CosteReal"] - proyectos["Presupuesto"]) / proyectos[
         "Presupuesto"
     ]
+    # Normalizar desviación presupuestal como porcentaje
+    desviacion_presupuestal = abs(proyectos["DesviacionPresupuestal"]) / proyectos["Presupuesto"]
     penalizaciones = proyectos["PenalizacionesMonto"] / proyectos["Presupuesto"]
     proyectos_a_tiempo = (proyectos["RetrasoFinalDias"] <= 0).mean() if not proyectos.empty else 0
     proyectos_cancelados = (proyectos["Cancelado"] == 1).mean() if not proyectos.empty else 0
@@ -48,7 +50,7 @@ def get_kpis(df_proy: pd.DataFrame, df_asig: pd.DataFrame, filtros: Dict) -> Dic
 
     return {
         "cumplimiento_presupuesto": cumplimiento.mean() if not proyectos.empty else np.nan,
-        "desviacion_presupuestal": proyectos["DesviacionPresupuestal"].mean() if not proyectos.empty else np.nan,
+        "desviacion_presupuestal": desviacion_presupuestal.mean() if not proyectos.empty else np.nan,
         "penalizaciones_sobre_presupuesto": penalizaciones.mean() if not proyectos.empty else np.nan,
         "proyectos_a_tiempo": proyectos_a_tiempo,
         "proyectos_cancelados": proyectos_cancelados,
