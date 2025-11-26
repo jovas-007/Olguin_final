@@ -5,11 +5,20 @@ from dss.auth import login
 from dss.data_sources import cargar_df_asignaciones, cargar_df_proyectos
 from dss.ui.views import render_detalle, render_prediccion, render_scorecard, render_metricas_calculadas, render_okrs, render_analisis_visual
 
-st.set_page_config(page_title="DSS: Sistema de Soporte de Decisiones", layout="wide")
+st.set_page_config(page_title="DSS: Decision Support System", layout="wide")
 
 
 def main():
-    st.title("DSS: Sistema de Soporte de Decisiones")
+    # CSS para centrar los tabs
+    st.markdown("""
+        <style>
+        .stTabs [data-baseweb="tab-list"] {
+            justify-content: center;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    st.title("DSS: Decision Support System")
     st.caption(
         "Misión: Optimizar procesos con tecnología | Visión: Decisiones basadas en datos y excelencia sostenible"
     )
@@ -36,26 +45,38 @@ def main():
 
     kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
 
-    tabs = ["Balanced Scorecard", "Análisis Visual", "Análisis Detallado", "Métricas Calculadas", "OKRs"]
-    if st.session_state.auth.get("role") == "project_manager":
-        tabs.append("Predicción de defectos")
-
-    tab_objs = st.tabs(tabs)
-
-    with tab_objs[0]:
-        render_scorecard(df_proyectos, df_asignaciones, filtros)
-    with tab_objs[1]:
-        render_analisis_visual(df_proyectos, df_asignaciones, filtros)
-    with tab_objs[2]:
-        render_detalle(df_proyectos, df_asignaciones, filtros)
-    with tab_objs[3]:
-        render_metricas_calculadas(filtros)
-    with tab_objs[4]:
-        render_okrs(df_proyectos, df_asignaciones, filtros)
-
-    if "Predicción de defectos" in tabs:
-        with tab_objs[5]:
-            render_prediccion(df_proyectos, kpis)
+    # Tabs principales: Balanced Scorecard y Dashboard
+    main_tabs = st.tabs([" Balanced Scorecard", " Dashboard"])
+    
+    # ============= TAB 1: BALANCED SCORECARD =============
+    with main_tabs[0]:
+        # Sub-tabs dentro de Balanced Scorecard
+        bsc_subtabs = ["MAIN", "OKRs"]
+        if st.session_state.auth.get("role") == "project_manager":
+            bsc_subtabs.append("Predicción de defectos")
+        
+        bsc_tabs = st.tabs(bsc_subtabs)
+        
+        with bsc_tabs[0]:
+            render_scorecard(df_proyectos, df_asignaciones, filtros)
+        with bsc_tabs[1]:
+            render_okrs(df_proyectos, df_asignaciones, filtros)
+        
+        if "Predicción de defectos" in bsc_subtabs:
+            with bsc_tabs[2]:
+                render_prediccion(df_proyectos, kpis)
+    
+    # ============= TAB 2: DASHBOARD =============
+    with main_tabs[1]:
+        # Sub-tabs dentro de Dashboard
+        dashboard_tabs = st.tabs(["Análisis Visual", "Análisis Detallado", "Métricas Calculadas"])
+        
+        with dashboard_tabs[0]:
+            render_analisis_visual(df_proyectos, df_asignaciones, filtros)
+        with dashboard_tabs[1]:
+            render_detalle(df_proyectos, df_asignaciones, filtros)
+        with dashboard_tabs[2]:
+            render_metricas_calculadas(filtros)
 
 
 if __name__ == "__main__":

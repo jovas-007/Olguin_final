@@ -599,7 +599,7 @@ def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
 
     st.divider()
 
-    with st.form("prediccion_form"):
+    with st.form("prediccion_form", clear_on_submit=False):
         st.subheader("Parámetros del Proyecto")
         
         col1, col2, col3 = st.columns(3)
