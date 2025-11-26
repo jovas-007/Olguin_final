@@ -128,7 +128,16 @@ def cargar_df_proyectos() -> pd.DataFrame:
         "AnioInicio", "MesInicio", "AnioFin", "MesFin"
     ]
     
-    return df[columnas]
+    df_result = df[columnas].copy()
+    
+    # Convertir porcentajes a decimal (0-1) si están en formato 0-100
+    for col in ["TasaDeErroresEncontrados", "TasaDeExitoEnPruebas", "PorcentajeTareasRetrasadas", "PorcentajeHitosRetrasados"]:
+        if col in df_result.columns:
+            # Si los valores son > 1, están en formato 0-100, convertir a 0-1
+            if df_result[col].max() > 1:
+                df_result[col] = df_result[col] / 100
+    
+    return df_result
 
 
 @st.cache_data(show_spinner=False)

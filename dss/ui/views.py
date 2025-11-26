@@ -170,21 +170,21 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
     col_proc1, col_proc2, col_proc3 = st.columns(3)
     with col_proc1:
         mostrar_tarjeta_kpi(
-            "Porcentaje de tareas retrasadas",
+            "Tareas completadas a tiempo",
             1 - kpis["porcentaje_tareas_retrasadas"],
             1 - KPI_TARGETS["porcentaje_tareas_retrasadas"],
             "Menos retrasos implica operación ágil y trazable.",
         )
     with col_proc2:
         mostrar_tarjeta_kpi(
-            "Porcentaje de hitos retrasados",
+            "Hitos completados a tiempo",
             1 - kpis["porcentaje_hitos_retrasados"],
             1 - KPI_TARGETS["porcentaje_hitos_retrasados"],
             "Entrega disciplinada de hitos acelera valor al cliente.",
         )
     with col_proc3:
         mostrar_tarjeta_kpi(
-            "Tasa de errores encontrados",
+            "Calidad del código",
             1 - kpis["tasa_errores"],
             1 - KPI_TARGETS["tasa_errores"],
             "Calidad del producto mejora satisfacción y reduce reprocesos.",

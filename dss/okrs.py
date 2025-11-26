@@ -102,9 +102,9 @@ OKRS = {
         "key_results": [
             {
                 "kr": "KR4.1",
-                "descripcion": "Lograr productividad promedio ≥ 40 horas/hito",
+                "descripcion": "Lograr productividad promedio ≥ 400 horas/hito",
                 "metrica": "productividad_promedio",
-                "target": 40,
+                "target": 400,
                 "unidad": "hrs/hito",
                 "peso": 35
             },

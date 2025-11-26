@@ -32,7 +32,7 @@ KPI_TARGETS = {
     "tasa_exito_pruebas": 0.9,  # Mínimo 90% de éxito en pruebas
     
     # Métricas de Productividad
-    "productividad_promedio": 40,  # 40 horas por hito (baseline)
+    "productividad_promedio": 400,  # 400 horas por hito (baseline)
     
     # Métricas de Retrasos
     "porcentaje_tareas_retrasadas": 0.1,  # Máximo 10%

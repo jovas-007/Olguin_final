@@ -125,12 +125,20 @@ def predecir_eficiencia_procesos(kpis: Dict, vistas: Dict) -> Dict:
     hitos_retrasados = kpis.get("porcentaje_hitos_retrasados", 0)
     tasa_errores = kpis.get("tasa_errores", 0)
     
+    # Normalizar si vienen en escala 0-100 en lugar de 0-1
+    if tareas_retrasadas > 1:
+        tareas_retrasadas = tareas_retrasadas / 100
+    if hitos_retrasados > 1:
+        hitos_retrasados = hitos_retrasados / 100
+    if tasa_errores > 1:
+        tasa_errores = tasa_errores / 100
+    
     # Score de eficiencia (0-100, mayor es mejor)
     eficiencia_score = (
         (1 - tareas_retrasadas) * 33.33 +
         (1 - hitos_retrasados) * 33.33 +
         (1 - tasa_errores) * 33.33
-    ) * 100
+    )
     
     if eficiencia_score >= 85:
         nivel = "ÓPTIMO"
@@ -179,15 +187,15 @@ def predecir_desarrollo_equipo(kpis: Dict, vistas: Dict) -> Dict:
     horas_relacion = kpis.get("horas_relacion", 1.0)
     
     # Score de capacidad del equipo (0-100)
-    # Normalizar productividad (asumiendo 0.75 como óptimo)
-    productividad_norm = min(productividad / 0.75, 1.0) if productividad > 0 else 0
-    precision_estimacion = 1 - abs(horas_relacion - 1.0)
+    # Normalizar productividad (target: 400 hrs/hito, excelente: 500+)
+    productividad_norm = min(productividad / 500, 1.0) if productividad > 0 else 0
+    precision_estimacion = max(0, 1 - abs(horas_relacion - 1.0))
     
     capacidad_score = (
         productividad_norm * 40 +
         tasa_exito_pruebas * 40 +
         precision_estimacion * 20
-    ) * 100
+    )
     
     if capacidad_score >= 85:
         nivel = "ALTO DESEMPEÑO"
@@ -201,7 +209,7 @@ def predecir_desarrollo_equipo(kpis: Dict, vistas: Dict) -> Dict:
     
     recomendaciones = []
     
-    if productividad < 0.65:
+    if productividad < 300:
         recomendaciones.append("Identificar obstáculos que reducen productividad")
         recomendaciones.append("Considerar herramientas de automatización")
         recomendaciones.append("Evaluar distribución de skills en el equipo")
