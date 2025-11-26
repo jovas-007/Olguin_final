@@ -5,11 +5,11 @@ from dss.auth import login
 from dss.data_sources import cargar_df_asignaciones, cargar_df_proyectos
 from dss.ui.views import render_detalle, render_prediccion, render_scorecard, render_metricas_calculadas, render_okrs, render_analisis_visual
 
-st.set_page_config(page_title="DSS – Dashboard de desempeño de proyectos de software", layout="wide")
+st.set_page_config(page_title="DSS: Sistema de Soporte de Decisiones", layout="wide")
 
 
 def main():
-    st.title("DSS – Dashboard de desempeño de proyectos de software")
+    st.title("DSS: Sistema de Soporte de Decisiones")
     st.caption(
         "Misión: Optimizar procesos con tecnología | Visión: Decisiones basadas en datos y excelencia sostenible"
     )
