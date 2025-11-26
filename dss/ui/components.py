@@ -2,22 +2,36 @@ import pandas as pd
 import streamlit as st
 
 
-def mostrar_tarjeta_kpi(nombre: str, valor: float, objetivo: float, descripcion: str):
+def mostrar_tarjeta_kpi(nombre: str, valor: float, objetivo: float, descripcion: str, menor_mejor: bool = False):
     if pd.isna(valor):
         estado = "Sin datos"
         color = "#ccc"
         valor_str = "N/D"
     else:
-        ratio = valor / objetivo if objetivo else 0
-        if ratio >= 1.05:
-            color = "#2e7d32"
-            estado = "Objetivo superado"
-        elif ratio >= 0.9:
-            color = "#f9a825"
-            estado = "Cerca del objetivo"
+        if menor_mejor:
+            # Para métricas donde menor es mejor (desviaciones, errores, retrasos)
+            ratio = objetivo / valor if valor > 0 else 0
+            if valor <= objetivo * 0.95:  # Mejor que el objetivo
+                color = "#2e7d32"
+                estado = "Objetivo superado"
+            elif valor <= objetivo * 1.1:  # Cerca del objetivo
+                color = "#f9a825"
+                estado = "Cerca del objetivo"
+            else:  # Peor que el objetivo
+                color = "#c62828"
+                estado = "Bajo el objetivo"
         else:
-            color = "#c62828"
-            estado = "Bajo el objetivo"
+            # Para métricas donde mayor es mejor (cumplimiento, éxito, productividad)
+            ratio = valor / objetivo if objetivo else 0
+            if ratio >= 1.05:
+                color = "#2e7d32"
+                estado = "Objetivo superado"
+            elif ratio >= 0.9:
+                color = "#f9a825"
+                estado = "Cerca del objetivo"
+            else:
+                color = "#c62828"
+                estado = "Bajo el objetivo"
         valor_str = f"{valor:.2f}"
     objetivo_str = "N/D" if pd.isna(objetivo) else f"{objetivo:.2f}"
 

@@ -78,6 +78,7 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             kpis["desviacion_presupuestal"],
             KPI_TARGETS["desviacion_presupuestal"],
             "Control estricto de costos para mantener rentabilidad y resiliencia.",
+            menor_mejor=True
         )
     with col_fin3:
         mostrar_tarjeta_kpi(
@@ -85,6 +86,7 @@ def render_scorecard(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, 
             kpis["penalizaciones_sobre_presupuesto"],
             KPI_TARGETS["penalizaciones_sobre_presupuesto"],
             "Minimiza riesgos económicos y refuerza acuerdos de calidad.",
+            menor_mejor=True
         )
     
     # Recomendaciones Financieras
@@ -365,26 +367,6 @@ def render_analisis_visual(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataF
             st.caption("Análisis de eficiencia por rol para optimización de cargas de trabajo y formación dirigida.")
         else:
             st.info("No hay datos de asignaciones disponibles para el filtro actual.")
-
-    st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Tercera fila - Visualización única más grande
-    st.markdown("""
-        <div style='background: linear-gradient(to right, #8e2de2, #4a00e0); 
-                    padding: 12px 18px; border-radius: 8px; margin-bottom: 12px;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
-            <h4 style='margin: 0; color: white; font-weight: 600;'>Distribución CAPEX/OPEX por Categoría</h4>
-            <p style='margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 0.9em;'>
-                Equilibrio de inversiones de capital vs operativas
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
-    st.bar_chart(
-        vistas["capex_opex"].set_index("Categoria")[["ProporcionCAPEX_OPEX"]],
-        use_container_width=True,
-        height=350
-    )
-    st.caption("Distribución estratégica de gastos para equilibrar inversiones a largo plazo (CAPEX) y operativas (OPEX).")
 
 
 def render_detalle(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtros: dict):

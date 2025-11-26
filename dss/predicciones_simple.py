@@ -21,19 +21,22 @@ def predecir_riesgo_financiero(kpis: Dict, vistas: Dict) -> Dict:
     riesgo_score = 0
     
     if cumplimiento < 0.85:
+        riesgo_score += 35
+    elif cumplimiento < 0.95:
+        riesgo_score += 15
+    
+    # Desviación presupuestal ahora está normalizada (0-1)
+    if desviacion > 0.20:  # Más de 20% de desviación
         riesgo_score += 40
-    elif cumplimiento < 0.90:
-        riesgo_score += 20
+    elif desviacion > 0.10:  # Entre 10-20%
+        riesgo_score += 25
+    elif desviacion > 0.05:  # Entre 5-10%
+        riesgo_score += 10
     
-    if desviacion > 0.10:
-        riesgo_score += 30
-    elif desviacion > 0.05:
-        riesgo_score += 15
-    
-    if penalizaciones > 0.05:
-        riesgo_score += 30
-    elif penalizaciones > 0.02:
-        riesgo_score += 15
+    if penalizaciones > 0.05:  # Más de 5%
+        riesgo_score += 25
+    elif penalizaciones > 0.02:  # Entre 2-5%
+        riesgo_score += 10
     
     # Determinar nivel de riesgo
     if riesgo_score >= 50:
@@ -49,13 +52,22 @@ def predecir_riesgo_financiero(kpis: Dict, vistas: Dict) -> Dict:
     # Generar recomendaciones
     recomendaciones = []
     
-    if cumplimiento < 0.90:
+    if cumplimiento < 0.95:
         recomendaciones.append("Revisar procesos de estimación de presupuestos")
-        recomendaciones.append("Implementar controles de costos más estrictos")
+        if cumplimiento < 0.85:
+            recomendaciones.append("Implementar controles de costos más estrictos urgentemente")
     
-    if desviacion > 0.05:
-        recomendaciones.append("Analizar causas de desviación presupuestal")
+    if desviacion > 0.20:
+        recomendaciones.append("CRÍTICO: Desviación presupuestal superior al 20%")
+        recomendaciones.append("Análisis inmediato de causas raíz de sobrecostos")
+        recomendaciones.append("Plan de acción correctivo en próximas 48 horas")
+    elif desviacion > 0.10:
+        recomendaciones.append("Analizar causas de desviación presupuestal (>10%)")
         recomendaciones.append("Establecer alertas tempranas de sobrecostos")
+        recomendaciones.append("Revisar scope creep y change requests")
+    elif desviacion > 0.05:
+        recomendaciones.append("Monitorear desviación presupuestal")
+        recomendaciones.append("Reforzar seguimiento de gastos")
     
     if penalizaciones > 0.02:
         recomendaciones.append("Mejorar cumplimiento de SLAs contractuales")
