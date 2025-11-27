@@ -1,5 +1,4 @@
-# Archivos de configuración sensibles
-.env
+
 
 # Python cache
 __pycache__/
