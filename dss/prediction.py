@@ -46,6 +46,18 @@ def obtener_metricas_modelo(df_proyectos: pd.DataFrame, modelo: LinearRegression
 
 
 def rayleigh_curve(total_defectos: float, duracion: int, sigma: float) -> pd.DataFrame:
+    """
+    Genera la curva de Rayleigh para acumulación de defectos.
+    
+    Args:
+        total_defectos: Número total de defectos esperados
+        duracion: Duración del proyecto en SEMANAS
+        sigma: Parámetro de escala de la distribución de Rayleigh
+    
+    Returns:
+        DataFrame con columnas 'Tiempo' (semanas) y 'DefectosAcumulados'
+    """
+    # Generar puntos de tiempo desde 0 hasta duracion (en semanas)
     tiempo = np.linspace(0, duracion, num=duracion + 1)
     cdf = rayleigh.cdf(tiempo, scale=sigma)
     defectos_acumulados = total_defectos * cdf
@@ -53,9 +65,19 @@ def rayleigh_curve(total_defectos: float, duracion: int, sigma: float) -> pd.Dat
 
 
 def calcular_sigma(duracion: int, complejidad: str) -> float:
-    base = max(duracion / 4, 1)
-    factor = {"baja": 0.8, "media": 1.0, "alta": 1.3}.get(complejidad, 1.0)
-    return base * factor
+    """
+    Calcula sigma para la distribución de Rayleigh.
+    El pico de defectos ocurre en t = sigma.
+    Para proyectos de software, típicamente el pico está entre 25-40% de la duración.
+    """
+    # Posicionar el pico entre 25-40% de la duración según complejidad
+    base_factor = {
+        "baja": 0.25,    # Pico temprano (25% del proyecto)
+        "media": 0.33,   # Pico en 1/3 del proyecto
+        "alta": 0.40     # Pico más tardío (40% del proyecto)
+    }.get(complejidad, 0.33)
+    
+    return duracion * base_factor
 
 
 def clasificar_nivel_riesgo(defectos: float, trabajadores: int, duracion: int) -> dict:

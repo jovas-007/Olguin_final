@@ -1,3 +1,21 @@
+# Archivos de configuración sensibles
+.env
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Streamlit
 .streamlit/
+
+# Scripts de prueba temporales
+test_db_connection.py
+ver_estructura.py
+convertir_a_word.py
+
+# Documentos generados
+*.docx
+
+# OS
+.DS_Store
+Thumbs.db

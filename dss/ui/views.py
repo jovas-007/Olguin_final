@@ -718,19 +718,27 @@ def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
         with col_chart2:
             st.markdown("#### Puntos Clave")
             
-            # Encontrar pico de detección
+            # Encontrar pico de detección (máxima tasa de defectos)
+            # El valor 'Tiempo' ya representa semanas directamente
             curva['DefectosSemanales'] = curva['DefectosAcumulados'].diff().fillna(0)
             pico_idx = curva['DefectosSemanales'].idxmax()
-            semana_pico = int(curva.iloc[pico_idx]['Tiempo'] / 7)
+            semana_pico = int(curva.iloc[pico_idx]['Tiempo'])
+            
+            # Encontrar cuándo se alcanza el 50% y 90% de defectos totales
+            defectos_totales = curva['DefectosAcumulados'].max()
+            idx_50 = (curva['DefectosAcumulados'] >= defectos_totales * 0.5).idxmax()
+            idx_90 = (curva['DefectosAcumulados'] >= defectos_totales * 0.9).idxmax()
+            semana_50 = int(curva.iloc[idx_50]['Tiempo'])
+            semana_90 = int(curva.iloc[idx_90]['Tiempo'])
             
             st.info(f"** Pico de detección:** Semana {semana_pico}")
-            st.info(f"** 50% defectos:** Semana {int(len(curva) * 0.4 / 7)}")
-            st.info(f"** 90% defectos:** Semana {int(len(curva) * 0.8 / 7)}")
+            st.info(f"** 50% defectos:** Semana {semana_50}")
+            st.info(f"** 90% defectos:** Semana {semana_90}")
             
             st.markdown("---")
             st.warning(
                 "**Recomendación:** Concentrar máximo esfuerzo de QA "
-                f"entre semanas {max(1, semana_pico-2)} y {semana_pico+2}"
+                f"entre semanas {max(1, semana_pico-1)} y {semana_50+1}"
             )
         
         # === SECCIÓN 4: PLAN DE TESTING ===
@@ -740,15 +748,9 @@ def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
         
         plan_testing = generar_plan_testing(pred_defectos, duracion, curva)
         
-        # Mostrar tabla con estilo
+        # Mostrar tabla sin estilos de color
         st.dataframe(
-            plan_testing.style.applymap(
-                lambda x: 'background-color: #ffebee' if x == "Alto" 
-                else 'background-color: #fff9c4' if x == "Medio" 
-                else 'background-color: #e8f5e9' if x == "Bajo" 
-                else '',
-                subset=['Esfuerzo QA']
-            ),
+            plan_testing,
             use_container_width=True,
             height=300
         )

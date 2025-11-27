@@ -17,29 +17,32 @@ MÉTRICAS IMPLEMENTADAS:
 12. PorcentajeHitosRetrasados: Hitos retrasados / Total hitos
 """
 
-from pathlib import Path
 import pandas as pd
 import numpy as np
 import streamlit as st
-
-DATA_DIR = Path(__file__).parent.parent / "CargaDatos"
+from .db_config import execute_query
 
 
 @st.cache_data(show_spinner=False)
 def cargar_tablas_completas():
-    """Carga todas las tablas necesarias para cálculos de métricas"""
-    return {
-        "hechos_proyectos": pd.read_csv(DATA_DIR / "hechos_proyectos_seed.csv"),
-        "hechos_asignaciones": pd.read_csv(DATA_DIR / "hechos_asignaciones_seed.csv"),
-        "dim_proyectos": pd.read_csv(DATA_DIR / "dim_proyectos_seed.csv"),
-        "dim_clientes": pd.read_csv(DATA_DIR / "dim_clientes_seed.csv"),
-        "dim_gastos": pd.read_csv(DATA_DIR / "dim_gastos_seed.csv"),
-        "dim_tiempo": pd.read_csv(DATA_DIR / "dim_tiempo_seed.csv"),
-        "dim_empleados": pd.read_csv(DATA_DIR / "dim_empleados_seed.csv"),
-        "dim_hitos": pd.read_csv(DATA_DIR / "dim_hitos_seed.csv"),
-        "dim_tareas": pd.read_csv(DATA_DIR / "dim_tareas_seed.csv"),
-        "dim_pruebas": pd.read_csv(DATA_DIR / "dim_pruebas_seed.csv"),
-    }
+    """Carga todas las tablas necesarias para cálculos de métricas desde BD"""
+    try:
+        return {
+            "hechos_proyectos": execute_query("SELECT * FROM hechos_proyectos"),
+            "hechos_asignaciones": execute_query("SELECT * FROM hechos_asignaciones"),
+            "dim_proyectos": execute_query("SELECT * FROM dim_proyectos"),
+            "dim_clientes": execute_query("SELECT * FROM dim_clientes"),
+            "dim_gastos": execute_query("SELECT * FROM dim_gastos"),
+            "dim_tiempo": execute_query("SELECT * FROM dim_tiempo"),
+            "dim_empleados": execute_query("SELECT * FROM dim_empleados"),
+            "dim_hitos": execute_query("SELECT * FROM dim_hitos"),
+            "dim_tareas": execute_query("SELECT * FROM dim_tareas"),
+            "dim_pruebas": execute_query("SELECT * FROM dim_pruebas"),
+        }
+    except Exception as e:
+        st.error(f"Error cargando tablas desde BD: {str(e)}")
+        # Retornar diccionario vacío como fallback
+        return {}
 
 
 def calcular_retrasos(id_proyecto: int, tablas: dict) -> dict:
@@ -278,15 +281,23 @@ def calcular_porcentaje_hitos_retrasados(id_proyecto: int, tablas: dict) -> floa
     return float(porcentaje)
 
 
+@st.cache_data(show_spinner=False, ttl=300)  # Cache por 5 minutos
 def generar_dataframe_metricas_calculadas() -> pd.DataFrame:
     """
     Genera un DataFrame con todas las métricas calculadas.
-    Las métricas ya están precalculadas en hechos_proyectos_seed.csv
+    Las métricas ya están precalculadas en hechos_proyectos
     """
-    tablas = cargar_tablas_completas()
+    # Cargar SOLO la tabla de hechos_proyectos, no todas las tablas
+    try:
+        df_hechos = execute_query("SELECT * FROM hechos_proyectos")
+    except Exception as e:
+        st.error(f"Error cargando hechos_proyectos: {str(e)}")
+        return pd.DataFrame()
     
-    # Leer hechos_proyectos que ya contiene las métricas calculadas
-    df_hechos = tablas["hechos_proyectos"]
+    # Verificar que tenemos columnas (debug)
+    if len(df_hechos.columns) == 0 or not isinstance(df_hechos.columns[0], str):
+        st.error(f"⚠️ DataFrame sin columnas nombradas. Tipo: {type(df_hechos.columns[0]) if len(df_hechos.columns) > 0 else 'N/A'}")
+        return pd.DataFrame()
     
     # Seleccionar solo las columnas de métricas que necesitamos
     columnas_metricas = [
@@ -307,13 +318,24 @@ def generar_dataframe_metricas_calculadas() -> pd.DataFrame:
     
     # Filtrar solo las columnas que existen
     columnas_existentes = [col for col in columnas_metricas if col in df_hechos.columns]
+    
+    if len(columnas_existentes) == 0:
+        st.error(f"⚠️ No se encontraron columnas de métricas. Columnas disponibles: {list(df_hechos.columns)[:5]}")
+        return pd.DataFrame()
+    
     df_metricas = df_hechos[columnas_existentes].copy()
+    
+    # Convertir todas las columnas numéricas primero
+    for col in df_metricas.columns:
+        if col != "ID_Proyecto":  # No convertir ID
+            df_metricas[col] = pd.to_numeric(df_metricas[col], errors='coerce')
     
     # Convertir porcentajes a decimal (0-1) si están en formato 0-100
     for col in ["TasaDeErroresEncontrados", "TasaDeExitoEnPruebas", "PorcentajeTareasRetrasadas", "PorcentajeHitosRetrasados"]:
         if col in df_metricas.columns:
             # Si los valores son > 1, están en formato 0-100, convertir a 0-1
-            if df_metricas[col].max() > 1:
+            max_val = df_metricas[col].max()
+            if not pd.isna(max_val) and max_val > 1:
                 df_metricas[col] = df_metricas[col] / 100
     
     print(f"✅ Métricas cargadas para {len(df_metricas)} proyectos")
