@@ -45,26 +45,22 @@ def main():
 
     kpis = get_kpis(df_proyectos, df_asignaciones, filtros)
 
-    # Tabs principales: Balanced Scorecard y Dashboard
-    main_tabs = st.tabs([" Balanced Scorecard", " Dashboard"])
+    # Tabs principales: Balanced Scorecard, Dashboard y Modelo de Predicción (para admin)
+    main_tab_names = [" Balanced Scorecard", " Dashboard"]
+    if st.session_state.auth.get("role") == "project_manager":
+        main_tab_names.append(" Modelo de Predicción")
+    
+    main_tabs = st.tabs(main_tab_names)
     
     # ============= TAB 1: BALANCED SCORECARD =============
     with main_tabs[0]:
         # Sub-tabs dentro de Balanced Scorecard
-        bsc_subtabs = ["MAIN", "OKRs"]
-        if st.session_state.auth.get("role") == "project_manager":
-            bsc_subtabs.append("Predicción de defectos")
-        
-        bsc_tabs = st.tabs(bsc_subtabs)
+        bsc_tabs = st.tabs(["MAIN", "OKRs"])
         
         with bsc_tabs[0]:
             render_scorecard(df_proyectos, df_asignaciones, filtros)
         with bsc_tabs[1]:
             render_okrs(df_proyectos, df_asignaciones, filtros)
-        
-        if "Predicción de defectos" in bsc_subtabs:
-            with bsc_tabs[2]:
-                render_prediccion(df_proyectos, kpis)
     
     # ============= TAB 2: DASHBOARD =============
     with main_tabs[1]:
@@ -77,6 +73,11 @@ def main():
             render_detalle(df_proyectos, df_asignaciones, filtros)
         with dashboard_tabs[2]:
             render_metricas_calculadas(filtros)
+    
+    # ============= TAB 3: MODELO DE PREDICCIÓN (solo para admin) =============
+    if st.session_state.auth.get("role") == "project_manager":
+        with main_tabs[2]:
+            render_prediccion(df_proyectos, kpis)
 
 
 if __name__ == "__main__":

@@ -573,9 +573,9 @@ def render_prediccion(df_proyectos: pd.DataFrame, kpis: dict):
     st.markdown("""
         <div style='background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); 
                     padding: 25px; border-radius: 12px; margin-bottom: 25px;'>
-            <h1 style='color: white; margin: 0; font-size: 2.2em;'> Predicción de Defectos con IA</h1>
+            <h1 style='color: white; margin: 0; font-size: 2.2em;'> Resumen Global: Predicción de Defectos</h1>
             <p style='color: rgba(255,255,255,0.95); margin: 8px 0 0 0; font-size: 1.05em;'>
-                Modelo de Machine Learning basado en distribución de Rayleigh
+                Modelo de Machine Learning basado en Regresión Lineal y distribución de Rayleigh
             </p>
             <p style='color: rgba(255,255,255,0.85); margin: 8px 0 0 0; font-size: 0.95em;'>
                 <strong>Misión:</strong> Optimizar calidad mediante predicción tecnológica | 
@@ -1275,41 +1275,3 @@ def render_okrs(df_proyectos: pd.DataFrame, df_asignaciones: pd.DataFrame, filtr
                 """, unsafe_allow_html=True)
         
         st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Resumen global
-    st.markdown("---")
-    st.subheader("Resumen Global de OKRs")
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    for idx, (okr_key, _, _) in enumerate(okr_configs):
-        okr_data = okrs_progreso[okr_key]
-        progreso = okr_data["progreso_general"]
-        
-        if progreso >= 85:
-            estado = "EXCELENTE"
-            color_fondo = "#d1fae5"
-            color_texto = "#065f46"
-        elif progreso >= 70:
-            estado = "EN CAMINO"
-            color_fondo = "#fef3c7"
-            color_texto = "#92400e"
-        else:
-            estado = "REQUIERE ATENCIÓN"
-            color_fondo = "#fee2e2"
-            color_texto = "#991b1b"
-        
-        with [col1, col2, col3, col4][idx]:
-            st.markdown(f"""
-                <div style='background: {color_fondo}; padding: 15px; border-radius: 8px; text-align: center;'>
-                    <div style='font-size: 2em; font-weight: bold; color: {color_texto};'>
-                        {progreso:.0f}%
-                    </div>
-                    <div style='font-size: 0.9em; color: {color_texto}; margin-top: 5px;'>
-                        {estado}
-                    </div>
-                    <div style='font-size: 0.8em; color: #666; margin-top: 8px;'>
-                        {okr_data["objetivo"][:30]}...
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)

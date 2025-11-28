@@ -348,18 +348,27 @@ def obtener_estadisticas_metricas_calculadas() -> dict:
     """
     df_metricas = generar_dataframe_metricas_calculadas()
     
+    # Función auxiliar para obtener valor de columna de forma segura
+    def get_value(col_name, operation='mean', default=0):
+        if col_name in df_metricas.columns:
+            if operation == 'mean':
+                return df_metricas[col_name].mean()
+            elif operation == 'sum':
+                return df_metricas[col_name].sum()
+        return default
+    
     return {
-        "retraso_inicio_promedio": df_metricas["RetrasoInicioDias"].mean(),
-        "retraso_final_promedio": df_metricas["RetrasoFinalDias"].mean(),
-        "presupuesto_promedio": df_metricas["Presupuesto"].mean(),
-        "coste_real_promedio": df_metricas["CosteReal"].mean(),
-        "desviacion_presupuestal_promedio": df_metricas["DesviacionPresupuestal"].mean(),
-        "penalizaciones_total": df_metricas["PenalizacionesMonto"].sum(),
-        "penalizaciones_promedio": df_metricas["PenalizacionesMonto"].mean(),
-        "proporcion_capex_opex": df_metricas["ProporcionCAPEX_OPEX"].mean(),
-        "tasa_errores_promedio": df_metricas["TasaDeErroresEncontrados"].mean(),
-        "tasa_exito_pruebas_promedio": df_metricas["TasaDeExitoEnPruebas"].mean(),
-        "productividad_promedio": df_metricas["ProductividadPromedio"].mean(),
-        "tareas_retrasadas_porcentaje": df_metricas["PorcentajeTareasRetrasadas"].mean(),
-        "hitos_retrasados_porcentaje": df_metricas["PorcentajeHitosRetrasados"].mean(),
+        "retraso_inicio_promedio": get_value("RetrasoInicioDias"),
+        "retraso_final_promedio": get_value("RetrasoFinalDias"),
+        "presupuesto_promedio": get_value("Presupuesto"),
+        "coste_real_promedio": get_value("CosteReal"),
+        "desviacion_presupuestal_promedio": get_value("DesviacionPresupuestal"),
+        "penalizaciones_total": get_value("PenalizacionesMonto", 'sum'),
+        "penalizaciones_promedio": get_value("PenalizacionesMonto"),
+        "proporcion_capex_opex": get_value("ProporcionCAPEX_OPEX"),
+        "tasa_errores_promedio": get_value("TasaDeErroresEncontrados"),
+        "tasa_exito_pruebas_promedio": get_value("TasaDeExitoEnPruebas"),
+        "productividad_promedio": get_value("ProductividadPromedio"),
+        "tareas_retrasadas_porcentaje": get_value("PorcentajeTareasRetrasadas"),
+        "hitos_retrasados_porcentaje": get_value("PorcentajeHitosRetrasados"),
     }
