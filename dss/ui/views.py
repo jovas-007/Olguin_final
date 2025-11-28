@@ -865,6 +865,14 @@ def render_metricas_calculadas(filtros: dict):
     df_metricas = generar_dataframe_metricas_calculadas()
     stats = obtener_estadisticas_metricas_calculadas()
     
+    # Debug: Verificar columnas de df_metricas
+    if df_metricas.empty:
+        st.error("⚠️ df_metricas está vacío!")
+        return
+    if "ID_Proyecto" not in df_metricas.columns:
+        st.error(f"⚠️ ID_Proyecto no está en df_metricas! Columnas: {list(df_metricas.columns)}")
+        return
+    
     # Obtener información básica de proyectos para filtros y visualización
     tablas = cargar_tablas_completas()
     

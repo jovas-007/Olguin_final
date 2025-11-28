@@ -323,7 +323,17 @@ def generar_dataframe_metricas_calculadas() -> pd.DataFrame:
         st.error(f"⚠️ No se encontraron columnas de métricas. Columnas disponibles: {list(df_hechos.columns)[:5]}")
         return pd.DataFrame()
     
+    # Debug: verificar que ID_Proyecto está incluido
+    if "ID_Proyecto" not in columnas_existentes:
+        st.error(f"⚠️ ID_Proyecto no está en columnas_existentes! Columnas: {columnas_existentes}")
+        return pd.DataFrame()
+    
     df_metricas = df_hechos[columnas_existentes].copy()
+    
+    # Verificar que ID_Proyecto está en el DataFrame final
+    if "ID_Proyecto" not in df_metricas.columns:
+        st.error(f"⚠️ ID_Proyecto desapareció después de copy()! Columnas: {list(df_metricas.columns)}")
+        return pd.DataFrame()
     
     # Convertir todas las columnas numéricas primero
     for col in df_metricas.columns:
