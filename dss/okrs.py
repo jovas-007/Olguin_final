@@ -149,9 +149,31 @@ def calcular_progreso_okr(okr_key: str, kpis: dict) -> dict:
                              "porcentaje_hitos_retrasados", "tasa_errores", "retraso_final_dias"]:
             # Métricas donde menor es mejor
             if metrica_valor <= target:
+                # Si cumple o supera el objetivo (valor menor o igual al target)
                 progreso = 100
+            elif target == 0:
+                # Si el target es 0 y el valor es mayor, usar escala logarítmica
+                if metrica_valor <= 0.01:
+                    progreso = 90
+                elif metrica_valor <= 0.05:
+                    progreso = 70
+                elif metrica_valor <= 0.10:
+                    progreso = 50
+                elif metrica_valor <= 0.20:
+                    progreso = 30
+                elif metrica_valor <= 0.50:
+                    progreso = 10
+                else:
+                    progreso = 5
             else:
-                progreso = max(0, 100 - ((metrica_valor - target) / target * 100))
+                # Calcular progreso inversamente proporcional
+                # Usar escala más amplia: target = 100%, 5*target = 0%
+                ratio = metrica_valor / target
+                if ratio >= 5.0:
+                    progreso = 5  # Mínimo 5% para mostrar que hay datos
+                else:
+                    # Progreso lineal: entre 1x (100%) y 5x (5%) del target
+                    progreso = max(5, 100 * (5.0 - ratio) / 4.0)
         else:
             # Métricas donde mayor es mejor
             if metrica_valor >= target:

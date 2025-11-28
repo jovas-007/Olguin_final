@@ -23,13 +23,13 @@ def mostrar_tarjeta_kpi(nombre: str, valor: float, objetivo: float, descripcion:
         else:
             # Para métricas donde mayor es mejor (cumplimiento, éxito, productividad)
             ratio = valor / objetivo if objetivo else 0
-            if ratio >= 1.05:
+            if ratio >= 1.0:  # Cumple o supera el objetivo
                 color = "#2e7d32"
                 estado = "Objetivo superado"
-            elif ratio >= 0.9:
+            elif ratio >= 0.9:  # Cerca del objetivo (90-100%)
                 color = "#f9a825"
                 estado = "Cerca del objetivo"
-            else:
+            else:  # Bajo el objetivo (<90%)
                 color = "#c62828"
                 estado = "Bajo el objetivo"
         valor_str = f"{valor:.2f}"
